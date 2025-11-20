@@ -1,0 +1,19 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* This helps with layout calculations */
+}
+
+
+
+.button{
+border:gray 1px solid;
+border-radius: 6px;
+}
+
