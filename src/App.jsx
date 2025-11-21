@@ -12,8 +12,7 @@ function App() {
       <Header> </Header>
       <About></About>
       <ColorsTimeline></ColorsTimeline>
-      <Footer></Footer>
-    
+<Footer></Footer>
     </>
   )
 }
