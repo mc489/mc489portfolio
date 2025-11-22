@@ -7,6 +7,7 @@ import { MapPin, Locate } from 'lucide-react';
 import React, { useState } from "react";
  import { FaRegComment } from 'react-icons/fa';
  import { ChevronRight } from 'lucide-react';
+import { MdDownload } from 'react-icons/md';
     import { FaEnvelope } from 'react-icons/fa';
 function Header() {
 
@@ -74,10 +75,19 @@ function Header() {
 
                 <div className="mx-[10px] my-[15px] flex flex-col gap-[`px]">
 
-                    <div className="flex flex-row relative items-center">
+                    <div className="flex flex-row relative items-center justify-between">
+                       
+                       <div className="flex items-center">
                         <h1 className="text-[24px]">MC Ganir</h1>
                         <FontAwesomeIcon icon={faCheckCircle} color="blue"
                             className="ml-[5px]" />
+                            </div>
+                           <button >
+                            <div className="flex items-center group gap-1">
+                                <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
+                              <MdDownload style={{ marginRight: '8px' }}  /> 
+                              </div>
+                              </button>
                     </div>
 
 
@@ -103,7 +113,7 @@ function Header() {
                             Send Email
                              </div>
                            </button>
-                        <button className="button px-[16px] hover:-translate-y-0.5"> My Resume</button>
+                    
                         <button className="button  px-[16px] hover:-translate-y-0.5"> Portfolio</button>
                     </div>
                 </div>
