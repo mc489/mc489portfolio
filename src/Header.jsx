@@ -36,10 +36,11 @@ function Header() {
 
 
         <header>
-            <div className=" pt-[24px] items-center justify-center flex flex-row gap-4 p4">
+            <div className=" max-[500px]:bg-blue-500 max-[500px]:p-[30px] max-[500px]:gap-1 pt-[24px] items-center justify-center flex flex-row gap-4 p4">
 
                 <div
-                    className="relative w-[150px] h-[150px] rounded-[16px] overflow-hidden group"
+                    className="relative w-[100px] aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
+
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
@@ -73,14 +74,14 @@ function Header() {
                 </div>
 
 
-                <div className="mx-[10px] my-[15px] flex flex-col gap-[`px]">
+                <div className=" mx-[10px] my-[15px] flex flex-col gap-[`px]">
 
                     <div className="flex flex-row relative items-center justify-between">
                        
                        <div className="flex items-center">
-                        <h1 className="text-[24px]">MC Ganir</h1>
+                        <h1 className="text-[24px] max-[500px]:text-[18px]">MC Ganir</h1>
                         <FontAwesomeIcon icon={faCheckCircle} color="blue"
-                            className="ml-[5px]" />
+                            className="ml-[5px] max-[500px]:w-[12px] " />
                             </div>
                            <button >
                             <div className="flex items-center group gap-1">
@@ -91,30 +92,33 @@ function Header() {
                     </div>
 
 
-                    <div className="mt-[px] flex flex-row items-center">
-                        <MapPin color="black" size={14} style={{ marginRight: '4px' }} /> {/* */}
-                        <h3 className="text-[16px]">Metro Manila, Philippines</h3>
+                    <div className="mt-[2px] flex flex-row items-center">
+                        <MapPin color="black" size={14} style={{ marginRight: '4px' }} className="max-[500px]:w-[10px]" /> {/* */}
+                        <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
                     </div>
-                    <h2 className=" mt-[10px] text-[20px] ">Information Technology/ Multimedia </h2>
+                    <h2 className=" mt-[10px] text-[20px] max-[500px]:text-[14px]">Information Technology/ Multimedia </h2>
 
                     <div className="mt-[15px] flex flex-row gap-[10px]">
 
-                        <button className="button bg-black px-[16px] py-[8px] 
-                        text-white text-[14px] !border-none hover:-translate-y-0.5">
+                       <button className="max-[500px]:text-[10px] max-[500px]:px-[8px] 
+                        button bg-black px-[16px] py-[8px] 
+                        text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
+                            
                             <div className="flex gap-[7px] items-center">
-                              <FaRegComment size={18}  color="white" />
+                              <FaRegComment size={18}  color="white" className="max-[500px]:w-[12px]"/>
                          Message Now
-                         <ChevronRight size={18} color="white" />
+                         <ChevronRight size={18} color="white" className="max-[500px]:w-[12px]" />
                         </div>
                         </button>
-                        <button className="button px-[16px] hover:-translate-y-0.5">
+
+                        <button className="button max-[500px]:text-[10px] max-[500px]:px-[8px]  px-[16px] hover:-translate-y-0.5  whitespace-nowrap">
                             <div className="flex items-center gap-[10px]">  
                          <FaEnvelope size="16px" color="black" /> 
                             Send Email
                              </div>
                            </button>
                     
-                        <button className="button  px-[16px] hover:-translate-y-0.5"> Portfolio</button>
+                        <button className="max-[500px]:text-[10px] max-[500px]:px-[8px] button  px-[16px] hover:-translate-y-0.5"> Portfolio</button>
                     </div>
                 </div>
             </div>
