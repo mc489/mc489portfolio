@@ -39,7 +39,7 @@ function Header() {
             <div className=" max-[500px]:bg-blue-500 max-[500px]:p-[30px] max-[500px]:gap-1 pt-[24px] items-center justify-center flex flex-row gap-4 p4">
 
                 <div
-                    className="relative w-[100px] aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
+                    className="relative w-[150px] max-[500px]:w-[100px] aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
