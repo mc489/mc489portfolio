@@ -14,7 +14,10 @@ function SocialLinks() {
                     <div className=" flex flex-col relative max-w-[320px] gap-1 rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
             <span className="text-lg">Social Links</span>
 
-            <button className="rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+
+
+ <a href="https://web.facebook.com/evmcpov" target="_blank" rel="noopener noreferrer">
+            <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                 <div className="items-center flex flex-row items-center gap-2 ">
 
                     <FaFacebook size={18} color="black" />
@@ -22,7 +25,11 @@ function SocialLinks() {
 
                 </div>
             </button>
-            <button className=" rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5  duration-200 ">
+            </a>
+
+           
+             <a href=" https://www.linkedin.com/in/mc-ganir-552264210/" target="_blank" rel="noopener noreferrer">
+            <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5  duration-200 ">
                 <div className="items-center flex flex-row items-center gap-2 ">
 
                     <FaLinkedin size={18} color="black" />
@@ -32,8 +39,11 @@ function SocialLinks() {
                     </span>
                 </div>
             </button>
+</a>
 
-             <button className="rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+
+  <a href=" https://github.com/mc489" target="_blank" rel="noopener noreferrer">
+             <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                 <div className="items-center flex flex-row items-center gap-2 ">
                 <FaGithub size={18} color="#181717" />
                 <span>
@@ -41,8 +51,11 @@ function SocialLinks() {
                     @mc489     </span>
             </div>
             </button>
+</a>
 
-              <button className="rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+
+  <a href=" https://www.behance.net/mcganir" target="_blank" rel="noopener noreferrer">
+              <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                 <div className="items-center flex flex-row items-center gap-2 ">
                 <FaBehance size={18} color="black" />
                 <span>
@@ -50,8 +63,11 @@ function SocialLinks() {
                 </span>
             </div>
 </button>
+</a>
 
-        <button className="rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+
+  <a href=" https://www.youtube.com/@mcjemuelganir" target="_blank" rel="noopener noreferrer">
+        <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                 <div className="items-center flex flex-row items-center gap-2 ">
   <FaYoutube size={18} color="black" />
                 <span>
@@ -61,6 +77,8 @@ function SocialLinks() {
 
 
         </button>
+        </a>
+
         </div>
 </div>
     )
