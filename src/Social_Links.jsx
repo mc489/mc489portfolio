@@ -11,7 +11,7 @@ function SocialLinks() {
 
      <div className="flex  justify-center items-center  ">
                  
-                    <div className=" flex flex-col relative max-w-[320px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
+                    <div className=" flex flex-col relative max-w-[320px] gap-1 rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
             <span className="text-lg">Social Links</span>
 
             <button className="rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">

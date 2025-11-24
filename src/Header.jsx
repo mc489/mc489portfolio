@@ -11,7 +11,7 @@ import { MdDownload } from 'react-icons/md';
 import { FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive'
 import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
-
+import RESUME from "./assets/Resume.pdf"
 function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1024px)'
@@ -46,7 +46,7 @@ function Header() {
 
 
         <header>
-    
+
 
 
             {isDesktopOrLaptop &&
@@ -97,12 +97,14 @@ function Header() {
                                 <FontAwesomeIcon icon={faCheckCircle} color="blue"
                                     className="ml-[5px] max-[500px]:w-[12px] " />
                             </div>
-                            <button >
-                                <div className="flex items-center group gap-1">
-                                    <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
-                                    <MdDownload style={{ marginRight: '8px' }} />
-                                </div>
-                            </button>
+                            <a href={RESUME} download target="_blank" rel="noopener noreferrer">
+                                <button className="cursor-pointer" >
+                                    <div className="flex items-center group gap-1">
+                                        <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
+                                        <MdDownload style={{ marginRight: '8px' }} />
+                                    </div>
+                                </button>
+                            </a>
                         </div>
 
 
@@ -114,31 +116,32 @@ function Header() {
 
                         <div className="mt-[15px] flex flex-row gap-[10px]">
 
-                            <button className="
+                            <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
+                                <button className=" cursor-pointer 
                         button bg-black px-[16px] py-[8px] 
                         text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
-                                <div className="flex gap-[8px] items-center">
-                                    <FaRegComment size={18} color="white" />
-                                    Message Now
-                                    <ChevronRight size={18} color="white" />
-                                </div>
-                            </button>
-
-                            <button className=" button px-[16px] hover:-translate-y-0.5  whitespace-nowrap">
+                                    <div className="flex gap-[8px] items-center">
+                                        <FaRegComment size={18} color="white" />
+                                        Message Now
+                                        <ChevronRight size={18} color="white" />
+                                    </div>
+                                </button>
+                            </a>
+                            <button className=" cursor-pointer button px-[16px] hover:-translate-y-0.5  whitespace-nowrap">
                                 <div className="flex items-center gap-[8px]">
                                     <FaEnvelope size="16px" color="black" />
                                     Send Email
                                 </div>
                             </button>
 
-                            <button className=" button  px-[16px] hover:-translate-y-0.5"> 
+                            <button className=" cursor-pointer button  px-[16px] hover:-translate-y-0.5">
                                 <div className="flex items-center gap-[8px]">
-                                
-                                   <FaBriefcase  size="16px" />
-                                Portfolio
+
+                                    <FaBriefcase size="16px" />
+                                    Portfolio
                                 </div>
-                                </button>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -147,7 +150,7 @@ function Header() {
             {isTabletOrMobile &&
 
                 <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
-                    
+
                     <div
                         className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
@@ -194,15 +197,20 @@ function Header() {
                                 <FontAwesomeIcon icon={faCheckCircle} color="blue"
                                     className="ml-[5px] w-[12px] " />
                             </div>
-                            <button >
-                       
-                        <div className="flex items-center group gap-1 ">
-                            <span className="text-[10px] opacity-0 group-hover:opacity-100 
-                            translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
-                            <MdDownload size= {12}  />
-                        </div>
-                    </button>
 
+
+
+
+                            <a href={RESUME} download target="_blank" rel="noopener noreferrer">
+                                <button >
+
+                                    <div className="flex items-center group gap-1 cursor-pointer ">
+                                        <span className="text-[10px] opacity-0 group-hover:opacity-100 
+                            translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
+                                        <MdDownload size={12} />
+                                    </div>
+                                </button>
+                            </a>
                         </div>
 
 
@@ -214,33 +222,38 @@ function Header() {
 
                         <div className="mt-[8px] flex flex-row gap-[6px]">
 
-                            <button className="
+                            <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
+                                <button className="cursor-pointer
                         button bg-black px-[8px] py-[4px] 
                         text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
+                                    <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
+                                    <div className="flex gap-[5px] items-center">
+                                        <FaRegComment size={10} color="white" />
+                                        Message
+                                        <ChevronRight size={10} color="white" />
+                                    </div>
+                                </button>
+                            </a>
 
-                                <div className="flex gap-[5px] items-center">
-                                    <FaRegComment size={10} color="white" />
-                                    Message
-                                    <ChevronRight size={10} color="white" />
-                                </div>
-                            </button>
+                            <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
 
-                            <button className=" text-[10px] button px-[8px] hover:-translate-y-0.5  whitespace-nowrap">
+                                <button className="cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
+                                    <div className="flex items-center gap-[5px]">
+                                        <FaEnvelope size={10} color="black" />
+                                        Email
+                                    </div>
+                                </button>
+                            </a>
+
+                            <button className="cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
+
                                 <div className="flex items-center gap-[5px]">
-                                    <FaEnvelope size={10} color="black" />
-                                    Email 
-                                </div>
-                            </button>
 
-                            <button className=" button text-[10px] px-[8px] hover:-translate-y-0.5">
-                                
-                                <div className="flex items-center gap-[5px]">
-                                
-                                   <FaBriefcase  size={10} />
-                                Portfolio
+                                    <FaBriefcase size={10} />
+                                    Portfolio
                                 </div>
-                                
-                               </button>
+
+                            </button>
                         </div>
                     </div>
                 </div>
