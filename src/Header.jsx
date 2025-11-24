@@ -10,12 +10,14 @@ import { ChevronRight } from 'lucide-react';
 import { MdDownload } from 'react-icons/md';
 import { FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive'
+import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
+
 function Header() {
     const isDesktopOrLaptop = useMediaQuery({
-        query: '(min-width: 1224px)'
+        query: '(min-width: 1024px)'
     })
     const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width:  1023px)' })
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
     const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
 
@@ -51,7 +53,7 @@ function Header() {
                 <div className=" pt-[24px] items-center justify-center flex flex-row gap-4   ">
 
                     <div
-                        className="relative w-[150px] max-[500px]:w-[100px] aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
+                        className="relative w-[150px]  aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
@@ -116,7 +118,7 @@ function Header() {
                         button bg-black px-[16px] py-[8px] 
                         text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
-                                <div className="flex gap-[7px] items-center">
+                                <div className="flex gap-[8px] items-center">
                                     <FaRegComment size={18} color="white" />
                                     Message Now
                                     <ChevronRight size={18} color="white" />
@@ -124,13 +126,19 @@ function Header() {
                             </button>
 
                             <button className=" button px-[16px] hover:-translate-y-0.5  whitespace-nowrap">
-                                <div className="flex items-center gap-[10px]">
+                                <div className="flex items-center gap-[8px]">
                                     <FaEnvelope size="16px" color="black" />
                                     Send Email
                                 </div>
                             </button>
 
-                            <button className=" button  px-[16px] hover:-translate-y-0.5"> Portfolio</button>
+                            <button className=" button  px-[16px] hover:-translate-y-0.5"> 
+                                <div className="flex items-center gap-[8px]">
+                                
+                                   <FaBriefcase  size="16px" />
+                                Portfolio
+                                </div>
+                                </button>
                         </div>
                     </div>
                 </div>
@@ -138,7 +146,7 @@ function Header() {
 
             {isTabletOrMobile &&
 
-                <div className=" py-[24px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
+                <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
                     
                     <div
                         className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
@@ -199,15 +207,15 @@ function Header() {
 
 
                         <div className=" m-0 flex flex-row items-center">
-                            <MapPin color="black" size={8} style={{ marginRight: '4px' }} /> {/* */}
+                            <MapPin color="black" size={8} style={{ marginRight: '2px' }} /> {/* */}
                             <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
                         </div>
                         <h2 className=" mt-[8px] text-[8px] justify-center ">Information Technology/ Multimedia </h2>
 
-                        <div className="mt-[8px] flex flex-row gap-[8px]">
+                        <div className="mt-[8px] flex flex-row gap-[6px]">
 
                             <button className="
-                        button bg-black px-[10px] py-[4px] 
+                        button bg-black px-[8px] py-[4px] 
                         text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                 <div className="flex gap-[5px] items-center">
@@ -217,14 +225,22 @@ function Header() {
                                 </div>
                             </button>
 
-                            <button className=" text-[10px] button px-[10px] hover:-translate-y-0.5  whitespace-nowrap">
+                            <button className=" text-[10px] button px-[8px] hover:-translate-y-0.5  whitespace-nowrap">
                                 <div className="flex items-center gap-[5px]">
                                     <FaEnvelope size={10} color="black" />
                                     Email 
                                 </div>
                             </button>
 
-                            <button className=" button text-[10px] px-[10px] hover:-translate-y-0.5"> Portfolio</button>
+                            <button className=" button text-[10px] px-[8px] hover:-translate-y-0.5">
+                                
+                                <div className="flex items-center gap-[5px]">
+                                
+                                   <FaBriefcase  size={10} />
+                                Portfolio
+                                </div>
+                                
+                               </button>
                         </div>
                     </div>
                 </div>
