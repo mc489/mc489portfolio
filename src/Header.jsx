@@ -48,7 +48,7 @@ function Header() {
 
 
             {isDesktopOrLaptop &&
-                <div className=" pt-[24px] items-center justify-center flex flex-row gap-4 p4">
+                <div className=" pt-[24px] items-center justify-center flex flex-row gap-4   ">
 
                     <div
                         className="relative w-[150px] max-[500px]:w-[100px] aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
@@ -138,7 +138,7 @@ function Header() {
 
             {isTabletOrMobile &&
 
-                <div className=" py-[24px] items-center justify-center flex flex-row gap-2 overflow-hidden">
+                <div className=" py-[24px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
                     
                     <div
                         className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
@@ -177,48 +177,50 @@ function Header() {
 
 
 
-                    <div className=" my-[15px] flex flex-col gap-[1px]">
+                    <div className=" my-[15px] flex flex-col  ">
 
                         <div className="flex flex-row relative items-center justify-between ">
 
-                            <div className="flex items-center">
+                            <div className="flex items-center ">
                                 <h1 className="text-[16px]">MC Ganir</h1>
                                 <FontAwesomeIcon icon={faCheckCircle} color="blue"
                                     className="ml-[5px] w-[12px] " />
                             </div>
                             <button >
-                        <div className="flex items-center group gap-1">
-                            <span className="text-[12px] opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
-                            <MdDownload style={{ marginRight: '8px' }} />
+                       
+                        <div className="flex items-center group gap-1 ">
+                            <span className="text-[10px] opacity-0 group-hover:opacity-100 
+                            translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
+                            <MdDownload size= {12}  />
                         </div>
                     </button>
 
                         </div>
 
 
-                        <div className="mt-[2px]  flex flex-row items-center">
-                            <MapPin color="black" size={10} style={{ marginRight: '4px' }} /> {/* */}
+                        <div className=" m-0 flex flex-row items-center">
+                            <MapPin color="black" size={8} style={{ marginRight: '4px' }} /> {/* */}
                             <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
                         </div>
-                        <h2 className=" mt-[2px] text-[12px] justify-center ">Information Technology/ Multimedia </h2>
+                        <h2 className=" mt-[8px] text-[8px] justify-center ">Information Technology/ Multimedia </h2>
 
-                        <div className="mt-[4px] flex flex-row gap-[10px]">
+                        <div className="mt-[8px] flex flex-row gap-[8px]">
 
                             <button className="
-                        button bg-black px-[10px] py-[8px] 
+                        button bg-black px-[10px] py-[4px] 
                         text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                 <div className="flex gap-[5px] items-center">
-                                    <FaRegComment size={12} color="white" />
-                                    Message Now
-                                    <ChevronRight size={12} color="white" />
+                                    <FaRegComment size={10} color="white" />
+                                    Message
+                                    <ChevronRight size={10} color="white" />
                                 </div>
                             </button>
 
                             <button className=" text-[10px] button px-[10px] hover:-translate-y-0.5  whitespace-nowrap">
                                 <div className="flex items-center gap-[5px]">
-                                    <FaEnvelope size="12px" color="black" />
-                                    Send Email
+                                    <FaEnvelope size={10} color="black" />
+                                    Email 
                                 </div>
                             </button>
 
