@@ -9,18 +9,14 @@ function App() {
   return (
     <>
 
-     <div className=""> 
+
       <Header />
-      <div className="flex flex-row gap-5 justify-center items-center mb-2">
-      <About />
+
+     
    
-      <ColorsTimeline></ColorsTimeline>
-     </div>
-     <div className="flex flex-row item-center justify-center "> 
-<SocialLinks></SocialLinks>
-</div>
-<Footer></Footer>
- </div>
+
+
+
     </>   
   )
 }
