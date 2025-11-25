@@ -4,6 +4,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Timeline from "./Timeline"
 import SocialLinks from "./Social_Links"
+import RecentProjects from "./Projects"
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Timeline />
       <SocialLinks/>
+  <RecentProjects/>
     <Footer/>
 
     </>

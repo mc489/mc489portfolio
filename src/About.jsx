@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{ useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function About() {

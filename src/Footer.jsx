@@ -1,7 +1,9 @@
 import { useMediaQuery } from 'react-responsive';
 
 
-function Footer() { const isDesktopOrLaptop = useMediaQuery({
+function Footer() { 
+    
+    const isDesktopOrLaptop = useMediaQuery({
             query: '(min-width: 1024px)'
         })
         const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })

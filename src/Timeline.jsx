@@ -16,17 +16,29 @@ export default function ExperienceTimeline() {
 
       role: "BS Information Technology",
       school: "Pamantasan ng Lungsod ng Valenzuela",
-      year: new Date().getFullYear(),
+      year: 2023,
       filled: true,
+    },
+ {
+      role: "Graphic Designer ",
+      school: "Valprints Advertising ",
+      year: 2023,
+      filled: false,
+      duration:"2023"
+    },
+     {
+      role: " Graphic Designer ",
+      school: "Val-Aire Aiconditioning Trading ",
+      year: 2023,
+      filled: false,
+      duration:"2023"
     },
     {
       role: "Digital Arts ",
       school: "STI College Caloocan",
       year: 2021,
       filled: false,
-      ojt: "Graphic Designer",
-      company:"Val-Aire Airconditioning Trading",
-      duration:"2023"
+
     },
   ];
 
@@ -99,7 +111,7 @@ export default function ExperienceTimeline() {
                     <div className="relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
 
       {/* Header */}
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-2">
         <span className="text-[16px]">💼</span>
         <h2 className="text-[16px] font-bold">Experience</h2>
       </div>

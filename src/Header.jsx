@@ -12,6 +12,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive'
 import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
 import RESUME from "./assets/RESUME.pdf"
+
 function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1024px)'
