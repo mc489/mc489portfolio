@@ -15,7 +15,7 @@ function Projects() {
 
                 <div className=" flex flex-col  items-center justify-center mt-5">
 
-                    <div className="py-[12px] flex flex-col  max-w-[620px] px-[30px] justify-center 
+                    <div className="py-[12px] flex flex-col w-full max-w-[9850px] px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 
@@ -64,7 +64,7 @@ function Projects() {
 
 
                         <div className=" flex items-center justify-between relative gap-1 rounded-[16px] 
-                         w-full  mt-[5px] gap-2 text-left">
+                         w-full  mt-[5px] mb-[10px] gap-2 text-left">
                             <span className="text-[16px] font-semibold">Recent Projects</span>
                             <span className='text-[10px] cursor-pointer'>View All</span>
                         </div>

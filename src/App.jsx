@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import Timeline from "./Timeline"
 import SocialLinks from "./Social_Links"
 import RecentProjects from "./Projects"
+import TechStack from "./TechStack"
 import { useMediaQuery } from 'react-responsive'
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
 
       <About />
       <Timeline />
-      <div className="flex items-center justify-center gap-2">
+    <TechStack/>
+      <div className="w-full flex items-center justify-center gap-20">
         <RecentProjects/>
       <SocialLinks/>
 </div>
@@ -41,6 +43,7 @@ function App() {
 
       <About />
       <Timeline />
+  
       <div className="flex flex-col items-center justify-center gap-2">
         <RecentProjects/>
       <SocialLinks/>
