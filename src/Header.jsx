@@ -113,7 +113,7 @@ function Header() {
                             <MapPin color="black" size={14} style={{ marginRight: '4px' }} /> {/* */}
                             <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
                         </div>
-                        <h2 className=" mt-[10px] text-[20px] ">Information Technology/ Multimedia </h2>
+                        <h2 className=" mt-[10px] text-[16px] ">Information Technology/ Multimedia </h2>
 
                         <div className="mt-[15px] flex flex-row gap-[10px]">
 
@@ -219,7 +219,7 @@ function Header() {
                             <MapPin color="black" size={8} style={{ marginRight: '2px' }} /> {/* */}
                             <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
                         </div>
-                        <h2 className=" mt-[8px] text-[8px] justify-center ">Information Technology/ Multimedia </h2>
+                        <h2 className=" mt-[8px] text-[10px] justify-center ">Information Technology/ Multimedia </h2>
 
                         <div className="mt-[8px] flex flex-row gap-[6px]">
 

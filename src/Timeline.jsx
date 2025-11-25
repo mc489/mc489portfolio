@@ -113,7 +113,7 @@ export default function ExperienceTimeline() {
       {/* Header */}
       <div className="flex items-center gap-2 mb-2">
         <span className="text-[16px]">💼</span>
-        <h2 className="text-[16px] font-bold">Experience</h2>
+        <h2 className="text-[16px] font-semibold">Experience</h2>
       </div>
 
     {/* Timeline */}
@@ -131,7 +131,7 @@ export default function ExperienceTimeline() {
               {/* Dot */}
               <span
                 className={` items-center 
-                  absolute -left-[2px] top-[8px]
+                  absolute -left-[2px] top-[4px]
                   w-[12px] h-[12px] rounded-full border-2 
                   transition-all duration-200 z-10
                   ${item.filled ? "bg-black" : "border-gray-300 bg-white hover:bg-black"}

@@ -21,7 +21,7 @@ const isDesktopOrLaptop = useMediaQuery({
         <div className="flex  justify-center items-center  ">
 
             <div className=" flex flex-col relative max-w-[320px] gap-1 rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
-                <span className="text-lg">Social Links</span>
+                <span className="text-lg font-bold">Social Links</span>
 
 
 
@@ -29,8 +29,8 @@ const isDesktopOrLaptop = useMediaQuery({
                     <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
 
-                            <FaFacebook size={18} color="black" />
-                            <span> MC Ganir</span>
+                            <FaFacebook size={14} color="black" />
+                            <span className='text-[14px]'> MC Ganir</span>
 
                         </div>
                     </button>
@@ -41,8 +41,8 @@ const isDesktopOrLaptop = useMediaQuery({
                     <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5  duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
 
-                            <FaLinkedin size={18} color="black" />
-                            <span>
+                            <FaLinkedin size={14} color="black" />
+                            <span className='text-[14px]'>
 
                                 MC Ganir
                             </span>
@@ -54,8 +54,8 @@ const isDesktopOrLaptop = useMediaQuery({
                 <a href=" https://github.com/mc489" target="_blank" rel="noopener noreferrer">
                     <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
-                            <FaGithub size={18} color="#181717" />
-                            <span>
+                            <FaGithub size={14} color="#181717" />
+                            <span className='text-[14px]'>
 
                                 @mc489     </span>
                         </div>
@@ -66,8 +66,8 @@ const isDesktopOrLaptop = useMediaQuery({
                 <a href=" https://www.behance.net/mcganir" target="_blank" rel="noopener noreferrer">
                     <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
-                            <FaBehance size={18} color="black" />
-                            <span>
+                            <FaBehance size={14} color="black" />
+                            <span className='text-[14px]'>
                                 mc ganir
                             </span>
                         </div>
@@ -78,8 +78,8 @@ const isDesktopOrLaptop = useMediaQuery({
                 <a href=" https://www.youtube.com/@mcjemuelganir" target="_blank" rel="noopener noreferrer">
                     <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
-                            <FaYoutube size={18} color="black" />
-                            <span>
+                            <FaYoutube size={14} color="black" />
+                            <span className='text-[14px]'>
                                 mcjemuelganir
                             </span>
                         </div>
@@ -93,9 +93,9 @@ const isDesktopOrLaptop = useMediaQuery({
         }
 
           {isTabletOrMobile &&
-        <div className="flex  justify-center items-center  ">
+        <div className="flex w-full justify-center items-center  ">
 
-            <div className=" flex flex-col relative max-w-[320px] gap-1 rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300 ">
+            <div className=" flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
 
                 <div className='flex mb-2'>
                 <span className="text-lg text-[16px] font-bold">Social Links</span>
