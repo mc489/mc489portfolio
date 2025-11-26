@@ -101,7 +101,8 @@ function Header() {
                             <a href={RESUME} download target="_blank" rel="noopener noreferrer">
                                 <button className="cursor-pointer" >
                                     <div className="flex items-center group gap-1">
-                                        <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
+                                        <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 
+                                        group-hover:translate-x-0 duration-200">Download My Resume</span>
                                         <MdDownload style={{ marginRight: '8px' }} />
                                     </div>
                                 </button>
@@ -149,121 +150,121 @@ function Header() {
             }
 
             {isTabletOrMobile &&
-            <>
-<div className="flex flex-col items-center">
-<span className="bg-red-500 ">***Under Construction***</span>
-<span className="bg-red-500">***Some functions may not be available***</span>
-</div>
-                <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
+                <>
+                    <div className="flex flex-col items-center">
+                        <span className="bg-red-500 ">***Under Construction***</span>
+                        <span className="bg-red-500">***Some functions may not be available***</span>
+                    </div>
+                    <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
 
-                    <div
-                        className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
+                        <div
+                            className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        {/* Default Image: Visible when not clicked AND not hovered */}
-                        <img
-                            src={profile}
-                            alt="profile"
-                            className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            {/* Default Image: Visible when not clicked AND not hovered */}
+                            <img
+                                src={profile}
+                                alt="profile"
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300
                     ${clicked || isHovered ? "opacity-0" : "opacity-100"}
                 `}
-                        />
+                            />
 
-                        {/* Hover Image: Visible when hovered (and not clicked) */}
-                        <img
-                            src={profileHover}
-                            alt="profile hover"
-                            className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300
+                            {/* Hover Image: Visible when hovered (and not clicked) */}
+                            <img
+                                src={profileHover}
+                                alt="profile hover"
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300
                     ${isHovered && !clicked ? "opacity-100" : "opacity-0"}
                 `}
-                        />
+                            />
 
-                        {/* Clicked Image: Visible only when 'clicked' is true */}
-                        <img
-                            src={profileClicked}
-                            alt="profile clicked"
-                            onClick={handleClick}
-                            className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
+                            {/* Clicked Image: Visible only when 'clicked' is true */}
+                            <img
+                                src={profileClicked}
+                                alt="profile clicked"
+                                onClick={handleClick}
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
                     ${clicked ? "opacity-100" : "opacity-0"}
                 `}
-                        />
-                    </div>
+                            />
+                        </div>
 
 
 
-                    <div className=" my-[15px] flex flex-col  ">
+                        <div className=" my-[15px] flex flex-col  ">
 
-                        <div className="flex flex-row relative items-center justify-between ">
+                            <div className="flex flex-row relative items-center justify-between ">
 
-                            <div className="flex items-center ">
-                                <h1 className="text-[16px]">MC Ganir</h1>
-                                <FontAwesomeIcon icon={faCheckCircle} color="blue"
-                                    className="ml-[5px] w-[12px] " />
+                                <div className="flex items-center ">
+                                    <h1 className="text-[16px] font-semibold">MC Ganir</h1>
+                                    <FontAwesomeIcon icon={faCheckCircle} color="blue"
+                                        className="ml-[5px] w-[12px] " />
+                                </div>
+
+
+
+
+                                <a href={RESUME} download target="_blank" rel="noopener noreferrer">
+                                    <button >
+
+                                        <div className="flex items-center group gap-1 cursor-pointer ">
+                                            <span className="text-[10px] opacity-0 group-hover:opacity-100 
+                            translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
+                                            <MdDownload size={12} />
+                                        </div>
+                                    </button>
+                                </a>
                             </div>
 
 
+                            <div className=" m-0 flex flex-row items-center">
+                                <MapPin color="black" size={8} style={{ marginRight: '2px' }} /> {/* */}
+                                <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
+                            </div>
+                            <h2 className=" mt-[8px] text-[10px] justify-center ">Information Technology/ Multimedia </h2>
 
+                            <div className="mt-[8px] flex flex-row gap-[6px]">
 
-                            <a href={RESUME} download target="_blank" rel="noopener noreferrer">
-                                <button >
-
-                                    <div className="flex items-center group gap-1 cursor-pointer ">
-                                        <span className="text-[10px] opacity-0 group-hover:opacity-100 
-                            translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
-                                        <MdDownload size={12} />
-                                    </div>
-                                </button>
-                            </a>
-                        </div>
-
-
-                        <div className=" m-0 flex flex-row items-center">
-                            <MapPin color="black" size={8} style={{ marginRight: '2px' }} /> {/* */}
-                            <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
-                        </div>
-                        <h2 className=" mt-[8px] text-[10px] justify-center ">Information Technology/ Multimedia </h2>
-
-                        <div className="mt-[8px] flex flex-row gap-[6px]">
-
-                            <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
-                                <button className="cursor-pointer
+                                <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
+                                    <button className="cursor-pointer
                         button bg-black px-[8px] py-[4px] 
                         text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
-                                    <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
-                                    <div className="flex gap-[5px] items-center">
-                                        <FaRegComment size={10} color="white" />
-                                        Message
-                                        <ChevronRight size={10} color="white" />
-                                    </div>
-                                </button>
-                            </a>
+                                        <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
+                                        <div className="flex gap-[5px] items-center">
+                                            <FaRegComment size={10} color="white" />
+                                            Message
+                                            <ChevronRight size={10} color="white" />
+                                        </div>
+                                    </button>
+                                </a>
 
-                            <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
+                                <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
 
-                                <button className="cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
+                                    <button className="cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
+                                        <div className="flex items-center gap-[5px]">
+                                            <FaEnvelope size={10} color="black" />
+                                            Email
+                                        </div>
+                                    </button>
+                                </a>
+
+                                <button className="cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
+
                                     <div className="flex items-center gap-[5px]">
-                                        <FaEnvelope size={10} color="black" />
-                                        Email
+
+                                        <FaBriefcase size={10} />
+                                        Portfolio
                                     </div>
+
                                 </button>
-                            </a>
-
-                            <button className="cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
-
-                                <div className="flex items-center gap-[5px]">
-
-                                    <FaBriefcase size={10} />
-                                    Portfolio
-                                </div>
-
-                            </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-</>
+                </>
 
             }
         </header>

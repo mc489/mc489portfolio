@@ -1,9 +1,9 @@
 
-
+import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
-
+import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
-
+import TStackAll from "./TStackAll.Jsx";
 
 function TechStack() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -13,6 +13,8 @@ function TechStack() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  1023px)' })
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
     const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+   
+    const [showModal, setShowModal] = useState(false);
     return (
 
 
@@ -26,9 +28,15 @@ function TechStack() {
                     <div className=" flex w-full flex-col relative max-w-[620px] gap-1 rounded-[16px] 
                     p-[15px] mt-[10px] text-left border border-gray-300 ">
 
-                <div className='flex'>
+<div className='flex justify-between items-center'>
+                <div className='flex gap-2'>
+                           <span className='text-[14px]'>🧠</span>
                         <span className="text-lg font-semibold ">Tech Stack</span>
  
+</div>
+<button onClick={() => setShowModal(true)} className="cursor-pointer">
+<span className='text-[12px] cursor-pointer'>View All</span>
+</button>
 </div>
                         <div className='mt-[5px] mb-[10px]'>
 
@@ -43,7 +51,7 @@ function TechStack() {
                                 rounded-[16px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                  
                                     <span className='text-[14px]'> Figma </span>
 
                                 </div>
@@ -54,7 +62,7 @@ function TechStack() {
                                   rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
                                   duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                   
                                     <span className='text-[14px]'> Adobe Xd</span>
 
                                 </div>
@@ -72,7 +80,7 @@ function TechStack() {
                                 rounded-[16px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                
                                     <span className='text-[14px]'> Photoshop </span>
 
                                 </div>
@@ -83,7 +91,7 @@ function TechStack() {
                                   rounded-[16px] gap-2 border-1 border-gray-300 hover:-translate-y-0.5 
                                   duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                  
                                     <span className='text-[14px]'> Illustrator</span>
 
                                 </div>
@@ -92,7 +100,7 @@ function TechStack() {
                                   rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
                                   duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                
                                     <span className='text-[14px]'> Canva</span>
 
                                 </div>
@@ -110,7 +118,6 @@ function TechStack() {
                                 rounded-[16px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">
 
-                                    <FaFacebook size={14} color="black" />
                                     <span className='text-[14px]'> Premiere Pro </span>
 
                                 </div>
@@ -121,7 +128,7 @@ function TechStack() {
                                   rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
                                   duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                  
                                     <span className='text-[14px]'> After Effects</span>
 
                                 </div>
@@ -130,7 +137,7 @@ function TechStack() {
                                   rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
                                   duration-200">
 
-                                    <FaFacebook size={14} color="black" />
+                                   
                                     <span className='text-[14px]'> Capcut</span>
 
                                 </div>
@@ -138,6 +145,171 @@ function TechStack() {
                    </div>
 
                     </div>
+                      <AnimatePresence>
+          {showModal && (
+            <motion.div
+              key="modal"
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
+            >
+             
+
+          <TStackAll setShowModal={setShowModal} />
+            </motion.div>
+          )}
+        </AnimatePresence>   
+                </div>
+            }
+
+               {isTabletOrMobile &&
+
+
+                <div className="flex w-full justify-center items-center  ">
+
+                    <div className=" flex w-full flex-col relative max-w-[330px] gap-1 rounded-[16px] 
+                    p-[15px] mt-[10px] text-left border border-gray-300 ">
+
+<div className='flex justify-between'>
+                <div className='flex items-center gap-2'>
+                    <span className='text-[14px]'>🧠</span>
+                        <span className="text-[16px] font-semibold ">Tech Stack</span>
+            
+</div>
+<button    onClick={() => setShowModal(true)} className='cursor-pointer'>
+<span className='text-[10px] cursor-pointer'>View All</span>
+</button>   
+</div>
+        <div className='mt-[5px] mb-[5px]'>
+
+                            <span className='font-semibold text-[14px]' >UI/UX</span>
+                            
+                        </div>
+                    
+
+                    <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+
+                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+                                  
+                                    <span className='text-[12px]'> Figma </span>
+
+                                </div>
+              
+
+              
+                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+                                    
+                                    <span className='text-[12px]'> Adobe Xd</span>
+
+                                </div>
+                   </div>
+
+ <div className='mb-[5px]'>
+
+                            <span className='font-semibold text-[14px] '>Graphic Design / Illustration</span>
+                        </div>
+                    
+
+                    <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+
+                               <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+                                    <span className='text-[12px]'> Photoshop </span>
+
+                                </div>
+              
+
+              
+                              <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+                                   
+                                    <span className='text-[12px]'> Illustrator</span>
+
+                                </div>
+
+                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+                                    <span className='text-[12px]'> Canva</span>
+
+                                </div>
+                                
+                   </div>
+
+ <div className='mb-[5px]'>
+
+                            <span className='font-semibold text-[14px]'>Video Editing</span>
+                        </div>
+                    
+
+                    <div className='flex gap-2  cursor-pointer w-full rounded-[12px]  '>
+    <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+                                   
+                                    <span className='text-[12px]'> Premiere Pro </span>
+
+                                </div>
+              
+
+              
+                               <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+                                
+                                    <span className='text-[12px]'> After Effects</span>
+
+                                </div>
+
+                                 <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+                                    <span className='text-[12px]'> Capcut</span>
+
+                                </div>
+                                
+                   </div>
+
+                    </div>
+                    
+  <AnimatePresence>
+          {showModal && (
+            <motion.div
+              key="modal"
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
+            >
+             
+
+          <TStackAll setShowModal={setShowModal} />
+            </motion.div>
+          )}
+        </AnimatePresence>           
                 </div>
             }
         </>

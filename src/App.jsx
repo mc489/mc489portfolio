@@ -7,7 +7,7 @@ import SocialLinks from "./Social_Links"
 import RecentProjects from "./Projects"
 import TechStack from "./TechStack"
 import { useMediaQuery } from 'react-responsive'
-
+import TStackAll from "./TStackAll.Jsx"
 function App() {
  const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1024px)'
@@ -31,7 +31,9 @@ function App() {
       <div className="flex items-center justify-center gap-2">
         <RecentProjects/>
       <SocialLinks/>
+    
 </div>
+
     <Footer/>
      </>
    }
@@ -43,11 +45,12 @@ function App() {
 
       <About />
       <Timeline />
-  
+     <TechStack/>
       <div className="flex flex-col items-center justify-center gap-2">
         <RecentProjects/>
       <SocialLinks/>
 </div>
+
     <Footer/>
      </>
    }
