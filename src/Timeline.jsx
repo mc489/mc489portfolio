@@ -51,8 +51,8 @@ export default function ExperienceTimeline() {
 
       {/* Header */}
       <div className="flex items-center gap-2 mb-6">
-        <span className="text-2xl">💼</span>
-        <h2 className="text-2xl font-bold">Experience</h2>
+        <span className="text-xl">💼</span>
+        <h2 className="text-xl  font-semibold">Experience</h2>
       </div>
 
     {/* Timeline */}

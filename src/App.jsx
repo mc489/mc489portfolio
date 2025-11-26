@@ -28,7 +28,7 @@ function App() {
       <About />
       <Timeline />
     <TechStack/>
-      <div className="w-full flex items-center justify-center gap-20">
+      <div className="flex items-center justify-center gap-2">
         <RecentProjects/>
       <SocialLinks/>
 </div>

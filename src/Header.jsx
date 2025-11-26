@@ -149,7 +149,11 @@ function Header() {
             }
 
             {isTabletOrMobile &&
-
+            <>
+<div className="flex flex-col items-center">
+<span className="bg-red-500 ">***Under Construction***</span>
+<span className="bg-red-500">***Some functions may not be available***</span>
+</div>
                 <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
 
                     <div
@@ -259,10 +263,10 @@ function Header() {
                     </div>
                 </div>
 
+</>
 
             }
         </header>
-
     );
 }
 

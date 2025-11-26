@@ -13,15 +13,19 @@ function Projects() {
         <>
             {isDesktopOrLaptop &&
 
-                <div className=" flex flex-col  items-center justify-center mt-5">
+                <div className=" flex flex-col max-w-[430px]  w-full items-center justify-center mt-5">
 
-                    <div className="py-[12px] flex flex-col w-full max-w-[9850px] px-[15px] justify-center 
+                    <div className="py-[12px] flex flex-col w-full  px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 
                         <div className=" flex items-center justify-between relative gap-1 rounded-[16px] 
                          w-full  mt-[5px] gap-2  text-left">
+
+                             <div className='flex items-center gap-2 '>  
+                            🗂️
                             <span className="text-lg font-bold">Recent Projects</span>
+                            </div> 
                             <span className='text-[12px] cursor-pointer'>View All</span>
                         </div>
 
@@ -47,10 +51,11 @@ function Projects() {
                          border-1 border-gray-300 rounded-[16px]'>
                             <h1 className='font-bold text-[16px]'>ELAD KICKS</h1>
                             <p className='text-[12px]'>
-                                A information website for footwear business
+                                An information website for footwear business
                             </p>
                         </div>
-                    </div></div>
+                    </div>
+                    </div>
 
 
             }
@@ -65,7 +70,13 @@ function Projects() {
 
                         <div className=" flex items-center justify-between relative gap-1 rounded-[16px] 
                          w-full  mt-[5px] mb-[10px] gap-2 text-left">
+
+
+                             <div className='flex items-center gap-2 '>  
+                             <span className='text-[16px]'>🗂️</span>
                             <span className="text-[16px] font-semibold">Recent Projects</span>
+                            </div> 
+                          
                             <span className='text-[10px] cursor-pointer'>View All</span>
                         </div>
 
@@ -89,7 +100,7 @@ function Projects() {
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px]'>
 
-                                    <h1 className='font-semibold text-[14px] mb-[5px] ' >CMEN</h1>
+                                    <h1 className='font-semibold text-[14px] mb-[5px]' >CMEN</h1>
                                     <p className='text-[10px]'>
                                         A drag and drop survey creation website
                                     </p>
@@ -104,7 +115,7 @@ function Projects() {
                          border-1 border-gray-300 rounded-[16px]'>
                                     <h1 className='font-semibold text-[14px] mb-[5px]'>ELAD KICKS</h1>
                                     <p className='text-[10px]'>
-                                        A information website for footwear business
+                                        An information website for footwear business
                                     </p>
                                 </div>
                             </button>

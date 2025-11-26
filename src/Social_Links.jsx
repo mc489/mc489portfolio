@@ -18,11 +18,15 @@ const isDesktopOrLaptop = useMediaQuery({
     return (
 <>
         {isDesktopOrLaptop &&
-        <div className="flex  justify-center items-center  ">
+        <div className="flex w-full max-w-[185px] items-center justify-center ">
 
-            <div className=" flex flex-col relative max-w-[320px] gap-1 rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
-                <span className="text-lg font-bold">Social Links</span>
-
+            <div className=" flex flex-col w-full  gap-1 rounded-[16px]  p-[15px] mt-[10px] text-left border border-gray-300">
+               
+               <div className='flex items-center gap-2 mb-[2px] '>
+                
+                <span className='"text-[16px]'>🔗</span>
+                <span className="text-md font-bold">Social Links</span>
+</div>
 
 
                 <a href="https://web.facebook.com/evmcpov" target="_blank" rel="noopener noreferrer">
@@ -97,7 +101,11 @@ const isDesktopOrLaptop = useMediaQuery({
 
             <div className=" flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
 
-                <div className='flex mb-2'>
+
+
+                <div className='flex mb-2 gap-2'>
+                    
+   <span className='"text-[16px]'>🔗</span>
                 <span className="text-lg text-[16px] font-bold">Social Links</span>
 
 </div>

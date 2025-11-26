@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
 
+
 function TechStack() {
   const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1024px)'
@@ -25,13 +26,14 @@ function TechStack() {
                     <div className=" flex w-full flex-col relative max-w-[620px] gap-1 rounded-[16px] 
                     p-[15px] mt-[10px] text-left border border-gray-300 ">
 
-
+                <div className='flex'>
                         <span className="text-lg font-semibold ">Tech Stack</span>
-
-
+ 
+</div>
                         <div className='mt-[5px] mb-[10px]'>
 
                             <span className='font-semibold ' >UI/UX</span>
+                            
                         </div>
                     
 
