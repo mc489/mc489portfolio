@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
 
 
-function TStackAll({ setShowModal }) {
+function Knowledge({ setShowModal }) {
   const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1024px)'
     })
@@ -557,4 +557,4 @@ function TStackAll({ setShowModal }) {
 
 
 }
-export default TStackAll
+export default Knowledge

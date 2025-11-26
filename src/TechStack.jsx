@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
-import TStackAll from "./TStackAll.Jsx";
+import Knowledge from "./Knowledge";
 
 function TechStack() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -157,7 +157,7 @@ function TechStack() {
             >
              
 
-          <TStackAll setShowModal={setShowModal} />
+          <Knowledge setShowModal={setShowModal} />
             </motion.div>
           )}
         </AnimatePresence>   
@@ -306,7 +306,7 @@ function TechStack() {
             >
              
 
-          <TStackAll setShowModal={setShowModal} />
+          <Knowledge setShowModal={setShowModal} />
             </motion.div>
           )}
         </AnimatePresence>           
