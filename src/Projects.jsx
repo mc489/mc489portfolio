@@ -26,7 +26,7 @@ function Projects() {
                          w-full  mt-[5px] gap-2  text-left">
 
                              <div className='flex items-center gap-2 '>  
-                            🗂️
+                            <span className="text-xl"> 🗂️</span>
                             <span className="text-lg font-bold">Recent Projects</span>
                             </div> 
                               <button onClick={() => setShowModal(true)} className='cursor-pointer'>
@@ -88,15 +88,17 @@ function Projects() {
                         </div>
                    
 
-                         <button onClick={() => setShowModal(false)} className= 'cursor-pointer '>
-                             <span className='text-[14px] cursor-pointer text-[16px]'>✕</span>
+                         <button onClick={() => setShowModal(false)} className= ' cursor-pointer '>
+                             <span className=' text-[16px] cursor-pointer text-[16px]'>✕</span>
                         </button>
                            </div>
-                             <span className="text-[16px]">Sorry but this part is under construction by 
+                              <span className="text-[16px]">Look, I'm gonna be straight with you, this part's a no-go right now. 
+                            It's in the hands of 
                                   <a href=" https://github.com/mc489" target="_blank" rel="noopener noreferrer">
                                 <span className="font-semibold"> @mc489. </span> 
                                 </a>
-                            But you know what, the next time you visit, this might working. </span>
+                       But you know what? Next time you swing by, it just might be working. 
+                       <span className="font-semibold"> Thanks.</span></span>
                               
                                </div>
                                </div>
@@ -198,11 +200,13 @@ function Projects() {
                              <span className='text-[10px] cursor-pointer text-[16px]'>✕</span>
                         </button>
                            </div>
-                             <span className="text-[10px]">Sorry but this part is under construction by 
+                             <span className="text-[10px]">Look, I'm gonna be straight with you, this part's a no-go right now. 
+                            It's in the hands of 
                                   <a href=" https://github.com/mc489" target="_blank" rel="noopener noreferrer">
                                 <span className="font-semibold"> @mc489. </span> 
                                 </a>
-                            But you know what, the next time you visit, this might working. </span>
+                       But you know what? Next time you swing by, it just might be working. 
+                       <span className="font-semibold"> Thanks.</span></span>
                               
                                </div>
                                </div>

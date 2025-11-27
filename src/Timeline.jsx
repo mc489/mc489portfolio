@@ -121,7 +121,7 @@ export default function ExperienceTimeline() {
         
         {/* ONE SINGLE VERTICAL LINE (Placed outside the map loop) */}
         {/* It spans from top-0 to bottom-0 of its relative parent */}
-        <div className="absolute left-[4px] top-5 bottom-0 w-px bg-gray-300 z-0"></div>
+        <div className="absolute left-[4px] top-4 bottom-0 w-px bg-gray-300 z-0"></div>
         
         <div className="space-y-8 mt-4">
           {timeline.map((item, idx) => (
