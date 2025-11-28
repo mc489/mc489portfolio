@@ -1,100 +1,116 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-
-
 function Knowledge({ setShowModal }) {
-    const isDesktopOrLaptop = useMediaQuery({
-        query: '(min-width: 1024px)'
-    })
-    const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width:  1023px)' })
-    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-    const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
-    
-    const [dragOffset, setDragOffset] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const modalRef = useRef(null);
-    const startY = useRef(0);
-    const [initialTranslate, setInitialTranslate] = useState(300);
+  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+  
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const modalRef = useRef(null);
+  const startY = useRef(0);
+  const [initialTranslate, setInitialTranslate] = useState(300);
 
-    useEffect(() => {
-        requestAnimationFrame(() => setInitialTranslate(0));
-    }, []);
-    const [isClosing, setIsClosing] = useState(false);
-    // Add these handler functions
-    const handleTouchStart = (e) => {
-        setIsDragging(true);
-        startY.current = e.touches[0].clientY;
+  useEffect(() => {
+    requestAnimationFrame(() => setInitialTranslate(0));
+  }, []);
+
+  const [isClosing, setIsClosing] = useState(false);
+  const [forceFade, setForceFade] = useState(false);
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    startY.current = e.touches[0].clientY;
+  };
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    startY.current = e.clientY;
+  };
+
+const handleTouchMove = (e) => {
+  if (!isDragging) return;
+  const currentY = e.touches[0].clientY;
+  const diff = currentY - startY.current;
+  // Remove the "if (diff > 0)" condition to allow negative values
+  setDragOffset(diff);
+};
+
+const handleMouseMove = (e) => {
+  if (!isDragging) return;
+  const currentY = e.clientY;
+  const diff = currentY - startY.current;
+  // Remove the "if (diff > 0)" condition to allow negative values
+  setDragOffset(diff);
+};
+const handleDragEnd = () => {
+  setIsDragging(false);
+  
+  // If in fullscreen and dragged down, close modal directly
+  if (isFullscreen && dragOffset > 50) {
+    setIsClosing(true);
+    setIsFullscreen(false);
+    setInitialTranslate(300);
+    setTimeout(() => {
+      setShowModal(false);
+    }, 50);
+    return;
+  }
+  
+  // Normal close from default position
+  if (dragOffset > 50) {
+    setIsClosing(true);
+    setInitialTranslate(300);
+    setTimeout(() => {
+      setShowModal(false);
+    }, 250);
+    return;
+  }
+  
+  // Drag up to fullscreen
+  if (dragOffset < -50) {
+    setIsFullscreen(true);
+    setDragOffset(0);
+    return;
+  }
+  
+  setDragOffset(0);
+};
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener("touchmove", preventScroll, { passive: false });
+      document.addEventListener("touchmove", handleTouchMove, { passive: false });
+      document.addEventListener("touchend", handleDragEnd);
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleDragEnd);
+    }
+    return () => {
+      document.removeEventListener("touchmove", preventScroll);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleDragEnd);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleDragEnd);
     };
+  }, [isDragging, dragOffset]);
 
-    const handleMouseDown = (e) => {
-        setIsDragging(true);
-        startY.current = e.clientY;
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
     };
+  }, []);
 
-    const handleTouchMove = (e) => {
-        if (!isDragging) return;
-        const currentY = e.touches[0].clientY;
-        const diff = currentY - startY.current;
-        if (diff > 0) {
-            setDragOffset(diff);
-        }
-    };
+  const preventScroll = (e) => e.preventDefault();
 
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
-        const currentY = e.clientY;
-        const diff = currentY - startY.current;
-        if (diff > 0) {
-            setDragOffset(diff);
-        }
-    };
-    const handleDragEnd = () => {
-        setIsDragging(false);
-
-        if (dragOffset > 150) {
-            setIsClosing(true);
-            setInitialTranslate(300);
-
-            setTimeout(() => {
-                setShowModal(false);
-            }, 250);
-
-            return;
-        }
-
-        setDragOffset(0);
-    };
-
-    // Add this useEffect to handle drag events
-    useEffect(() => {
-        if (isDragging) {
-            document.addEventListener("touchmove", preventScroll, { passive: false });
-            document.addEventListener("touchmove", handleTouchMove, { passive: false });
-            document.addEventListener("touchend", handleDragEnd);
-            document.addEventListener("mousemove", handleMouseMove);
-            document.addEventListener("mouseup", handleDragEnd);
-        }
-
-        return () => {
-            document.removeEventListener("touchmove", preventScroll);
-            document.removeEventListener("touchmove", handleTouchMove);
-            document.removeEventListener("touchend", handleDragEnd);
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("mouseup", handleDragEnd);
-        };
-    }, [isDragging, dragOffset]);
-
-    useEffect(() => {
-        document.body.style.overflow = "hidden";
-        return () => {
-            document.body.style.overflow = "auto";
-        };
-    }, []);
-    const preventScroll = (e) => e.preventDefault();
-    const [forceFade, setForceFade] = useState(false);
+  const closeModal = () => {
+    setForceFade(true);
+    setInitialTranslate(300);
+    setTimeout(() => setShowModal(false), 250);
+  };
 
     return (
 
@@ -413,34 +429,44 @@ function Knowledge({ setShowModal }) {
             {isTabletOrMobile &&
                 <>
 
-                    <div
-                        className="fixed inset-0 bg-black"
-                        style={{
-                            opacity: forceFade ? 0 : 0.5 - dragOffset / 10,
-                            transform: `translateY(${initialTranslate + dragOffset}px)`,
-
-                            // opacity: fast fade
-                            // transform: normal slide
-                            transition: isDragging
-                                ? "none"
-                                : forceFade
-                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                                    : "opacity 0.25s ease-out, transform 0.25s ease-out"
-                        }}
-                        onClick={() => {
-                            setForceFade(true);        // FAST fade
-                            setInitialTranslate(300);  // slide normal speed
-                            setTimeout(() => setShowModal(false), 250);
-                        }}
-                    />
-                    <div className="fixed bottom-0 flex w-full justify-center items-center">
+                  <div
+    className="fixed inset-0 bg-gray-400"
+    style={{
+        opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+        transform: `translateY(${initialTranslate + dragOffset}px)`,
+        transition: isDragging
+            ? "none"
+            : forceFade
+                ? "opacity 0.1s ease-out, transform 0.10s ease-out"
+                : "opacity 0.25s ease-out, transform 0.25s ease-out",
+       pointerEvents: 'auto'
+    }}
+    onClick={() => {
+        if (isFullscreen) return; // Don't close when fullscreen
+        setForceFade(true);
+        setInitialTranslate(300);
+        setTimeout(() => setShowModal(false), 250);
+    }}
+/>
+                   <div className={`fixed flex w-full justify-center items-center ${
+  isFullscreen ? 'inset-0' : 'bottom-0'
+}`}>
                         <div
                             ref={modalRef}
-                            className="bg-white flex w-full flex-col relative gap-1 rounded-t-[16px] px-[30px] py-[30px] text-left border border-gray-300"
-                            style={{
-                                transform: `translateY(${initialTranslate + dragOffset}px)`,
-                                transition: isDragging ? "none" : "transform 0.25s ease-out"
-                            }}
+                          className={`bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+  isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
+}`}
+                        style={{
+  transform: isFullscreen
+    ? `translateY(${isDragging ? dragOffset : 0}px)`
+    : `translateY(${initialTranslate + dragOffset}px)`,
+
+  height: isFullscreen && !isDragging ? '100vh' : 'auto',
+
+  transition: isDragging
+    ? "none"
+    : "transform 0.25s ease-out, height 0.3s ease-out"
+}}
                         >
                             {/* Drag handle - replaces ChevronDown button */}
                             <button
@@ -459,10 +485,11 @@ function Knowledge({ setShowModal }) {
                                 </div>
                                 <button
                                     onClick={() => {
+                                
                                         setIsClosing(true);
                                         setForceFade(true);        // <- fast opacity fade
                                         setInitialTranslate(300);  // <- normal slide
-                                        setTimeout(() => setShowModal(false), 250);
+                                        setTimeout(() => setShowModal(false), 50);
                                     }}
                                     className="cursor-pointer"
                                 >

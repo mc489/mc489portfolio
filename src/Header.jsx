@@ -12,6 +12,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive'
 import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
 import RESUME from "./assets/RESUME.pdf"
+import { motion, AnimatePresence } from "framer-motion";
 
 function Header() {
     const isDesktopOrLaptop = useMediaQuery({
@@ -21,7 +22,7 @@ function Header() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  1023px)' })
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
     const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
-
+         const [showModal, setShowModal] = useState(true);
     // State to track if the image has been clicked
     const [clicked, setClicked] = useState(false);
     // State to track if the cursor is currently over the element
@@ -43,6 +44,7 @@ function Header() {
         }
     };
 
+
     return (
 
 
@@ -51,8 +53,47 @@ function Header() {
 
 
             {isDesktopOrLaptop &&
-                <div className=" pt-[24px] items-center justify-center flex flex-row gap-4   ">
 
+            
+                <div className=" pt-[24px] items-center justify-center flex flex-row gap-4   ">
+    <AnimatePresence>
+                              {showModal && (
+                                <motion.div
+                                  key="modal"
+                                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                                  exit={{ opacity: 0, scale: 0.9, y: 30 }}
+                                  transition={{ duration: 0.25, ease: "easeOut" }}
+                                  className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
+                                >
+                    <div className=" max-w-[530px] px-10">
+                  <div className=" bg-white flex w-full flex-col relative max-w-[620px] gap-1 rounded-[16px] 
+                    p-[20px] mt-[10px] text-left border border-gray-300 ">
+                     
+                     <div className="flex justify-between items-center">
+                        <div className="flex flex-row gap-2 items-center">
+
+                            <span className="text-[16px]">⚠️</span>
+                             <h1 className="font-semibold text-[16px]">Warning</h1>
+                            
+                        </div>
+                   
+
+                         <button onClick={() => setShowModal(false)} className= ' cursor-pointer '>
+                             <span className=' text-[16px] cursor-pointer text-[16px]'>✕</span>
+                        </button>
+                           </div>
+                              <span className="text-[16px]">This are currently under construction.
+                                Some functions may not be available.
+                                
+                   
+                       <span className="font-semibold"> Thanks.</span></span>
+                              
+                               </div>
+                               </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>  
                     <div
                         className="relative w-[150px]  aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
@@ -136,14 +177,19 @@ function Header() {
                                     Send Email
                                 </div>
                             </button>
+              <a href="" target="_blank" rel="noopener noreferrer">
+                                <button className=" cursor-pointer 
+                        button  px-[16px] py-[8px] 
+                        text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
 
-                            <button className=" cursor-pointer button  px-[16px] hover:-translate-y-0.5">
-                                <div className="flex items-center gap-[8px]">
+                                    <div className="flex gap-[8px] items-center">
 
-                                    <FaBriefcase size="16px" />
+                                    <FaBriefcase size="16px" color="black" />
                                     Portfolio
                                 </div>
                             </button>
+                                       </a>
+
                         </div>
                     </div>
                 </div>
@@ -151,12 +197,50 @@ function Header() {
 
             {isTabletOrMobile &&
                 <>
-                    <div className="flex flex-col items-center">
-                        <span className="bg-red-500 ">***Under Construction***</span>
-                        <span className="bg-red-500">***Some functions may not be available***</span>
-                    </div>
+
+                
+                  
                     <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
 
+               
+    <AnimatePresence>
+                              {showModal && (
+                                <motion.div
+                                  key="modal"
+                                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                                  exit={{ opacity: 0, scale: 0.9, y: 30 }}
+                                  transition={{ duration: 0.25, ease: "easeOut" }}
+                                  className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
+                                >
+                    <div className=" max-w-[330px] px-10 ">
+                  <div className=" bg-white flex w-full flex-col relative  gap-1 rounded-[16px] 
+                   py-[15px] px-[20px] text-left border border-gray-300 ">
+                     
+                     <div className="flex justify-between items-center">
+                        <div className="flex flex-row gap-2 items-center">
+
+                            <span className="text-[14px]">⚠️</span>
+                             <h1 className="font-semibold text-[14px]">Warning</h1>
+                            
+                        </div>
+                   
+
+                         <button onClick={() => setShowModal(false)} className= ' cursor-pointer '>
+                             <span className=' text-[14px] cursor-pointer '>✕</span>
+                        </button>
+                           </div>
+                              <span className="text-[10px]">This are currently under construction.
+                                Some functions may not be available.
+                                
+                   
+                       <span className="font-semibold text-[10px]"> Thanks.</span></span>
+                              
+                               </div>
+                               </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>  
                         <div
                             className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
@@ -251,6 +335,7 @@ function Header() {
                                     </button>
                                 </a>
 
+ <a href="" target="_blank" rel="noopener noreferrer">
                                 <button className="cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
 
                                     <div className="flex items-center gap-[5px]">
@@ -260,6 +345,7 @@ function Header() {
                                     </div>
 
                                 </button>
+                                </a>
                             </div>
                         </div>
                     </div>

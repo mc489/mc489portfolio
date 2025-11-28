@@ -1,4 +1,4 @@
-
+import { ChevronRight } from 'lucide-react';
 import About from "./About"
 import Header from "./Header"
 import Footer from "./Footer"
