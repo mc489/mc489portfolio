@@ -430,10 +430,11 @@ const handleDragEnd = () => {
                 <>
 
                   <div
-    className="fixed inset-0 bg-gray-400"
+    className="fixed inset-0 bg-gray-600"
     style={{
         opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
         transform: `translateY(${initialTranslate + dragOffset}px)`,
+        opacity: isDragging ? 0 : 0.600,
         transition: isDragging
             ? "none"
             : forceFade
@@ -453,7 +454,7 @@ const handleDragEnd = () => {
 }`}>
                         <div
                             ref={modalRef}
-                          className={`bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+                          className={` bg-white flex  w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
   isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
 }`}
                         style={{
@@ -465,14 +466,16 @@ const handleDragEnd = () => {
 
   transition: isDragging
     ? "none"
-    : "transform 0.25s ease-out, height 0.3s ease-out"
+    : "transform 0.25s ease-out, height 0.3s ease-out ",
+
+
 }}
                         >
                             {/* Drag handle - replaces ChevronDown button */}
                             <button
                                 onTouchStart={handleTouchStart}
                                 onMouseDown={handleMouseDown}
-                                className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
+                                className="mt-[20px] flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
                             >
                                 <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                             </button>
