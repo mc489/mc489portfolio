@@ -24,10 +24,14 @@ function App() {
    {isDesktopOrLaptop &&
    <> 
   <Header />
-
+<div className='flex  items-center justify-center gap-2'>
       <About />
+      <div className='flex flex-col'>
       <Timeline />
+      
     <TechStack/>
+    </div>
+    </div>
       <div className="flex items-center justify-center gap-2">
         <RecentProjects/>
       <SocialLinks/>

@@ -16,9 +16,9 @@ function Projects() {
         <>
             {isDesktopOrLaptop &&
 
-                <div className=" flex flex-col max-w-[430px] !static h-full  w-full items-center justify-center mt-5">
+                <div className=" flex flex-col items-center justify-center mt-3">
 
-                    <div className="py-[12px] flex flex-col w-full  px-[15px] justify-center 
+                    <div className="py-[12px] w-full max-w-[660px]  flex flex-col  px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 
@@ -26,8 +26,8 @@ function Projects() {
                          w-full  mt-[5px] gap-2  text-left">
 
                              <div className='flex items-center gap-2 '>  
-                            <span className="text-xl"> 🗂️</span>
-                            <span className="text-lg font-bold">Recent Projects</span>
+                            <span className="text-[16px]"> 🗂️</span>
+                            <span className="text-lg font-semibold">Recent Projects</span>
                             </div> 
                               <button onClick={() => setShowModal(true)} className='cursor-pointer'>
                             <span className='text-[12px] cursor-pointer'>View All</span>

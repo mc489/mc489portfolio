@@ -119,34 +119,48 @@ const handleDragEnd = () => {
 
             {isDesktopOrLaptop &&
                 <>
-                    <div
-                        className="fixed inset-0 bg-black"
-                        style={{
-                            opacity: forceFade ? 0 : 0.5 - dragOffset / 10,
-                            transform: `translateY(${initialTranslate + dragOffset}px)`,
-
-                            // opacity: fast fade
-                            // transform: normal slide
-                            transition: isDragging
-                                ? "none"
-                                : forceFade
-                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                                    : "opacity 0.25s ease-out, transform 0.25s ease-out"
-                        }}
-                        onClick={() => {
-                            setForceFade(true);        // FAST fade
-                            setInitialTranslate(300);  // slide normal speed
-                            setTimeout(() => setShowModal(false), 250);
-                        }}
-                    />
-                    <div className="fixed bottom-0 flex w-full justify-center items-center">
+                    
+                  <div
+    className="fixed inset-0 bg-gray-600"
+    style={{
+        opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+        transform: `translateY(${initialTranslate + dragOffset}px)`,
+        opacity: isDragging ? 0 : 0.600,
+        transition: isDragging
+            ? "none"
+            : forceFade
+                ? "opacity 0.1s ease-out, transform 0.10s ease-out"
+                : "opacity 0.25s ease-out, transform 0.25s ease-out",
+       pointerEvents: 'auto'
+    }}
+    onClick={() => {
+        if (isFullscreen) return; // Don't close when fullscreen
+        setForceFade(true);
+        setInitialTranslate(300);
+        setTimeout(() => setShowModal(false), 250);
+    }}
+/>
+                   <div className={`fixed flex w-full justify-center items-center ${
+  isFullscreen ? 'inset-0' : 'bottom-0'
+}`}>
                         <div
                             ref={modalRef}
-                            className="bg-white flex w-full flex-col relative gap-1 rounded-t-[16px] px-[40px] py-[50px] text-left border border-gray-300"
-                            style={{
-                                transform: `translateY(${initialTranslate + dragOffset}px)`,
-                                transition: isDragging ? "none" : "transform 0.25s ease-out"
-                            }}
+                          className={` bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+  isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
+}`}
+                        style={{
+  transform: isFullscreen
+    ? `translateY(${isDragging ? dragOffset : 0}px)`
+    : `translateY(${initialTranslate + dragOffset}px)`,
+
+  height: isFullscreen && !isDragging ? '100vh' : 'auto',
+
+  transition: isDragging
+    ? "none"
+    : "transform 0.25s ease-out, height 0.3s ease-out ",
+
+
+}}
                         >
                             {/* Drag handle - replaces ChevronDown button */}
                             <button
@@ -165,10 +179,11 @@ const handleDragEnd = () => {
                                 </div>
                                 <button
                                     onClick={() => {
+                                
                                         setIsClosing(true);
                                         setForceFade(true);        // <- fast opacity fade
                                         setInitialTranslate(300);  // <- normal slide
-                                        setTimeout(() => setShowModal(false), 250);
+                                        setTimeout(() => setShowModal(false), 50);
                                     }}
                                     className="cursor-pointer"
                                 >
@@ -204,6 +219,15 @@ const handleDragEnd = () => {
 
 
                                     <span className='text-[16px]'> Adobe Xd</span>
+
+                                </div>
+                                 <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">
+
+
+
+                                    <span className='text-[16px]'> Sketch</span>
 
                                 </div>
                             </div>
@@ -454,7 +478,7 @@ const handleDragEnd = () => {
 }`}>
                         <div
                             ref={modalRef}
-                          className={` bg-white flex  w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+                          className={` bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
   isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
 }`}
                         style={{
@@ -475,7 +499,7 @@ const handleDragEnd = () => {
                             <button
                                 onTouchStart={handleTouchStart}
                                 onMouseDown={handleMouseDown}
-                                className="mt-[20px] flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
+                                className="mt-[15px] flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
                             >
                                 <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                             </button>

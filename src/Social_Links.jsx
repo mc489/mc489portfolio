@@ -18,19 +18,19 @@ const isDesktopOrLaptop = useMediaQuery({
     return (
 <>
         {isDesktopOrLaptop &&
-        <div className="flex  max-h-[400px] w-full max-w-[185px] items-center justify-center ">
+        <div className="flex  items-center justify-center ">
 
-            <div className=" flex flex-col w-full  gap-1 rounded-[16px]  p-[15px] mt-[10px] text-left border border-gray-300">
+            <div className=" flex-col  w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
                
-               <div className='flex items-center gap-2 mb-[2px] '>
+               <div className='flex items-center gap-2 mb-[14px] '>
                 
                 <span className='"text-[16px]'>🔗</span>
-                <span className="text-[16px] font-semibold">Social Links</span>
+                <span className="text-lg font-semibold">Social Links</span>
 </div>
 
 
                 <a href="https://web.facebook.com/evmcpov" target="_blank" rel="noopener noreferrer">
-                    <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+                    <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
 
                             <FaFacebook size={14} color="black" />
@@ -42,7 +42,7 @@ const isDesktopOrLaptop = useMediaQuery({
 
 
                 <a href=" https://www.linkedin.com/in/mc-ganir-552264210/" target="_blank" rel="noopener noreferrer">
-                    <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 
+                    <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 
                     py-2 hover:-translate-y-0.5  duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
 
@@ -57,7 +57,7 @@ const isDesktopOrLaptop = useMediaQuery({
 
 
                 <a href=" https://github.com/mc489" target="_blank" rel="noopener noreferrer">
-                    <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+                    <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
                             <FaGithub size={14} color="#181717" />
                             <span className='text-[14px]'>
@@ -69,7 +69,7 @@ const isDesktopOrLaptop = useMediaQuery({
 
 
                 <a href=" https://www.behance.net/mcganir" target="_blank" rel="noopener noreferrer">
-                    <button className="cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
+                    <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="items-center flex flex-row items-center gap-2 ">
                             <FaBehance size={14} color="black" />
                             <span className='text-[14px]'>

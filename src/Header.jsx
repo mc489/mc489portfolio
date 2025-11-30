@@ -83,7 +83,7 @@ function Header() {
                              <span className=' text-[16px] cursor-pointer text-[16px]'>✕</span>
                         </button>
                            </div>
-                              <span className="text-[16px]">This are currently under construction.
+                              <span className="text-[16px]">This is currently under construction.
                                 Some functions may not be available.
                                 
                    
@@ -230,7 +230,7 @@ function Header() {
                              <span className=' text-[14px] cursor-pointer '>✕</span>
                         </button>
                            </div>
-                              <span className="text-[10px]">This are currently under construction.
+                              <span className="text-[10px]">This is currently under construction.
                                 Some functions may not be available.
                                 
                    

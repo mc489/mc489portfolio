@@ -23,14 +23,16 @@ function TechStack() {
             {isDesktopOrLaptop &&
 
 
-                <div className="flex w-full justify-center items-center  ">
+                <div className="flex justify-center items-center  ">
 
-                    <div className=" flex w-full flex-col relative max-w-[620px] gap-1 rounded-[16px] 
-                    p-[15px] mt-[10px] text-left border border-gray-300 ">
+                    <div className="  w-full flex-col relative
+                     max-w-[270px]  rounded-[16px] 
+                    px-[15px] pt-[10px] pb-[4px] mt-[5px] 
+                    text-left border border-gray-300 ">
 
                         <div className='flex justify-between items-center'>
                             <div className='flex gap-2 items-center'>
-                                <span className='text-xl'>🧠</span>
+                                <span className='text-[16px]'>🧠</span>
                                 <span className="text-lg font-semibold ">Tech Stack</span>
 
                             </div>
@@ -38,110 +40,105 @@ function TechStack() {
                                 <span className='text-[12px] cursor-pointer'>View All</span>
                             </button>
                         </div>
-                        <div className='mt-[5px] mb-[10px]'>
+                        <div className='mt-[5px] mb-[5px]'>
 
-                            <span className='font-semibold ' >UI/UX</span>
+                            <span className='font-semibold text-[12px] ' >UI/UX</span>
 
                         </div>
 
 
-                        <div className='mb-[15px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+                        <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
 
                             <div className="items-center px-[15px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[16px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">
 
 
-                                <span className='text-[14px]'> Figma </span>
+                                <span className='text-[10px]'> Figma </span>
 
                             </div>
 
 
 
                             <div className="items-center px-[15px]  flex flex-row items-center
-                                  rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
+                                rounded-[6px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
                                   duration-200">
 
 
-                                <span className='text-[14px]'> Adobe Xd</span>
+                                <span className='text-[10px]'> Adobe Xd</span>
 
                             </div>
+                             <div className="items-center px-[15px]  flex flex-row items-center
+                                rounded-[6px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
+                                  duration-200">
+
+
+                                <span className='text-[10px]'> Sketch</span>
+
+                            </div>
+                            
+
+                            
                         </div>
 
-                        <div className='mb-[10px]'>
+                        <div className='mb-[5px]'>
 
-                            <span className='font-semibold '>Graphic Design / Illustration</span>
+                            <span className='font-semibold text-[12px] '>Graphic Design / Illustration</span>
                         </div>
 
 
-                        <div className='mb-[15px]  flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
-                            <div className="items-center  gap-2 px-[15px] py-[2px] flex flex-row items-center gap-
-                                rounded-[16px] border-1 border-gray-300  hover:-translate-y-0.5 
+                            <div className="items-center gap-2 px-[15px] py-[2px] flex flex-row items-center gap-
+                               rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">
 
 
-                                <span className='text-[14px]'> Photoshop </span>
+                                <span className='text-[10px]'> Photoshop </span>
 
                             </div>
 
 
 
                             <div className="items-center px-[15px] flex flex-row items-center
-                                  rounded-[16px] gap-2 border-1 border-gray-300 hover:-translate-y-0.5 
+                                rounded-[6px] gap-2 border-1 border-gray-300 hover:-translate-y-0.5 
                                   duration-200">
 
 
-                                <span className='text-[14px]'> Illustrator</span>
+                                <span className='text-[10px]'> Illustrator</span>
 
                             </div>
 
-                            <div className="items-center px-[15px] flex flex-row items-center
-                                  rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
-                                  duration-200">
+                         
+ <div className='mb-[5px]'>
 
-
-                                <span className='text-[14px]'> Canva</span>
-
-                            </div>
-
-                        </div>
-
-                        <div className='mb-[10px]'>
-
-                            <span className='font-semibold'>Video Editing</span>
+                            <span className='font-semibold text-[12px] '>Graphic Design / Illustration</span>
                         </div>
 
 
-                        <div className='flex gap-2  cursor-pointer w-full rounded-[12px]  '>
-                            <div className="items-center px-[15px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[16px] border-1 border-gray-300  hover:-translate-y-0.5 
+                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
+
+                            <div className="items-center gap-2 px-[15px] py-[2px] flex flex-row items-center gap-
+                               rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">
 
-                                <span className='text-[14px]'> Premiere Pro </span>
+
+                                <span className='text-[10px]'> Photoshop </span>
 
                             </div>
 
 
 
                             <div className="items-center px-[15px] flex flex-row items-center
-                                  rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
+                                rounded-[6px] gap-2 border-1 border-gray-300 hover:-translate-y-0.5 
                                   duration-200">
 
 
-                                <span className='text-[14px]'> After Effects</span>
+                                <span className='text-[10px]'> Illustrator</span>
 
-                            </div>
-
-                            <div className="items-center px-[15px] flex flex-row items-center
-                                  rounded-[16px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
-                                  duration-200">
-
-
-                                <span className='text-[14px]'> Capcut</span>
-
-                            </div>
-
+                            </div> </div>
+    
+                        
                         </div>
 
                     </div>
