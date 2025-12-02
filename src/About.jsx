@@ -11,10 +11,10 @@ function About() {
     };
 
     const isDesktopOrLaptop = useMediaQuery({
-        query: '(min-width: 1024px)'
+        query: '(min-width: 700px)'
     });
     const isTabletOrMobile = useMediaQuery({
-        query: '(max-width: 1023px)'
+        query: '(max-width: 699px)'
     });
     // Other media queries (isBigScreen, isPortrait, isRetina) remain the same
 
