@@ -177,13 +177,14 @@ function Header() {
                                     Send Email
                                 </div>
                             </button>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/10WJnF94czDMsQyRpLlOUi44E9VxIO_VM/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                                 <button className=" cursor-pointer 
                         button  px-[16px] py-[8px] 
                         text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
 
+ 
                                     <div className="flex gap-[8px] items-center">
-
+ 
                                     <FaBriefcase size="16px" color="black" />
                                     Portfolio
                                 </div>
@@ -335,7 +336,7 @@ function Header() {
                                     </button>
                                 </a>
 
- <a href="" target="_blank" rel="noopener noreferrer">
+ <a href="https://drive.google.com/file/d/10WJnF94czDMsQyRpLlOUi44E9VxIO_VM/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                                 <button className="cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
 
                                     <div className="flex items-center gap-[5px]">

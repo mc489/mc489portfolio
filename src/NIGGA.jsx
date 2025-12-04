@@ -112,6 +112,14 @@ const handleDragEnd = () => {
     setTimeout(() => setShowModal(false), 250);
   };
 
+  
+const pansmatala = {
+
+    src:' https://placehold.co/400'
+
+}
+
+
     return (
 
 
@@ -162,6 +170,8 @@ const handleDragEnd = () => {
 
 }}
                         >
+
+<div>
                             {/* Drag handle - replaces ChevronDown button */}
                             <button
                                 onTouchStart={handleTouchStart}
@@ -170,6 +180,8 @@ const handleDragEnd = () => {
                             >
                                 <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                             </button>
+
+
 
                             {/* Header - KEEP ONLY ONE */}
                             <div className='flex justify-between items-center'>
@@ -211,8 +223,8 @@ const handleDragEnd = () => {
                             <p className='text-[12px]'>
                                 Comparing products between by Lazada and Shopee
                             </p>
-                             <p className='text-[12px]'>
-                               nike.com
+                             <p className='text-[10px]'>
+                             ecompare-asdas.vercel.app/
                             </p>
                         </div>
 
@@ -233,13 +245,19 @@ const handleDragEnd = () => {
                                 An information website for footwear business
                             </p>
                         </div>
-                
+               
 </div>   
                           
 
+ <div className='flex gap-4 mt-5'>
 
+                   <img src=' https://placehold.co/400' width={360}></img>
+                    <img src=' https://placehold.co/400' width={360}></img>
+                     <img src=' https://placehold.co/400' width={360}></img>
+                     
+                </div>
                          
-
+</div>
                          
 
                         </div>

@@ -112,7 +112,7 @@ function TechStack() {
                          
  <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] '>Graphic Design / Illustration</span>
+                            <span className='font-semibold text-[12px] '>Video Editing</span>
                         </div>
 
 
@@ -123,7 +123,7 @@ function TechStack() {
                                 duration-200">
 
 
-                                <span className='text-[10px]'> Photoshop </span>
+                                <span className='text-[10px]'> Premiere Pro </span>
 
                             </div>
 
@@ -134,7 +134,7 @@ function TechStack() {
                                   duration-200">
 
 
-                                <span className='text-[10px]'> Illustrator</span>
+                                <span className='text-[10px]'> After Effects</span>
 
                             </div> </div>
     
