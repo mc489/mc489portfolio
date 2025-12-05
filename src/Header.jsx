@@ -13,7 +13,7 @@ import { useMediaQuery } from 'react-responsive'
 import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
 import RESUME from "./assets/RESUME.pdf"
 import { motion, AnimatePresence } from "framer-motion";
-
+import { FaFacebookMessenger } from 'react-icons/fa';
 function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
@@ -150,11 +150,14 @@ function Header() {
                             </a>
                         </div>
 
-
+<a href= 'https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
                         <div className="mt-[2px] flex flex-row items-center">
                             <MapPin color="black" size={14} style={{ marginRight: '4px' }} /> {/* */}
                             <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
                         </div>
+                       </a>
+                       
+                       
                         <h2 className=" mt-[10px] text-[16px] ">Information Technology/ Multimedia </h2>
 
                         <div className="mt-[15px] flex flex-row gap-[10px]">
@@ -165,7 +168,7 @@ function Header() {
                         text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                     <div className="flex gap-[8px] items-center">
-                                        <FaRegComment size={18} color="white" />
+                                        <FaFacebookMessenger size={18} color="white" />
                                         Message Now
                                         <ChevronRight size={18} color="white" />
                                     </div>
@@ -304,11 +307,12 @@ function Header() {
                                 </a>
                             </div>
 
-
+<a href= 'https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
                             <div className=" m-0 flex flex-row items-center">
                                 <MapPin color="black" size={8} style={{ marginRight: '2px' }} /> {/* */}
                                 <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
                             </div>
+                            </a>
                             <h2 className=" mt-[8px] text-[10px] justify-center ">Information Technology/ Multimedia </h2>
 
                             <div className="mt-[8px] flex flex-row gap-[6px]">
@@ -319,7 +323,7 @@ function Header() {
                         text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
                                         <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
                                         <div className="flex gap-[5px] items-center">
-                                            <FaRegComment size={10} color="white" />
+                                           <FaFacebookMessenger size={10} color="white" />
                                             Message
                                             <ChevronRight size={10} color="white" />
                                         </div>
