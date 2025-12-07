@@ -1,123 +1,204 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import c1 from "./assets/projectsimg/cmen1.jpg"
+import c2 from "./assets/projectsimg/cmen2.jpg"
+import c3 from "./assets/projectsimg/cmen3.jpg"
+import c4 from "./assets/projectsimg/cmen4.jpg"
+import c5 from "./assets/projectsimg/cmen5.jpg"
+import e1 from "./assets/projectsimg/ecom1.png"
+import e2 from "./assets/projectsimg/ecom2.jpg"
+import e3 from "./assets/projectsimg/ecom3.png"
+import e4 from "./assets/projectsimg/ecom4.png"
+import e5 from "./assets/projectsimg/ecom5.png"
+import ek1 from "./assets/projectsimg/ek1.png"
+import ek2 from "./assets/projectsimg/ek2.png"
+import ek3 from "./assets/projectsimg/ek3.png"
+import ek4 from "./assets/projectsimg/ek4.png"
+import ek5 from "./assets/projectsimg/ek5.png"
+
+
+
 
 function Nigga({ setShowModal }) {
-  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
-  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
-  
-  const [dragOffset, setDragOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const modalRef = useRef(null);
-  const startY = useRef(0);
-  const [initialTranslate, setInitialTranslate] = useState(300);
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
 
-  useEffect(() => {
-    requestAnimationFrame(() => setInitialTranslate(0));
-  }, []);
+    // --- Modal Drag State ---
+    const [dragOffset, setDragOffset] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const modalRef = useRef(null);
+    const startY = useRef(0);
+    const [initialTranslate, setInitialTranslate] = useState(300);
+    const [forceFade, setForceFade] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
 
-  const [isClosing, setIsClosing] = useState(false);
-  const [forceFade, setForceFade] = useState(false);
+    // --- Album/Lightbox State ---
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
 
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    startY.current = e.touches[0].clientY;
-  };
+    // Group images for easier handling
+    const galleryImages = [
+        c1, c2, c3, c4, c5,
+        e1, e2, e3, e4, e5,
+        ek1, ek2, ek3, ek4, ek5
+    ];
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    startY.current = e.clientY;
-  };
+    useEffect(() => {
+        requestAnimationFrame(() => setInitialTranslate(0));
+    }, []);
 
-const handleTouchMove = (e) => {
-  if (!isDragging) return;
-  const currentY = e.touches[0].clientY;
-  const diff = currentY - startY.current;
-  // Remove the "if (diff > 0)" condition to allow negative values
-  setDragOffset(diff);
-};
-
-const handleMouseMove = (e) => {
-  if (!isDragging) return;
-  const currentY = e.clientY;
-  const diff = currentY - startY.current;
-  // Remove the "if (diff > 0)" condition to allow negative values
-  setDragOffset(diff);
-};
-const handleDragEnd = () => {
-  setIsDragging(false);
-  
-  // If in fullscreen and dragged down, close modal directly
-  if (isFullscreen && dragOffset > 50) {
-    setIsClosing(true);
-    setIsFullscreen(false);
-    setInitialTranslate(300);
-    setTimeout(() => {
-      setShowModal(false);
-    }, 50);
-    return;
-  }
-  
-  // Normal close from default position
-  if (dragOffset > 50) {
-    setIsClosing(true);
-    setInitialTranslate(300);
-    setTimeout(() => {
-      setShowModal(false);
-    }, 250);
-    return;
-  }
-  
-  // Drag up to fullscreen
-  if (dragOffset < -50) {
-    setIsFullscreen(true);
-    setDragOffset(0);
-    return;
-  }
-  
-  setDragOffset(0);
-};
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener("touchmove", preventScroll, { passive: false });
-      document.addEventListener("touchmove", handleTouchMove, { passive: false });
-      document.addEventListener("touchend", handleDragEnd);
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleDragEnd);
-    }
-    return () => {
-      document.removeEventListener("touchmove", preventScroll);
-      document.removeEventListener("touchmove", handleTouchMove);
-      document.removeEventListener("touchend", handleDragEnd);
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleDragEnd);
+    // --- Drag Logic ---
+    const handleTouchStart = (e) => {
+        setIsDragging(true);
+        startY.current = e.touches[0].clientY;
     };
-  }, [isDragging, dragOffset]);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        startY.current = e.clientY;
     };
-  }, []);
 
-  const preventScroll = (e) => e.preventDefault();
+    const handleTouchMove = (e) => {
+        if (!isDragging) return;
+        const currentY = e.touches[0].clientY;
+        const diff = currentY - startY.current;
+        setDragOffset(diff);
+    };
 
-  const closeModal = () => {
-    setForceFade(true);
-    setInitialTranslate(300);
-    setTimeout(() => setShowModal(false), 250);
-  };
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        const currentY = e.clientY;
+        const diff = currentY - startY.current;
+        setDragOffset(diff);
+    };
 
-  
-const pansmatala = {
+    const handleDragEnd = () => {
+        setIsDragging(false);
+        if (isFullscreen && dragOffset > 50) {
+            setIsClosing(true);
+            setIsFullscreen(false);
+            setInitialTranslate(300);
+            setTimeout(() => { setShowModal(false); }, 50);
+            return;
+        }
+        if (dragOffset > 50) {
+            setIsClosing(true);
+            setInitialTranslate(300);
+            setTimeout(() => { setShowModal(false); }, 250);
+            return;
+        }
+        if (dragOffset < -50) {
+            setIsFullscreen(true);
+            setDragOffset(0);
+            return;
+        }
+        setDragOffset(0);
+    };
 
-    src:' https://placehold.co/400'
+    useEffect(() => {
+        if (isDragging) {
+            document.addEventListener("touchmove", preventScroll, { passive: false });
+            document.addEventListener("touchmove", handleTouchMove, { passive: false });
+            document.addEventListener("touchend", handleDragEnd);
+            document.addEventListener("mousemove", handleMouseMove);
+            document.addEventListener("mouseup", handleDragEnd);
+        }
+        return () => {
+            document.removeEventListener("touchmove", preventScroll);
+            document.removeEventListener("touchmove", handleTouchMove);
+            document.removeEventListener("touchend", handleDragEnd);
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleDragEnd);
+        };
+    }, [isDragging, dragOffset]);
 
-}
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => { document.body.style.overflow = "auto"; };
+    }, []);
+
+    const preventScroll = (e) => e.preventDefault();
+
+    // --- Lightbox Functions ---
+    const openLightbox = (index) => {
+        setCurrentImageIndex(index);
+        setLightboxOpen(true);
+    };
+
+    const closeLightbox = () => {
+        setLightboxOpen(false);
+    };
+
+    const nextSlide = (e) => {
+        e?.stopPropagation();
+        setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+    };
+
+    const prevSlide = (e) => {
+        e?.stopPropagation();
+        setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+    };
+
+    // Swipe Logic for Lightbox
+    const minSwipeDistance = 50;
+    const onLbTouchStart = (e) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+    const onLbTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+    const onLbTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+        if (isLeftSwipe) nextSlide();
+        if (isRightSwipe) prevSlide();
+    };
+
+    // --- Render Component for the Gallery Grid ---
+    const GalleryGrid = () => (
+        <div className={`flex gap-4 mt-5 flex-wrap ${ isTabletOrMobile ? 'w-full gap-2 items-center justify-center' : '' }`}>
+            {galleryImages.map((img, index) => (
+                <div 
+                    key={index}
+                    onClick={() => openLightbox(index)}
+               className={`cursor-pointer overflow-hidden rounded-md shadow-sm hover:opacity-80 transition-opacity ${
+                    isTabletOrMobile 
+                        ? 'w-full  h-72 bg-gray-100 ' 
+                        : 'w-24 h-24 bg-gray-100'
+                }`}>
+                    <img 
+                        src={img} 
+                        alt={`Project ${index}`} 
+                        className="w-full  h-full object-cover "
+                    />
+                </div>
+            ))}
+        </div>
+    );
+
+    // --- Main Modal Style Calculation ---
+    const modalOverlayStyle = {
+        opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+        transform: `translateY(${initialTranslate + dragOffset}px)`,
+        transition: isDragging ? "none" : (forceFade ? "opacity 0.1s ease-out" : "opacity 0.25s ease-out"),
+        pointerEvents: 'auto'
+    };
+
+    const modalContentStyle = {
+        transform: isFullscreen
+            ? `translateY(${isDragging ? dragOffset : 0}px)`
+            : `translateY(${initialTranslate + dragOffset}px)`,
+        height: isFullscreen && !isDragging ? '100vh' : 'auto',
+        transition: isDragging ? "none" : "transform 0.25s ease-out, height 0.3s ease-out ",
+    };
+
+ 
 
 
     return (
@@ -127,140 +208,194 @@ const pansmatala = {
 
             {isDesktopOrLaptop &&
                 <>
-                    
-                  <div
-    className="fixed inset-0 bg-gray-600"
-    style={{
-        opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
-        transform: `translateY(${initialTranslate + dragOffset}px)`,
-        opacity: isDragging ? 0 : 0.600,
-        transition: isDragging
-            ? "none"
-            : forceFade
-                ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                : "opacity 0.25s ease-out, transform 0.25s ease-out",
-       pointerEvents: 'auto'
-    }}
-    onClick={() => {
-        if (isFullscreen) return; // Don't close when fullscreen
-        setForceFade(true);
-        setInitialTranslate(300);
-        setTimeout(() => setShowModal(false), 250);
-    }}
-/>
-                   <div className={`fixed flex w-full justify-center items-center ${
-  isFullscreen ? 'inset-0' : 'bottom-0'
-}`}>
-                        <div
-                            ref={modalRef}
-                          className={` bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
-  isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
-}`}
+
+                    <div
+                        className="fixed inset-0 bg-gray-600 "
                         style={{
-  transform: isFullscreen
-    ? `translateY(${isDragging ? dragOffset : 0}px)`
-    : `translateY(${initialTranslate + dragOffset}px)`,
+                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+                            transform: `translateY(${initialTranslate + dragOffset}px)`,
+                            opacity: isDragging ? 0 : 0.600,
+                            transition: isDragging
+                                ? "none"
+                                : forceFade
+                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
+                                    : "opacity 0.25s ease-out, transform 0.25s ease-out",
+                            pointerEvents: 'auto'
+                        }}
+                        onClick={() => {
+                            if (isFullscreen) return; // Don't close when fullscreen
+                            setForceFade(true);
+                            setInitialTranslate(300);
+                            setTimeout(() => setShowModal(false), 250);
+                        }}
+                    />
+              <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
+    <div
+        ref={modalRef}
+        className={`overflow-scroll overflow-x-auto bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px]
+             text-left border border-gray-300 ${
+            isFullscreen ? 'rounded-none' : 'rounded-t-[16px] max-h-[80vh]' // <-- ADD max-h-[80vh] class
+        }`}
+        style={{
+            transform: isFullscreen
+                ? `translateY(${isDragging ? dragOffset : 0}px)`
+                : `translateY(${initialTranslate + dragOffset}px)`,
+            
+            // Set height to 100vh when fullscreen, but allow it to be constrained by max-h when not
+            height: isFullscreen && !isDragging ? '100vh' : 'auto', 
 
-  height: isFullscreen && !isDragging ? '100vh' : 'auto',
-
-  transition: isDragging
-    ? "none"
-    : "transform 0.25s ease-out, height 0.3s ease-out ",
-
-
-}}
-                        >
-
-<div>
-                            {/* Drag handle - replaces ChevronDown button */}
-                            <button
-                                onTouchStart={handleTouchStart}
-                                onMouseDown={handleMouseDown}
-                                className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
-                            >
-                                <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
-                            </button>
-
-
-
-                            {/* Header - KEEP ONLY ONE */}
-                            <div className='flex justify-between items-center'>
-                                <div className='flex items-center gap-2'>
-                                    <span className='text-[24px]'> 🗂️</span>
-                                    <span className="text-[24px] font-semibold">All Projects</span>
-                                </div>
+            transition: isDragging
+                ? "none"
+                : "transform 0.25s ease-out, height 0.3s ease-out ",
+        }}
+    >
+                            <div>
+                                {/* Drag handle - replaces ChevronDown button */}
                                 <button
-                                    onClick={() => {
-                                
-                                        setIsClosing(true);
-                                        setForceFade(true);        // <- fast opacity fade
-                                        setInitialTranslate(300);  // <- normal slide
-                                        setTimeout(() => setShowModal(false), 50);
-                                    }}
-                                    className="cursor-pointer"
+                                    onTouchStart={handleTouchStart}
+                                    onMouseDown={handleMouseDown}
+                                    className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
                                 >
-
-
-
-                                    <span className='cursor-pointer text-[24px]'>✕</span>
+                                    <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                                 </button>
-                            </div>                 <div className='mt-[5px] mb-[5px]'>
 
-                                <span className='font-semibold text-[16px]' >Websites</span>
 
-                            </div>
 
-                       <div className='flex gap-10'>  
-   <div className=' max-w-[400px] px-[20px] py-[10px] text-left
+                                {/* Header - KEEP ONLY ONE */}
+                                <div className='flex justify-between items-center'>
+                                    <div className='flex items-center gap-2'>
+                                        <span className='text-[24px]'> 🗂️</span>
+                                        <span className="text-[24px] font-semibold">All Projects</span>
+                                    </div>
+                                    <button
+                                        onClick={() => {
+
+                                            setIsClosing(true);
+                                            setForceFade(true);        // <- fast opacity fade
+                                            setInitialTranslate(300);  // <- normal slide
+                                            setTimeout(() => setShowModal(false), 50);
+                                        }}
+                                        className="cursor-pointer"
+                                    >
+
+
+
+                                        <span className='cursor-pointer text-[24px]'>✕</span>
+                                    </button>
+                                </div>                 <div className='mt-[5px] mb-[5px]'>
+
+                                    <span className='font-semibold text-[16px]' >Websites</span>
+
+                                </div>
+
+
+<div className=' flex-col'>
+                                <div className='flex gap-10'>
+                                    <div className=' max-w-[400px] px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                      
-                            <h1 className='text-[16px] font-bold   mb-[5px]'>
-                                E-Compare
-                            </h1>
-                            
-                         
-                            <p className='text-[12px]'>
-                                Comparing products between by Lazada and Shopee
-                            </p>
-                             <p className='text-[10px]'>
-                             ecompare-asdas.vercel.app/
-                            </p>
-                        </div>
 
-                        <div className=' max-w-[400px] px-[20px] py-[10px] text-left
+                                        <h1 className='text-[16px] font-bold   mb-[5px]'>
+                                            E-Compare
+                                        </h1>
+
+
+                                        <p className='text-[12px]'>
+                                            Comparing products between by Lazada and Shopee
+                                        </p>
+                                        <p className='text-[10px]'>
+                                            ecompare-asdas.vercel.app/
+                                        </p>
+                                    </div>
+
+                                    <div className=' max-w-[400px] px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                            <h1 className='font-bold ' >CMEN</h1>
-                            <p className='text-[12px]'>
-                                A drag and drop survey creation website
-                            </p>
-                        </div>
+                                        <h1 className='font-bold ' >CMEN</h1>
+                                        <p className='text-[12px]'>
+                                            A drag and drop survey creation website
+                                        </p>
+                                    </div>
 
-                     <div className=' max-w-[400px] px-[20px] py-[10px] text-left
+                                    <div className=' max-w-[400px] px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                            <h1 className='font-bold text-[16px]'>ELAD KICKS</h1>
-                            <p className='text-[12px]'>
-                                An information website for footwear business
-                            </p>
+                                        <h1 className='font-bold text-[16px]'>ELAD KICKS</h1>
+                                        <p className='text-[12px]'>
+                                            An information website for footwear business
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                              {/* --- THIS IS THE NEW ALBUM GRID --- */}
+                        <GalleryGrid className= '!items-center !justify-center' />
+                    </div>
+
+    
+                </div>
+            </div>
+
+            {/* --- 3. THE LIGHTBOX OVERLAY (Album View) --- */}
+            {lightboxOpen && (
+                <div 
+                    className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
+                    onClick={closeLightbox}
+                >
+                    {/* Close Button */}
+                    <button 
+                        className="absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
+                        onClick={closeLightbox}
+                    >
+                        &times;
+                    </button>
+
+                    {/* Prev Button */}
+                    <button 
+                        className="absolute left-2 md:left-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        onClick={prevSlide}
+                    >
+                        &#8249;
+                    </button>
+
+                    {/* Image Container with Swipe */}
+                    <div 
+                        className="relative max-w-4xl w-full h-full flex items-center justify-center"
+                        onClick={(e) => e.stopPropagation()} // Stop click closing modal
+                        onTouchStart={onLbTouchStart}
+                        onTouchMove={onLbTouchMove}
+                        onTouchEnd={onLbTouchEnd}
+                    >
+                        <img 
+                            src={galleryImages[currentImageIndex]} 
+                            alt="Full View" 
+                            className="max-h-[85vh] max-w-full object-contain rounded shadow-2xl select-none"
+                        />
+                        <div className="absolute bottom-5 text-white/50 text-sm">
+                            {currentImageIndex + 1} / {galleryImages.length}
                         </div>
-               
-</div>   
+                    </div>
+
+                    {/* Next Button */}
+                    <button 
+                        className="absolute right-2 md:right-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        onClick={nextSlide}
+                    >
+                        &#8250;
+                    </button>
+                </div>
+            )}
+        
+   
+
+
+
+                           
+
                           
 
- <div className='flex gap-4 mt-5'>
 
-                   <img src=' https://placehold.co/400' width={360}></img>
-                    <img src=' https://placehold.co/400' width={360}></img>
-                     <img src=' https://placehold.co/400' width={360}></img>
-                     
-                </div>
-                         
-</div>
-                         
-
-                        </div>
                     </div>
                 </>
             }
@@ -268,328 +403,152 @@ const pansmatala = {
             {isTabletOrMobile &&
                 <>
 
-                  <div
-    className="fixed inset-0 bg-gray-600"
-    style={{
-        opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
-        transform: `translateY(${initialTranslate + dragOffset}px)`,
-        opacity: isDragging ? 0 : 0.600,
-        transition: isDragging
-            ? "none"
-            : forceFade
-                ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                : "opacity 0.25s ease-out, transform 0.25s ease-out",
-       pointerEvents: 'auto'
-    }}
-    onClick={() => {
-        if (isFullscreen) return; // Don't close when fullscreen
-        setForceFade(true);
-        setInitialTranslate(300);
-        setTimeout(() => setShowModal(false), 250);
-    }}
-/>
-                   <div className={`fixed flex w-full justify-center items-center ${
-  isFullscreen ? 'inset-0' : 'bottom-0'
-}`}>
-                        <div
-                            ref={modalRef}
-                          className={` bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
-  isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
-}`}
+   <div
+                        className="fixed inset-0 bg-gray-600 "
                         style={{
-  transform: isFullscreen
-    ? `translateY(${isDragging ? dragOffset : 0}px)`
-    : `translateY(${initialTranslate + dragOffset}px)`,
+                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+                            transform: `translateY(${initialTranslate + dragOffset}px)`,
+                            opacity: isDragging ? 0 : 0.600,
+                            transition: isDragging
+                                ? "none"
+                                : forceFade
+                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
+                                    : "opacity 0.25s ease-out, transform 0.25s ease-out",
+                            pointerEvents: 'auto'
+                        }}
+                        onClick={() => {
+                            if (isFullscreen) return; // Don't close when fullscreen
+                            setForceFade(true);
+                            setInitialTranslate(300);
+                            setTimeout(() => setShowModal(false), 250);
+                        }}
+                    />
+              <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
+    <div
+        ref={modalRef}
+        className={`overflow-scroll overflow-x-auto bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+            isFullscreen ? 'rounded-none' : 'rounded-t-[16p x] max-h-[80vh]' // <-- ADD max-h-[80vh] class
+        }`}
+        style={{
+            transform: isFullscreen
+                ? `translateY(${isDragging ? dragOffset : 0}px)`
+                : `translateY(${initialTranslate + dragOffset}px)`,
+            
+            // Set height to 100vh when fullscreen, but allow it to be constrained by max-h when not
+            height: isFullscreen && !isDragging ? '100vh' : 'auto', 
 
-  height: isFullscreen && !isDragging ? '100vh' : 'auto',
-
-  transition: isDragging
-    ? "none"
-    : "transform 0.25s ease-out, height 0.3s ease-out ",
-
-
-}}
-                        >
-                            {/* Drag handle - replaces ChevronDown button */}
-                            <button
-                                onTouchStart={handleTouchStart}
-                                onMouseDown={handleMouseDown}
-                                className="mt-[15px] flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
-                            >
-                                <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
-                            </button>
-
-                            {/* Header - KEEP ONLY ONE */}
-                            <div className='flex justify-between items-center'>
-                                <div className='flex items-center gap-2'>
-                                    <span className='text-[16px]'>🧠</span>
-                                    <span className="text-[20px] font-semibold">Tech Stack</span>
-                                </div>
+            transition: isDragging
+                ? "none"
+                : "transform 0.25s ease-out, height 0.3s ease-out ",
+        }}
+    >
+                            <div>
+                                {/* Drag handle - replaces ChevronDown button */}
                                 <button
-                                    onClick={() => {
-                                
-                                        setIsClosing(true);
-                                        setForceFade(true);        // <- fast opacity fade
-                                        setInitialTranslate(300);  // <- normal slide
-                                        setTimeout(() => setShowModal(false), 50);
-                                    }}
-                                    className="cursor-pointer"
+                                    onTouchStart={handleTouchStart}
+                                    onMouseDown={handleMouseDown}
+                                    className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
                                 >
-
-
-
-                                    <span className='cursor-pointer text-[20px]'>✕</span>
+                                    <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                                 </button>
-                            </div>
-
-                            <div className='mt-[5px] mb-[5px]'>
-
-                                <span className='font-semibold text-[14px]' >UI/UX</span>
-
-                            </div>
-
-
-                            <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Figma </span>
-
-                                </div>
 
 
 
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
+                                {/* Header - KEEP ONLY ONE */}
+                                <div className='flex justify-between items-center'>
+                                    <div className='flex items-center gap-2'>
+                                        <span className='text-[24px]'> 🗂️</span>
+                                        <span className="text-[24px] font-semibold">All Projects</span>
+                                    </div>
+                                    <button
+                                        onClick={() => {
+
+                                            setIsClosing(true);
+                                            setForceFade(true);        // <- fast opacity fade
+                                            setInitialTranslate(300);  // <- normal slide
+                                            setTimeout(() => setShowModal(false), 50);
+                                        }}
+                                        className="cursor-pointer"
+                                    >
 
 
 
-                                    <span className='text-[12px]'> Adobe Xd</span>
+                                        <span className='cursor-pointer text-[24px]'>✕</span>
+                                    </button>
+                                </div>                 <div className='mt-[15px] '>
 
-                                </div>
-                            </div>
-
-                            <div className='mb-[5px] '>
-
-                                <span className='font-semibold text-[14px] '>Graphic Design / Illustration</span>
-                            </div>
-
-
-                            <div className='mb-[10px]  flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Photoshop </span>
+                                    <span className='font-semibold text-[16px]' >Websites</span>
 
                                 </div>
 
 
 
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-
-                                    <span className='text-[12px]'> Illustrator</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Canva</span>
-
-                                </div>
-
-                            </div>
-
-                            <div className='mb-[5px]'>
-
-                                <span className='font-semibold text-[14px]'>Video Editing</span>
-                            </div>
-
-                            <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-
-                                    <span className='text-[12px]'> Premiere Pro </span>
 
                                 </div>
 
 
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> After Effects</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Capcut</span>
-
-
-                                </div>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-                                    <span className='text-[12px]'> Da Vinci Resolve</span>
-                                </div>
-                            </div>
-
-
-
-                            <div className='mb-[5px]'>
-
-                                <span className='font-semibold text-[14px]'>FrontEnd</span>
-                            </div>
-
-
-                            <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap '>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-
-                                    <span className='text-[12px]'> HTML5</span>
-
-                                </div>
-
-
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> CSS</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> JavaScript</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> React</span>
-
-                                </div>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Tailwind</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Vite</span>
-
-                                </div>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Next.js</span>
-
-                                </div>
-
-                            </div>
-                            <div className='mb-[5px] '>
-
-                                <span className='font-semibold text-[14px]'>Developer Tools</span>
-                            </div>
-
-
-                            <div className='flex gap-2  cursor-pointer w-full rounded-[12px] flex-wrap '>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-
-                                    <span className='text-[12px]'> Git</span>
-
-                                </div>
-
-
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Github</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> VS Code</span>
-
-                                </div>
-
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Jira</span>
-
-                                </div>
-                                <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                    <span className='text-[12px]'> Teams</span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
+                              {/* --- THIS IS THE NEW ALBUM GRID --- */}
+                        <GalleryGrid c />
                     </div>
+
+    
+              
+            
+
+            {/* --- 3. THE LIGHTBOX OVERLAY (Album View) --- */}
+            {lightboxOpen && (
+                <div 
+                    className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
+                    onClick={closeLightbox}
+                >
+                    {/* Close Button */}
+                    <button 
+                        className="absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
+                        onClick={closeLightbox}
+                    >
+                        &times;
+                    </button>
+
+                    {/* Prev Button */}
+                    <button 
+                        className="absolute left-2 md:left-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        onClick={prevSlide}
+                    >
+                        &#8249;
+                    </button>
+
+                    {/* Image Container with Swipe */}
+                    <div 
+                        className="relative max-w-4xl w-full px-10  h-full flex items-center justify-center"
+                        onClick={(e) => e.stopPropagation()} // Stop click closing modal
+                        onTouchStart={onLbTouchStart}
+                        onTouchMove={onLbTouchMove}
+                        onTouchEnd={onLbTouchEnd}
+                    >
+                        <img 
+                            src={galleryImages[currentImageIndex]} 
+                            alt="Full View" 
+                            className="max-h-[85vh] max-w-full object-contain rounded shadow-2xl select-none"
+                        />
+                        <div className="absolute bottom-5 text-white/50 text-sm">
+                            {currentImageIndex + 1} / {galleryImages.length}
+                        </div>
+                    </div>
+
+                    {/* Next Button */}
+                    <button 
+                        className="absolute right-2 md:right-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        onClick={nextSlide}
+                    >
+                        &#8250;
+                    </button>
+                </div>
+            )}
+                       
+  </div>
+          
+                  
+
                 </>
             }
         </>

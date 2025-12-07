@@ -7,7 +7,7 @@ import SocialLinks from "./Social_Links"
 import RecentProjects from "./Projects"
 import TechStack from "./TechStack"
 import { useMediaQuery } from 'react-responsive'
-import TStackAll from "./Knowledge.jsx"
+
 function App() {
  const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'

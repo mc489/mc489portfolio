@@ -28,8 +28,15 @@ function Header() {
     // State to track if the cursor is currently over the element
     const [isHovered, setIsHovered] = useState(false);
 
+
+
+
+
+
+
     const handleClick = () => {
         setClicked(true);
+       
     };
 
     const handleMouseEnter = () => {
@@ -224,7 +231,7 @@ function Header() {
                      <div className="flex justify-between items-center">
                         <div className="flex flex-row gap-2 items-center">
 
-                            <span className="text-[14px]">⚠️</span>
+                            <span className="text-[14px]">🐞</span>
                              <h1 className="font-semibold text-[14px]">Warning</h1>
                             
                         </div>
@@ -235,7 +242,7 @@ function Header() {
                         </button>
                            </div>
                               <span className="text-[10px]">This is currently under construction.
-                                Some functions may not be available.
+                                Some functions may have some bugs.
                                 
                    
                        <span className="font-semibold text-[10px]"> Thanks.</span></span>
@@ -260,24 +267,29 @@ function Header() {
                 `}
                             />
 
+
+
+
                             {/* Hover Image: Visible when hovered (and not clicked) */}
                             <img
                                 src={profileHover}
                                 alt="profile hover"
-                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300
-                    ${isHovered && !clicked ? "opacity-100" : "opacity-0"}
-                `}
-                            />
-
-                            {/* Clicked Image: Visible only when 'clicked' is true */}
-                            <img
-                                src={profileClicked}
-                                alt="profile clicked"
-                                onClick={handleClick}
+                               onClick={handleClick}
                                 className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
                     ${clicked ? "opacity-100" : "opacity-0"}
                 `}
                             />
+  <img
+                                src={profileClicked}
+                                alt="profile hover"
+                               onClick={handleClick}
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
+                    ${clicked ? "opacity-100" : "opacity-0"}
+                `}
+                            />
+
+                      
+
                         </div>
 
 

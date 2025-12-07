@@ -160,33 +160,7 @@ function Projects() {
                                   transition={{ duration: 0.25, ease: "easeOut" }}
                                   className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
                                 >
-                    <div className="px-10">
-                  <div className=" bg-white flex w-full flex-col relative max-w-[620px] gap-1 rounded-[16px] 
-                    p-[20px] mt-[10px] text-left border border-gray-300 ">
-                     
-                     <div className="flex justify-between items-center">
-                        <div className="flex flex-row gap-2 items-center">
-
-                            <span>🛠️</span>
-                             <h1 className="font-semibold text-[16px]">Not Available</h1>
-                            
-                        </div>
-                   
-
-                         <button onClick={() => setShowModal(false)} className= 'cursor-pointer '>
-                             <span className='text-[10px] cursor-pointer text-[16px]'>✕</span>
-                        </button>
-                           </div>
-                             <span className="text-[10px]">Look, I'm gonna be straight with you, this part's a no-go right now. 
-                            It's in the hands of 
-                                  <a href=" https://github.com/mc489" target="_blank" rel="noopener noreferrer">
-                                <span className="font-semibold"> @mc489. </span> 
-                                </a>
-                       But you know what? Next time you swing by, it just might be working. 
-                       <span className="font-semibold"> Thanks.</span></span>
-                              
-                               </div>
-                               </div>
+                        <Nigga setShowModal={setShowModal}/>
                                 </motion.div>
                               )}
                             </AnimatePresence>  
