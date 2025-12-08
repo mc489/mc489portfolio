@@ -15,10 +15,18 @@ import ek2 from "./assets/projectsimg/ek2.png"
 import ek3 from "./assets/projectsimg/ek3.png"
 import ek4 from "./assets/projectsimg/ek4.png"
 import ek5 from "./assets/projectsimg/ek5.png"
-
-
-
-
+import expwarmer from "./assets/projectsimg/expwarmer.jpg"
+import ja from "./assets/projectsimg/ja.jpg"
+import ky from "./assets/projectsimg/ky.jpg"
+import toxxazi from "./assets/projectsimg/toxxazi.jpg"
+import ecomlogo from "./assets/projectsimg/LOGO 1.1.png"
+import trend from "./assets/projectsimg/trend.jpg"
+import chades from "./assets/projectsimg/chades.jpg"
+import batwar from "./assets/projectsimg/BATWARKA.jpg"
+import aircon1 from "./assets/projectsimg/aircon1.jpg"
+import cover from "./assets/projectsimg/cover.jpg"
+import neutral from "./assets/projectsimg/neutral 3.png"
+import jirsey1 from "./assets/projectsimg/jirsey1.jpg"
 function Nigga({ setShowModal }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
@@ -43,7 +51,9 @@ function Nigga({ setShowModal }) {
     const galleryImages = [
         c1, c2, c3, c4, c5,
         e1, e2, e3, e4, e5,
-        ek1, ek2, ek3, ek4, ek5
+        ek1, ek2, ek3, ek4, ek5, ja, ky, toxxazi, ecomlogo,
+        expwarmer, jirsey1, trend, chades, aircon1, cover, neutral,
+       batwar
     ];
 
     useEffect(() => {
@@ -167,11 +177,8 @@ function Nigga({ setShowModal }) {
                 <div 
                     key={index}
                     onClick={() => openLightbox(index)}
-               className={`cursor-pointer overflow-hidden rounded-md shadow-sm hover:opacity-80 transition-opacity ${
-                    isTabletOrMobile 
-                        ? 'w-full  h-72 bg-gray-100 ' 
-                        : 'w-24 h-24 bg-gray-100'
-                }`}>
+               className='cursor-pointer overflow-hidden rounded-md shadow-sm hover:opacity-80 transition-opacity w-24 h-24 bg-gray-100'>
+            
                     <img 
                         src={img} 
                         alt={`Project ${index}`} 
@@ -284,7 +291,7 @@ function Nigga({ setShowModal }) {
                                     </button>
                                 </div>                 <div className='mt-[5px] mb-[5px]'>
 
-                                    <span className='font-semibold text-[16px]' >Websites</span>
+                                    <span className='font-semibold text-[16px]' >All</span>
 
                                 </div>
 
@@ -426,7 +433,7 @@ function Nigga({ setShowModal }) {
               <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
     <div
         ref={modalRef}
-        className={`overflow-scroll overflow-x-auto bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+        className={`overflow-scroll overflow-x-auto bg-white flex w-full flex-col relative gap-1 px-[15px] py-[25px] text-left border border-gray-300 ${
             isFullscreen ? 'rounded-none' : 'rounded-t-[16p x] max-h-[80vh]' // <-- ADD max-h-[80vh] class
         }`}
         style={{
@@ -477,7 +484,7 @@ function Nigga({ setShowModal }) {
                                     </button>
                                 </div>                 <div className='mt-[15px] '>
 
-                                    <span className='font-semibold text-[16px]' >Websites</span>
+                                    <span className='font-semibold text-[16px]' >All</span>
 
                                 </div>
 
@@ -511,7 +518,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Prev Button */}
                     <button 
-                        className="absolute left-2 md:left-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        className="absolute left-2 md:left-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
                         onClick={prevSlide}
                     >
                         &#8249;
@@ -519,7 +526,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Image Container with Swipe */}
                     <div 
-                        className="relative max-w-4xl w-full px-10  h-full flex items-center justify-center"
+                        className="relative max-w-4xl w-full px-5  h-full flex items-center justify-center"
                         onClick={(e) => e.stopPropagation()} // Stop click closing modal
                         onTouchStart={onLbTouchStart}
                         onTouchMove={onLbTouchMove}
@@ -528,7 +535,7 @@ function Nigga({ setShowModal }) {
                         <img 
                             src={galleryImages[currentImageIndex]} 
                             alt="Full View" 
-                            className="max-h-[85vh] max-w-full object-contain rounded shadow-2xl select-none"
+                            className="max-h-full max-w-full object-contain rounded shadow-2xl select-none"
                         />
                         <div className="absolute bottom-5 text-white/50 text-sm">
                             {currentImageIndex + 1} / {galleryImages.length}
@@ -537,7 +544,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Next Button */}
                     <button 
-                        className="absolute right-2 md:right-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        className="absolute right-2 md:right-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
                         onClick={nextSlide}
                     >
                         &#8250;
