@@ -430,31 +430,35 @@ function Nigga({ setShowModal }) {
                             setTimeout(() => setShowModal(false), 250);
                         }}
                     />
-              <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
-    <div
-        ref={modalRef}
-        className={`overflow-scroll overflow-x-auto bg-white flex w-full flex-col relative gap-1 px-[15px] py-[25px] text-left border border-gray-300 ${
-            isFullscreen ? 'rounded-none' : 'rounded-t-[16p x] max-h-[80vh]' // <-- ADD max-h-[80vh] class
-        }`}
-        style={{
-            transform: isFullscreen
-                ? `translateY(${isDragging ? dragOffset : 0}px)`
-                : `translateY(${initialTranslate + dragOffset}px)`,
-            
-            // Set height to 100vh when fullscreen, but allow it to be constrained by max-h when not
-            height: isFullscreen && !isDragging ? '100vh' : 'auto', 
+              <div className={`fixed flex w-full justify-center items-center z-[50] ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
+            <div
+                ref={modalRef}
+                className={`bg-white flex w-full flex-col relative gap-1 px-[15px] py-[30px] text-left border border-gray-300 shadow-xl
+                    ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px] max-h-[85vh]'}
+                `}
+                style={{
+                    // LOGIC FIX: Keep height 100vh if fullscreen, regardless of dragging state
+                    height: isFullscreen ? '100vh' : 'auto',
+                    
+                    transform: isFullscreen
+                        ? `translateY(${isDragging ? dragOffset : 0}px)`
+                        : `translateY(${initialTranslate + dragOffset}px)`,
 
-            transition: isDragging
-                ? "none"
-                : "transform 0.25s ease-out, height 0.3s ease-out ",
-        }}
-    >
-                            <div>
+                    // CSS FIX: This stops the browser from trying to scroll the page while you drag
+                    touchAction: 'none',
+
+                    transition: isDragging
+                        ? "none"
+                        : "transform 0.25s ease-out, height 0.3s ease-out",
+                }}
+            >
+                          
                                 {/* Drag handle - replaces ChevronDown button */}
                                 <button
                                     onTouchStart={handleTouchStart}
                                     onMouseDown={handleMouseDown}
-                                    className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
+                                    className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing 
+                                    py-2 -mt-2"
                                 >
                                     <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                                 </button>
@@ -482,23 +486,23 @@ function Nigga({ setShowModal }) {
 
                                         <span className='cursor-pointer text-[24px]'>✕</span>
                                     </button>
-                                </div>                 <div className='mt-[15px] '>
-
-                                    <span className='font-semibold text-[16px]' >All</span>
-
-                                </div>
+                                </div>        
 
 
 
 
-                                </div>
+                               
 
-
+<div 
+        className="flex-1 overflow-y-auto overflow-x-hidden w-full"
+        // Optional: stop propagation ensures scrolling inside here doesn't trigger drag on parent if logic overlaps
+        onPointerDown={(e) => e.stopPropagation()} 
+    >
                               {/* --- THIS IS THE NEW ALBUM GRID --- */}
                         <GalleryGrid c />
                     </div>
 
-    
+    </div>
               
             
 
