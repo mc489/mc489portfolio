@@ -27,6 +27,9 @@ import aircon1 from "./assets/projectsimg/aircon1.jpg"
 import cover from "./assets/projectsimg/cover.jpg"
 import neutral from "./assets/projectsimg/neutral 3.png"
 import jirsey1 from "./assets/projectsimg/jirsey1.jpg"
+import wotg1 from "./assets/projectsimg/wotg1.jpeg"
+import wotg2 from "./assets/projectsimg/wotg2.png"
+import wotg3 from "./assets/projectsimg/wotg3.png"
 function Nigga({ setShowModal }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
@@ -52,7 +55,8 @@ function Nigga({ setShowModal }) {
         c1, c2, c3, c4, c5,
         e1, e2, e3, e4, e5,
         ek1, ek2, ek3, ek4, ek5, ja, ky, toxxazi, ecomlogo,
-        expwarmer, jirsey1, trend, chades, aircon1, cover, neutral,
+        expwarmer, jirsey1, trend, chades, wotg1,wotg2,wotg3,
+         aircon1, cover, neutral,
        batwar
     ];
 
@@ -206,7 +210,31 @@ function Nigga({ setShowModal }) {
     };
 
  
+useEffect(() => {
+    // 1. Only run this logic if the lightbox is actually open
+    if (!lightboxOpen) return;
 
+    // 2. Define the event handler
+    const handleKeyDown = (e) => {
+        if (e.key === "ArrowLeft") {
+            prevSlide();
+        } else if (e.key === "ArrowRight") {
+            nextSlide();
+        } else if (e.key === "Escape") {
+            // Optional: Close on Escape key (Good UX)
+            closeLightbox();
+        }
+    };
+
+    // 3. Add the event listener to the window
+    window.addEventListener("keydown", handleKeyDown);
+
+    // 4. Cleanup function: Remove the listener when the component unmounts
+    // or when lightboxOpen becomes false. This prevents memory leaks.
+    return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+    };
+}, [lightboxOpen, prevSlide, nextSlide, closeLightbox]);
 
     return (
 
@@ -352,7 +380,7 @@ function Nigga({ setShowModal }) {
                 >
                     {/* Close Button */}
                     <button 
-                        className="absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
+                        className=" cursor-pointer absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
                         onClick={closeLightbox}
                     >
                         &times;
@@ -360,7 +388,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Prev Button */}
                     <button 
-                        className="absolute left-2 md:left-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        className=" cursor-pointer absolute left-2 md:left-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
                         onClick={prevSlide}
                     >
                         &#8249;
@@ -386,7 +414,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Next Button */}
                     <button 
-                        className="absolute right-2 md:right-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
+                        className=" cursor-pointer absolute right-2 md:right-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
                         onClick={nextSlide}
                     >
                         &#8250;
@@ -514,7 +542,7 @@ function Nigga({ setShowModal }) {
                 >
                     {/* Close Button */}
                     <button 
-                        className="absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
+                        className="cursor-pointer absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
                         onClick={closeLightbox}
                     >
                         &times;
@@ -522,7 +550,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Prev Button */}
                     <button 
-                        className="absolute left-2 md:left-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
+                        className="cursor-pointer absolute left-2 md:left-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
                         onClick={prevSlide}
                     >
                         &#8249;
@@ -548,7 +576,7 @@ function Nigga({ setShowModal }) {
 
                     {/* Next Button */}
                     <button 
-                        className="absolute right-2 md:right-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
+                        className="cursor-pointer absolute right-2 md:right-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
                         onClick={nextSlide}
                     >
                         &#8250;
