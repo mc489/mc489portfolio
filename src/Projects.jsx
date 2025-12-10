@@ -21,7 +21,7 @@ function Projects() {
 
                 <div className=" flex flex-col items-center justify-center mt-3">
 
-                    <div className="py-[12px] w-full max-w-[660px]  flex flex-col  px-[15px] justify-center 
+                    <div className="hover:shadow-sm py-[12px] w-full max-w-[660px]  flex flex-col  px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 

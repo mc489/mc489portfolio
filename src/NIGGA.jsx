@@ -30,6 +30,10 @@ import jirsey1 from "./assets/projectsimg/jirsey1.jpg"
 import wotg1 from "./assets/projectsimg/wotg1.jpeg"
 import wotg2 from "./assets/projectsimg/wotg2.png"
 import wotg3 from "./assets/projectsimg/wotg3.png"
+import lid from "./assets/projectsimg/lid.jpg"
+import card1 from "./assets/projectsimg/card1.jpg"
+import ecosia from "./assets/projectsimg/ECOSIA.jpg"
+
 function Nigga({ setShowModal }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
@@ -54,8 +58,9 @@ function Nigga({ setShowModal }) {
     const galleryImages = [
         c1, c2, c3, c4, c5,
         e1, e2, e3, e4, e5,
-        ek1, ek2, ek3, ek4, ek5, ja, ky, toxxazi, ecomlogo,
-        expwarmer, jirsey1, trend, chades, wotg1,wotg2,wotg3,
+        ek1, ek2, ek3, ek4, ek5, ja, ky, toxxazi, ecomlogo,lid, card1,
+        expwarmer, jirsey1, trend, chades, ecosia,
+         wotg1,wotg2,wotg3,
          aircon1, cover, neutral,
        batwar
     ];
@@ -319,49 +324,7 @@ useEffect(() => {
                                     </button>
                                 </div>                 <div className='mt-[5px] mb-[5px]'>
 
-                                    <span className='font-semibold text-[16px]' >All</span>
-
-                                </div>
-
-
-<div className=' flex-col'>
-                                <div className='flex gap-10'>
-                                    <div className=' max-w-[400px] px-[20px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px] cursor-pointer
-                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
-
-                                        <h1 className='text-[16px] font-bold   mb-[5px]'>
-                                            E-Compare
-                                        </h1>
-
-
-                                        <p className='text-[12px]'>
-                                            Comparing products between by Lazada and Shopee
-                                        </p>
-                                        <p className='text-[10px]'>
-                                            ecompare-asdas.vercel.app/
-                                        </p>
-                                    </div>
-
-                                    <div className=' max-w-[400px] px-[20px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px] cursor-pointer
-                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                                        <h1 className='font-bold ' >CMEN</h1>
-                                        <p className='text-[12px]'>
-                                            A drag and drop survey creation website
-                                        </p>
-                                    </div>
-
-                                    <div className=' max-w-[400px] px-[20px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px] cursor-pointer
-                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                                        <h1 className='font-bold text-[16px]'>ELAD KICKS</h1>
-                                        <p className='text-[12px]'>
-                                            An information website for footwear business
-                                        </p>
-                                    </div>
-
-                                </div>
+                                  
 
 
                               {/* --- THIS IS THE NEW ALBUM GRID --- */}

@@ -63,44 +63,7 @@ function Header() {
 
             
                 <div className=" pt-[24px] items-center justify-center flex flex-row gap-4   ">
-    <AnimatePresence>
-                              {showModal && (
-                                <motion.div
-                                  key="modal"
-                                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                                  exit={{ opacity: 0, scale: 0.9, y: 30 }}
-                                  transition={{ duration: 0.25, ease: "easeOut" }}
-                                  className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
-                                >
-                    <div className=" max-w-[530px] px-10">
-                  <div className=" bg-white flex w-full flex-col relative max-w-[620px] gap-1 rounded-[16px] 
-                    p-[20px] mt-[10px] text-left border border-gray-300 ">
-                     
-                     <div className="flex justify-between items-center">
-                        <div className="flex flex-row gap-2 items-center">
-
-                            <span className="text-[16px]">⚠️</span>
-                             <h1 className="font-semibold text-[16px]">Warning</h1>
-                            
-                        </div>
-                   
-
-                         <button onClick={() => setShowModal(false)} className= ' cursor-pointer '>
-                             <span className=' text-[16px] cursor-pointer text-[16px]'>✕</span>
-                        </button>
-                           </div>
-                              <span className="text-[16px]">This is currently under construction.
-                                Some functions may not be available.
-                                
-                   
-                       <span className="font-semibold"> Thanks.</span></span>
-                              
-                               </div>
-                               </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>  
+  
                     <div
                         className="relative w-[150px]  aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
@@ -171,7 +134,7 @@ function Header() {
 
                             <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
                                 <button className=" cursor-pointer 
-                        button bg-black px-[16px] py-[8px] 
+                        button bg-black px-[16px] py-[8px] duration-200
                         text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                     <div className="flex gap-[8px] items-center">
@@ -181,20 +144,25 @@ function Header() {
                                     </div>
                                 </button>
                             </a>
-                            <button className=" cursor-pointer button px-[16px] hover:-translate-y-0.5  whitespace-nowrap">
+                         <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
+                               <button className=" cursor-pointer 
+                        button  px-[16px] py-[8px]  duration-200
+                        text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
                                 <div className="flex items-center gap-[8px]">
                                     <FaEnvelope size="16px" color="black" />
                                     Send Email
                                 </div>
                             </button>
+                            </a>
+
               <a href="https://drive.google.com/file/d/10WJnF94czDMsQyRpLlOUi44E9VxIO_VM/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                                 <button className=" cursor-pointer 
-                        button  px-[16px] py-[8px] 
+                        button  px-[16px] py-[8px]  duration-200
                         text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
 
  
                                     <div className="flex gap-[8px] items-center">
- 
+
                                     <FaBriefcase size="16px" color="black" />
                                     Portfolio
                                 </div>
@@ -214,44 +182,7 @@ function Header() {
                     <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
 
                
-    <AnimatePresence>
-                              {showModal && (
-                                <motion.div
-                                  key="modal"
-                                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                                  exit={{ opacity: 0, scale: 0.9, y: 30 }}
-                                  transition={{ duration: 0.25, ease: "easeOut" }}
-                                  className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs"
-                                >
-                    <div className=" max-w-[330px] px-10 ">
-                  <div className=" bg-white flex w-full flex-col relative  gap-1 rounded-[16px] 
-                   py-[15px] px-[20px] text-left border border-gray-300 ">
-                     
-                     <div className="flex justify-between items-center">
-                        <div className="flex flex-row gap-2 items-center">
-
-                            <span className="text-[14px]">🐞</span>
-                             <h1 className="font-semibold text-[14px]">Warning</h1>
-                            
-                        </div>
-                   
-
-                         <button onClick={() => setShowModal(false)} className= ' cursor-pointer '>
-                             <span className=' text-[14px] cursor-pointer '>✕</span>
-                        </button>
-                           </div>
-                              <span className="text-[10px]">This is currently under construction.
-                                Some functions may have some bugs.
-                                
-                   
-                       <span className="font-semibold text-[10px]"> Thanks.</span></span>
-                              
-                               </div>
-                               </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>  
+   
                         <div
                             className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 

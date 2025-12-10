@@ -31,7 +31,7 @@ function About() {
             {/* Desktop View (No See More/Less needed) */}
             {isDesktopOrLaptop &&
                 <div className="flex justify-center items-center ">
-                    <div className="relative max-w-[340px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
+                    <div className="hover:shadow-sm relative max-w-[340px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
                         <h1 className="text-xl font-semibold mb-2">About</h1>
                         <p className=" text-[14px]">{p1}</p>
                         <br/>

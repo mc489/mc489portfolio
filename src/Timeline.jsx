@@ -47,7 +47,7 @@ export default function ExperienceTimeline() {
 
  {isDesktopOrLaptop &&
     <div className="flex  justify-center items-center ">
-                 <div className="w-full
+                 <div className="w-full hover:shadow-sm
                  max-w-[650px] rounded-[16px]  p-[15px] mt-[10px] 
                  text-left border border-gray-300">
 
