@@ -37,6 +37,8 @@ function Projects() {
                             </button>
                         </div>
 
+
+<a href="https://e-compare-public-uwu.vercel.app/ " target="_blank" rel="noopenner noreferrer">
                         <div className=' w-full px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
@@ -47,7 +49,7 @@ function Projects() {
                                 Comparing products between by Lazada and Shopee
                             </p>
                         </div>
-
+</a>
                         <div className=' w-full px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>

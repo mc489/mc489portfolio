@@ -166,7 +166,8 @@ const handleDragEnd = () => {
                             <button
                                 onTouchStart={handleTouchStart}
                                 onMouseDown={handleMouseDown}
-                                className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
+                                className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing
+                                 py-2 -mt-2"
                             >
                                 <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                             </button>
@@ -478,7 +479,8 @@ const handleDragEnd = () => {
 }`}>
                         <div
                             ref={modalRef}
-                          className={` bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px] text-left border border-gray-300 ${
+                          className={` bg-white flex w-full flex-col relative gap-1
+                             px-[30px] py-[35px] text-left border border-gray-300 ${
   isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
 }`}
                         style={{
@@ -499,7 +501,7 @@ const handleDragEnd = () => {
                             <button
                                 onTouchStart={handleTouchStart}
                                 onMouseDown={handleMouseDown}
-                                className="mt-[15px] flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
+                                className=" flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
                             >
                                 <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
                             </button>

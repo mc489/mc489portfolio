@@ -23,6 +23,7 @@ function App() {
    
    {isDesktopOrLaptop &&
    <> 
+
   <Header />
 <div className='flex  items-center justify-center gap-2'>
       <About />
@@ -35,8 +36,7 @@ function App() {
       <div className="flex items-center justify-center gap-2">
         <RecentProjects/>
       <SocialLinks/>
-    
-</div>
+    </div>
 
     <Footer/>
      </>

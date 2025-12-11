@@ -424,7 +424,7 @@ useEffect(() => {
               <div className={`fixed flex w-full justify-center items-center z-[50] ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
             <div
                 ref={modalRef}
-                className={`bg-white flex w-full flex-col relative gap-1 px-[15px] py-[30px] text-left border border-gray-300 shadow-xl
+                className={`bg-white flex w-full flex-col relative gap-1 px-[15px] py-[35px] text-left border border-gray-300 shadow-xl
                     ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px] max-h-[85vh]'}
                 `}
                 style={{
@@ -459,8 +459,8 @@ useEffect(() => {
                                 {/* Header - KEEP ONLY ONE */}
                                 <div className='flex justify-between items-center'>
                                     <div className='flex items-center gap-2'>
-                                        <span className='text-[24px]'> 🗂️</span>
-                                        <span className="text-[24px] font-semibold">All Projects</span>
+                                        <span className='text-[20px]'> 🗂️</span>
+                                        <span className="text-[20px] font-semibold">All Projects</span>
                                     </div>
                                     <button
                                         onClick={() => {
@@ -475,7 +475,7 @@ useEffect(() => {
 
 
 
-                                        <span className='cursor-pointer text-[24px]'>✕</span>
+                                        <span className='cursor-pointer text-[22px]'>✕</span>
                                     </button>
                                 </div>        
 
