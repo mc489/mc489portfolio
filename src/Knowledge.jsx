@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-
+import { GrTechnology } from "react-icons/gr";
 function Knowledge({ setShowModal }) {
   const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1024px)' });
   const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
@@ -174,8 +174,8 @@ const handleDragEnd = () => {
 
                             {/* Header - KEEP ONLY ONE */}
                             <div className='flex justify-between items-center'>
-                                <div className='flex items-center gap-2'>
-                                    <span className='text-[24px]'>🧠</span>
+                                <div className='flex items-center gap-3'>
+                                    <GrTechnology size={16} color="black"/>
                                     <span className="text-[24px] font-semibold">Tech Stack</span>
                                 </div>
                                 <button
@@ -508,8 +508,8 @@ const handleDragEnd = () => {
 
                             {/* Header - KEEP ONLY ONE */}
                             <div className='flex justify-between items-center'>
-                                <div className='flex items-center gap-2'>
-                                    <span className='text-[16px]'>🧠</span>
+                                <div className='flex items-center gap-3'>
+                                       <GrTechnology size={12} color="black"/>
                                     <span className="text-[20px] font-semibold">Tech Stack</span>
                                 </div>
                                 <button

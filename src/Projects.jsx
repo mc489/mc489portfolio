@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from "framer-motion";
 import Nigga from "./NIGGA";
-
+import { GrProjects } from "react-icons/gr";
 
 function Projects() {
     const isDesktopOrLaptop = useMediaQuery({
@@ -29,7 +29,7 @@ function Projects() {
                          w-full  mt-[5px] gap-2  text-left">
 
                              <div className='flex items-center gap-2 '>  
-                            <span className="text-[16px]"> 🗂️</span>
+                            <GrProjects size={12} color="black" />
                             <span className="text-lg font-semibold">Recent Projects</span>
                             </div> 
                               <button onClick={() => setShowModal(true)} className='cursor-pointer'>
@@ -102,7 +102,7 @@ function Projects() {
 
 
                              <div className='flex items-center gap-2 '>  
-                             <span className='text-[14px]'>🗂️</span>
+                            <GrProjects size={10} color="black" />
                             <span className="text-[16px] font-semibold">Recent Projects</span>
                             </div> 
                           <button onClick={() => setShowModal(true)} className='cursor-pointer'>

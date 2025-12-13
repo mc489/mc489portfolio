@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
 import Knowledge from "./Knowledge";
-
+import { GrTechnology } from "react-icons/gr";
 function TechStack() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
@@ -32,7 +32,7 @@ function TechStack() {
 
                         <div className='flex justify-between items-center'>
                             <div className='flex gap-2 items-center'>
-                                <span className='text-[16px]'>🧠</span>
+                                 <GrTechnology size={14} color="black"/>
                                 <span className="text-lg font-semibold ">Tech Stack</span>
 
                             </div>
@@ -171,7 +171,7 @@ function TechStack() {
 
                         <div className='flex justify-between'>
                             <div className='flex items-center gap-2'>
-                                <span className='text-[14px]'>🧠</span>
+                            <GrTechnology size={12} color="black"/>
                                 <span className="text-[16px] font-semibold ">Tech Stack</span>
 
                             </div>

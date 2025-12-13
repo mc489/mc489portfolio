@@ -1,5 +1,7 @@
 import React from "react";
 import { useMediaQuery } from 'react-responsive'
+import { MdOutlineViewTimeline } from "react-icons/md";
+
 export default function ExperienceTimeline() {
 
 
@@ -49,12 +51,13 @@ export default function ExperienceTimeline() {
     <div className="flex  justify-center items-center ">
                  <div className="w-full hover:shadow-sm
                  max-w-[650px] rounded-[16px]  p-[15px] mt-[10px] 
-                 text-left border border-gray-300">
+                 border border-gray-300">
 
       {/* Header */}
-                   <div className='flex gap-2 items-center'>
-        <span className="text-[16px] ">💼</span>
-        <h2 className="text-lg font-semibold">Experience</h2>
+                   <div className='flex gap-2 items-center '>
+     
+      <MdOutlineViewTimeline size={16} color="black" className="items-center" />
+        <h2 className="text-lg font-semibold text-center">Experience</h2>
       </div>
 
     {/* Timeline */}
@@ -114,7 +117,7 @@ export default function ExperienceTimeline() {
 
       {/* Header */}
       <div className="flex items-center gap-2 mb-2">
-        <span className="text-[14px]">💼</span>
+        <MdOutlineViewTimeline size={12} color="black" className="items-center" />
         <h2 className="text-[16px] font-semibold">Experience</h2>
       </div>
 

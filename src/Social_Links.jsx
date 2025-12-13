@@ -5,6 +5,7 @@ import { FaGithub } from 'react-icons/fa'; // 'fa' for Font Awesome
 import { FaBehance } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa'; // 'fa' for Font Awesome
 import { useMediaQuery } from 'react-responsive';
+import { LuLink } from "react-icons/lu";
 
 function SocialLinks() {
 const isDesktopOrLaptop = useMediaQuery({
@@ -24,7 +25,8 @@ const isDesktopOrLaptop = useMediaQuery({
                
                <div className='flex items-center gap-2 mb-[14px] '>
                 
-                <span className='"text-[16px]'>🔗</span>
+                
+              <LuLink size={14} color="black"/>
                 <span className="text-lg font-semibold">Social Links</span>
 </div>
 
@@ -106,7 +108,7 @@ const isDesktopOrLaptop = useMediaQuery({
 
                 <div className='flex mb-2 gap-2 items-center'>
                     
-   <span className='text-[14px]'>🔗</span>
+ <LuLink size={12} color="black"/>
                 <span className="text-[16px] font-semibold">Social Links</span>
 
 </div>

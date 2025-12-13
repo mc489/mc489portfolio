@@ -11,9 +11,16 @@ import { MdDownload } from 'react-icons/md';
 import { FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive'
 import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
+import { MdMailOutline } from "react-icons/md";
+import { RiMessengerLine } from "react-icons/ri";
+import { LuBriefcaseBusiness } from "react-icons/lu";
+import { FaTimeline } from "react-icons/fa6";
 import RESUME from "./assets/RESUME.pdf"
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookMessenger } from 'react-icons/fa';
+import { MdOutlineDownload } from "react-icons/md";
+
+import { MdVerified } from "react-icons/md";
 function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
@@ -104,17 +111,23 @@ function Header() {
 
                         <div className="flex flex-row relative items-center justify-between">
 
-                            <div className="flex items-center">
+                            <div className="flex items-center gap-2">
                                 <h1 className="text-[24px] max-[500px]:text-[18px]">MC Ganir</h1>
-                                <FontAwesomeIcon icon={faCheckCircle} color="blue"
-                                    className="ml-[5px] max-[500px]:w-[12px] " />
+                       
+                                
+                                    <MdVerified color="blue"
+                                
+                                     className="text-[16px]" />
                             </div>
+
+
                             <a href={RESUME} download target="_blank" rel="noopener noreferrer">
                                 <button className="cursor-pointer" >
                                     <div className="flex items-center group gap-1">
                                         <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 
                                         group-hover:translate-x-0 duration-200">Download My Resume</span>
-                                        <MdDownload style={{ marginRight: '8px' }} />
+                                        
+                                        <MdOutlineDownload className="text-[20px] " />
                                     </div>
                                 </button>
                             </a>
@@ -138,9 +151,10 @@ function Header() {
                         text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                     <div className="flex gap-[8px] items-center">
-                                        <FaFacebookMessenger size={18} color="white" />
+                                    
+                                        <RiMessengerLine size={16} color="white" />
                                         Message Now
-                                        <ChevronRight size={18} color="white" />
+                                        <ChevronRight size={16} color="white" />
                                     </div>
                                 </button>
                             </a>
@@ -149,7 +163,8 @@ function Header() {
                         button  px-[16px] py-[8px]  duration-200
                         text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
                                 <div className="flex items-center gap-[8px]">
-                                    <FaEnvelope size="16px" color="black" />
+                                    
+                                    <MdMailOutline size={16} color="black" />
                                     Send Email
                                 </div>
                             </button>
@@ -162,8 +177,8 @@ function Header() {
 
  
                                     <div className="flex gap-[8px] items-center">
-
-                                    <FaBriefcase size="16px" color="black" />
+<LuBriefcaseBusiness size={16} color="black"/>
+                                    
                                     Portfolio
                                 </div>
                             </button>
@@ -231,8 +246,8 @@ function Header() {
 
                                 <div className="flex items-center ">
                                     <h1 className="text-[16px] font-semibold">MC Ganir</h1>
-                                    <FontAwesomeIcon icon={faCheckCircle} color="blue"
-                                        className="ml-[5px] w-[12px] " />
+                                      <MdVerified  icon={faCheckCircle} color="blue"
+                              className="ml-[5px] w-[10px] " />
                                 </div>
 
 
@@ -244,7 +259,7 @@ function Header() {
                                         <div className="flex items-center group gap-1 cursor-pointer ">
                                             <span className="text-[10px] opacity-0 group-hover:opacity-100 
                             translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
-                                            <MdDownload size={12} />
+                                            <MdOutlineDownload size={12} />
                                         </div>
                                     </button>
                                 </a>
@@ -266,7 +281,7 @@ function Header() {
                         text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
                                         <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
                                         <div className="flex gap-[5px] items-center">
-                                           <FaFacebookMessenger size={10} color="white" />
+                                           <RiMessengerLine size={10} color="white" />
                                             Message
                                             <ChevronRight size={10} color="white" />
                                         </div>
@@ -277,7 +292,7 @@ function Header() {
 
                                     <button className="cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
                                         <div className="flex items-center gap-[5px]">
-                                            <FaEnvelope size={10} color="black" />
+                                           <MdMailOutline size={10} color="black" />
                                             Email
                                         </div>
                                     </button>
@@ -288,7 +303,7 @@ function Header() {
 
                                     <div className="flex items-center gap-[5px]">
 
-                                        <FaBriefcase size={10} />
+                                        <LuBriefcaseBusiness size={10} />
                                         Portfolio
                                     </div>
 

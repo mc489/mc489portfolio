@@ -33,7 +33,7 @@ import wotg3 from "./assets/projectsimg/wotg3.png"
 import lid from "./assets/projectsimg/lid.jpg"
 import card1 from "./assets/projectsimg/card1.jpg"
 import ecosia from "./assets/projectsimg/ECOSIA.jpg"
-
+import { GrProjects } from "react-icons/gr";
 function Nigga({ setShowModal }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
@@ -303,8 +303,9 @@ useEffect(() => {
 
                                 {/* Header - KEEP ONLY ONE */}
                                 <div className='flex justify-between items-center'>
-                                    <div className='flex items-center gap-2'>
-                                        <span className='text-[24px]'> 🗂️</span>
+                                    <div className='flex items-center gap-3 '>
+                                     <GrProjects size={16} color="black" />
+                                                               
                                         <span className="text-[24px] font-semibold">All Projects</span>
                                     </div>
                                     <button
@@ -458,8 +459,8 @@ useEffect(() => {
 
                                 {/* Header - KEEP ONLY ONE */}
                                 <div className='flex justify-between items-center'>
-                                    <div className='flex items-center gap-2'>
-                                        <span className='text-[20px]'> 🗂️</span>
+                                    <div className='flex items-center gap-3'>
+                                             <GrProjects size={12} color="black" />
                                         <span className="text-[20px] font-semibold">All Projects</span>
                                     </div>
                                     <button

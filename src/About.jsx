@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 function About() {
     // State to manage whether the full text is shown on mobile/tablet
@@ -31,8 +32,16 @@ function About() {
             {/* Desktop View (No See More/Less needed) */}
             {isDesktopOrLaptop &&
                 <div className="flex justify-center items-center ">
-                    <div className="hover:shadow-sm relative max-w-[340px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
-                        <h1 className="text-xl font-semibold mb-2">About</h1>
+                    <div className="hover:shadow-sm relative max-w-[340px] rounded-[16px] w-full p-[15px] mt-[10px] 
+                    text-left border border-gray-300 ">
+                   
+                   
+                   <div className='flex items-center gap-2 '>
+                        <IoMdInformationCircleOutline size={16} color="black" />
+                        <h1 className="text-lg font-semibold ">About</h1>
+                        </div>
+                        
+                        
                         <p className=" text-[14px]">{p1}</p>
                         <br/>
                         <p className='text-[14px]'>{p2}</p>
@@ -45,10 +54,15 @@ function About() {
             {/* Tablet or Mobile View (With See More/Less) */}
             {isTabletOrMobile &&
                 <div className="flex justify-center items-center">
-                    <div className="relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
-                        <h1 className="text-[16px] font-semibold mb-2">About</h1>
-                        
-                        {/* Conditionally render paragraphs or the short version */}
+                    <div className="relative max-w-[330px] rounded-[16px] w-full 
+                    p-[15px] mt-[10px] text-left border border-gray-300">
+                     
+                      <div className='flex items-center gap-2 mb-2 '>
+                      <IoMdInformationCircleOutline size={12} color="black"/> 
+                        <h1 className="text-[16px] font-semibold ">About</h1>
+                                       
+</div>
+                           {/* Conditionally render paragraphs or the short version */}
                         {isMobileExpanded ? (
                             // Full Text View
                             <>
