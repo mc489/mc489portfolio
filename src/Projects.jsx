@@ -21,7 +21,7 @@ function Projects() {
 
                 <div className=" flex flex-col items-center justify-center mt-3">
 
-                    <div className="hover:shadow-sm py-[12px] w-full max-w-[660px]  flex flex-col  px-[15px] justify-center 
+                    <div className="hover:shadow-sm py-[12px] w-full max-w-[650px]  flex flex-col  px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 
@@ -38,35 +38,47 @@ function Projects() {
                         </div>
 
 
-<a href="https://e-compare-public-uwu.vercel.app/ " target="_blank" rel="noopenner noreferrer">
+<a href="https://ecompare-ten.vercel.app/ " target="_blank" rel="noopenner noreferrer">
                         <div className=' w-full px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                            <h1 className='text-[16px] font-bold   mb-[5px]'>
+                         
+                         <div className="flex items-center justify-between mb-[5px]">
+                            <h1 className='text-[16px] font-bold   '>
                                 E-Compare
                             </h1>
+                            <span className="text-[10px] font-semibold italic text-gray-600">ecompare-ten.vercel.app</span>
+                            </div>
                             <p className='text-[12px]'>
                                 Comparing products between by Lazada and Shopee
                             </p>
                         </div>
 </a>
-                        <div className=' w-full px-[20px] py-[10px] text-left
+                        <button onClick={() => setShowModal(true)} className=' w-full px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
+                          
+                           <div className="flex items-center justify-between mb-[5px]">
                             <h1 className='font-bold ' >CMEN</h1>
+                               <span className="text-[10px] font-semibold italic text-gray-600">Deployment Pending</span>
+                            </div>
                             <p className='text-[12px]'>
                                 A drag and drop survey creation website
                             </p>
-                        </div>
+                        </button>
 
-                        <div className=' w-full px-[20px] py-[10px] text-left
+                        <button onClick={() => setShowModal(true)} className=' w-full px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
+
+                          <div className="flex items-center justify-between mb-[5px]">
                             <h1 className='font-bold text-[16px]'>ELAD KICKS</h1>
+                                   <span className="text-[10px] font-semibold italic text-gray-600">Deployment Pending</span>
+                           </div>
                             <p className='text-[12px]'>
                                 An information website for footwear business
                             </p>
-                        </div>
+                        </button>
                     </div>
 
                     
@@ -110,13 +122,17 @@ function Projects() {
                             </button>
                         </div>
 
-                        <a href='https://ecompare-asdas.vercel.app/' target='_blank' rel='noopener noreferrer'>
+                        <a href='https://ecompare-ten.vercel.app/' target='_blank' rel='noopener noreferrer'>
                             <button className='w-full cursor-pointer '>
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] '>
-                                    <h1 className='text-[14px] font-semibold  mb-[5px]'>
+                                  <div className="flex items-center justify-between mb-[5px]">
+                                    <h1 className='text-[14px] font-semibold'>
                                         E-Compare
                                     </h1>
+                                    <span className="text-[8px] font-semibold italic text-gray-600">ecompare-ten.vercel.app</span>
+
+                                    </div>
                                     <p className='text-[10px]'>
                                         Comparing products between by Lazada and Shopee
                                     </p>
@@ -125,31 +141,36 @@ function Projects() {
                         </a>
 
 
-                        <a href='' target='_blank' rel='noopener noreferrer'>
-                            <button className='w-full cursor-pointer'>
+                      
+                            <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px]'>
-
+ <div className="flex items-center justify-between mb-[5px]">
                                     <h1 className='font-semibold text-[14px] mb-[5px]' >CMEN</h1>
+                                 <span className="text-[8px] font-semibold italic text-gray-600">Deployment Pending</span>
+                                </div>
                                     <p className='text-[10px]'>
                                         A drag and drop survey creation website
                                     </p>
                                 </div>
                             </button>
-                        </a>
+                     
 
 
-                        <a href='' target='_blank' rel='noopener noreferrer'>
-                            <button className='w-full cursor-pointer'>
+                       
+                            <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px]'>
-                                    <h1 className='font-semibold text-[14px] mb-[5px]'>ELAD KICKS</h1>
+                                     <div className="flex items-center justify-between mb-[5px]">
+                            <h1 className='font-bold text-[14px]'>ELAD KICKS</h1>
+                                   <span className="text-[8px] font-semibold italic text-gray-600">Deployment Pending</span>
+                           </div>
                                     <p className='text-[10px]'>
                                         An information website for footwear business
                                     </p>
                                 </div>
                             </button>
-                        </a>
+                       
                     </div>
 
                       <AnimatePresence>

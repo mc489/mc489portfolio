@@ -21,7 +21,7 @@ const isDesktopOrLaptop = useMediaQuery({
         {isDesktopOrLaptop &&
         <div className="flex  items-center justify-center ">
 
-            <div className=" hover:shadow-sm flex-col  w-full relative max-w-[254px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
+            <div className=" hover:shadow-sm flex-col  w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
                
                <div className='flex items-center gap-2 mb-[14px] '>
                 
