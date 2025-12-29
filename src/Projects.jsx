@@ -38,7 +38,7 @@ function Projects() {
                         </div>
 
 
-<a href="https://ecompare-ten.vercel.app/ " target="_blank" rel="noopenner noreferrer">
+<a href="https://ecompare.site/ " target="_blank" rel="noopenner noreferrer">
                         <div className=' w-full px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
@@ -47,7 +47,7 @@ function Projects() {
                             <h1 className='text-[16px] font-bold   '>
                                 E-Compare
                             </h1>
-                            <span className="text-[10px] font-semibold italic text-gray-600">ecompare-ten.vercel.app</span>
+                            <span className="text-[10px] font-semibold italic text-gray-600">ecompare.site</span>
                             </div>
                             <p className='text-[12px]'>
                                 Comparing products between by Lazada and Shopee
@@ -122,7 +122,7 @@ function Projects() {
                             </button>
                         </div>
 
-                        <a href='https://ecompare-ten.vercel.app/' target='_blank' rel='noopener noreferrer'>
+                        <a href='https://ecompare.site/' target='_blank' rel='noopener noreferrer'>
                             <button className='w-full cursor-pointer '>
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] '>
@@ -130,7 +130,8 @@ function Projects() {
                                     <h1 className='text-[14px] font-semibold'>
                                         E-Compare
                                     </h1>
-                                    <span className="text-[8px] font-semibold italic text-gray-600">ecompare-ten.vercel.app</span>
+                                    <span className="text-[8px] font-semibold italic text-gray-600">
+                                        ecompare.site</span>
 
                                     </div>
                                     <p className='text-[10px]'>
