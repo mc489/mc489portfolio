@@ -34,9 +34,14 @@ import lid from "./assets/projectsimg/lid.jpg"
 import card1 from "./assets/projectsimg/card1.jpg"
 import ecosia from "./assets/projectsimg/ECOSIA.jpg"
 import { GrProjects } from "react-icons/gr";
+
 function Nigga({ setShowModal }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
+
+    // --- Navigation & Filtering State ---
+    const navItems = ["All", "Websites", "Apps", "Graphics"];
+    const [activeItem, setActiveItem] = useState(navItems[0]);
 
     // --- Modal Drag State ---
     const [dragOffset, setDragOffset] = useState(0);
@@ -54,66 +59,46 @@ function Nigga({ setShowModal }) {
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
 
-    // Group images for easier handling
+    // --- Image Category Arrays ---
     const galleryImages = [
-        c1, c2, c3, c4, c5,
-        e1, e2, e3, e4, e5,
-        ek1, ek2, ek3, ek4, ek5, ja, ky, toxxazi, ecomlogo,lid, card1,
-        expwarmer, jirsey1, trend, chades, ecosia,
-         wotg1,wotg2,wotg3,
-         aircon1, cover, neutral,
-       batwar
+        c1, c2, c3, c4, c5, e1, e2, e3, e4, e5, ek1, ek2, ek3, ek4, ek5, 
+        ja, ky, toxxazi, ecomlogo, lid, card1, expwarmer, jirsey1, 
+        trend, chades, ecosia, wotg1, wotg2, wotg3, aircon1, cover, neutral, batwar
     ];
+
+    const WebsitesImages = [c1, c2, c3, c4, c5, e1, e2, e3, e4, e5, ek1, ek2, ek3, ek4, ek5];
+    const appImages = [wotg1, wotg2, wotg3];
+    const GraphicsImages = [
+        ja, ky, toxxazi, ecomlogo, lid, card1, expwarmer, jirsey1, 
+        trend, chades, ecosia, aircon1, cover, neutral, batwar
+    ];
+
+    // Determine which images to display
+    const displayedImages = 
+        activeItem === "Websites" ? WebsitesImages :
+        activeItem === "Apps" ? appImages :
+        activeItem === "Graphics" ? GraphicsImages :
+        galleryImages;
 
     useEffect(() => {
         requestAnimationFrame(() => setInitialTranslate(0));
     }, []);
 
     // --- Drag Logic ---
-    const handleTouchStart = (e) => {
-        setIsDragging(true);
-        startY.current = e.touches[0].clientY;
-    };
-
-    const handleMouseDown = (e) => {
-        setIsDragging(true);
-        startY.current = e.clientY;
-    };
-
-    const handleTouchMove = (e) => {
-        if (!isDragging) return;
-        const currentY = e.touches[0].clientY;
-        const diff = currentY - startY.current;
-        setDragOffset(diff);
-    };
-
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
-        const currentY = e.clientY;
-        const diff = currentY - startY.current;
-        setDragOffset(diff);
-    };
+    const handleTouchStart = (e) => { setIsDragging(true); startY.current = e.touches[0].clientY; };
+    const handleMouseDown = (e) => { setIsDragging(true); startY.current = e.clientY; };
+    const handleTouchMove = (e) => { if (!isDragging) return; setDragOffset(e.touches[0].clientY - startY.current); };
+    const handleMouseMove = (e) => { if (!isDragging) return; setDragOffset(e.clientY - startY.current); };
 
     const handleDragEnd = () => {
         setIsDragging(false);
-        if (isFullscreen && dragOffset > 50) {
-            setIsClosing(true);
-            setIsFullscreen(false);
-            setInitialTranslate(300);
-            setTimeout(() => { setShowModal(false); }, 50);
-            return;
-        }
         if (dragOffset > 50) {
             setIsClosing(true);
             setInitialTranslate(300);
             setTimeout(() => { setShowModal(false); }, 250);
             return;
         }
-        if (dragOffset < -50) {
-            setIsFullscreen(true);
-            setDragOffset(0);
-            return;
-        }
+        if (dragOffset < -50) { setIsFullscreen(true); setDragOffset(0); return; }
         setDragOffset(0);
     };
 
@@ -142,423 +127,163 @@ function Nigga({ setShowModal }) {
     const preventScroll = (e) => e.preventDefault();
 
     // --- Lightbox Functions ---
-    const openLightbox = (index) => {
-        setCurrentImageIndex(index);
-        setLightboxOpen(true);
-    };
-
-    const closeLightbox = () => {
-        setLightboxOpen(false);
-    };
+    const openLightbox = (index) => { setCurrentImageIndex(index); setLightboxOpen(true); };
+    const closeLightbox = () => setLightboxOpen(false);
 
     const nextSlide = (e) => {
         e?.stopPropagation();
-        setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+        setCurrentImageIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
     };
 
     const prevSlide = (e) => {
         e?.stopPropagation();
-        setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+        setCurrentImageIndex((prev) => (prev === 0 ? displayedImages.length - 1 : prev - 1));
     };
 
-    // Swipe Logic for Lightbox
-    const minSwipeDistance = 50;
-    const onLbTouchStart = (e) => {
-        setTouchEnd(null);
-        setTouchStart(e.targetTouches[0].clientX);
-    };
-    const onLbTouchMove = (e) => {
-        setTouchEnd(e.targetTouches[0].clientX);
-    };
+    const onLbTouchStart = (e) => { setTouchEnd(null); setTouchStart(e.targetTouches[0].clientX); };
+    const onLbTouchMove = (e) => { setTouchEnd(e.targetTouches[0].clientX); };
     const onLbTouchEnd = () => {
         if (!touchStart || !touchEnd) return;
         const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
-        if (isLeftSwipe) nextSlide();
-        if (isRightSwipe) prevSlide();
+        if (distance > 50) nextSlide();
+        if (distance < -50) prevSlide();
     };
 
-    // --- Render Component for the Gallery Grid ---
+    // --- Sub-Component: Navigation Menu ---
+    const NavMenu = () => (
+        <nav className={`relative ${isDesktopOrLaptop ? 'pl-2 min-w-[150px]' : 'w-full mb-4'}`}>
+            {isDesktopOrLaptop && <div className="absolute left-2 top-0 bottom-0 w-px bg-gray-300"></div>}
+            <ul className={`${isTabletOrMobile ? 'flex overflow-x-auto gap-2 no-scrollbar pb-2' : ''}`}>
+                {navItems.map((item) => (
+                    <li key={item} className={`${isDesktopOrLaptop ? 'mb-4' : 'flex-shrink-0'}`}>
+                        <button
+                            onClick={() => { setActiveItem(item); setCurrentImageIndex(0); }}
+                            className={`text-left py-1 px-4 duration-200 ease-in-out whitespace-nowrap ${
+                                activeItem === item
+                                    ? "text-black font-semibold border-l-4 border-black"
+                                    : "text-gray-500 hover:text-gray-700 hover:border-l-4 hover:border-gray-400"
+                            }`}
+                        >
+                            {item}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+
     const GalleryGrid = () => (
-        <div className={`flex gap-4 mt-5 flex-wrap ${ isTabletOrMobile ? 'w-full gap-2 items-center justify-center' : '' }`}>
-            {galleryImages.map((img, index) => (
+        <div className={`flex gap-4 mt-5 flex-wrap flex-1 ${isTabletOrMobile ? 'w-full gap-2 items-center justify-center' : ''}`}>
+            {displayedImages.map((img, index) => (
                 <div 
                     key={index}
                     onClick={() => openLightbox(index)}
-               className='cursor-pointer overflow-hidden rounded-md shadow-sm hover:opacity-80 transition-opacity w-24 h-24 bg-gray-100'>
-            
-                    <img 
-                        src={img} 
-                        alt={`Project ${index}`} 
-                        className="w-full  h-full object-cover "
-                    />
+                    className='cursor-pointer overflow-hidden rounded-md shadow-sm hover:opacity-80 transition-opacity w-24 h-24 bg-gray-100'
+                >
+                    <img src={img} alt={`Project ${index}`} className="w-full h-full object-cover" />
                 </div>
             ))}
         </div>
     );
 
-    // --- Main Modal Style Calculation ---
-    const modalOverlayStyle = {
-        opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
-        transform: `translateY(${initialTranslate + dragOffset}px)`,
-        transition: isDragging ? "none" : (forceFade ? "opacity 0.1s ease-out" : "opacity 0.25s ease-out"),
-        pointerEvents: 'auto'
-    };
-
-    const modalContentStyle = {
-        transform: isFullscreen
-            ? `translateY(${isDragging ? dragOffset : 0}px)`
-            : `translateY(${initialTranslate + dragOffset}px)`,
-        height: isFullscreen && !isDragging ? '100vh' : 'auto',
-        transition: isDragging ? "none" : "transform 0.25s ease-out, height 0.3s ease-out ",
-    };
-
- 
-useEffect(() => {
-    // 1. Only run this logic if the lightbox is actually open
-    if (!lightboxOpen) return;
-
-    // 2. Define the event handler
-    const handleKeyDown = (e) => {
-        if (e.key === "ArrowLeft") {
-            prevSlide();
-        } else if (e.key === "ArrowRight") {
-            nextSlide();
-        } else if (e.key === "Escape") {
-            // Optional: Close on Escape key (Good UX)
-            closeLightbox();
-        }
-    };
-
-    // 3. Add the event listener to the window
-    window.addEventListener("keydown", handleKeyDown);
-
-    // 4. Cleanup function: Remove the listener when the component unmounts
-    // or when lightboxOpen becomes false. This prevents memory leaks.
-    return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-    };
-}, [lightboxOpen, prevSlide, nextSlide, closeLightbox]);
+    useEffect(() => {
+        if (!lightboxOpen) return;
+        const handleKeyDown = (e) => {
+            if (e.key === "ArrowLeft") prevSlide();
+            else if (e.key === "ArrowRight") nextSlide();
+            else if (e.key === "Escape") closeLightbox();
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [lightboxOpen, currentImageIndex, displayedImages]);
 
     return (
-
-
         <>
-
-            {isDesktopOrLaptop &&
+            {/* --- DESKTOP VIEW --- */}
+            {isDesktopOrLaptop && (
                 <>
-
                     <div
-                        className="fixed inset-0 bg-gray-600 "
+                        className="fixed inset-0 bg-gray-600 z-40"
                         style={{
-                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.6),
                             transform: `translateY(${initialTranslate + dragOffset}px)`,
-                            opacity: isDragging ? 0 : 0.600,
-                            transition: isDragging
-                                ? "none"
-                                : forceFade
-                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                                    : "opacity 0.25s ease-out, transform 0.25s ease-out",
-                            pointerEvents: 'auto'
+                            transition: isDragging ? "none" : "opacity 0.25s ease-out, transform 0.25s ease-out",
                         }}
-                        onClick={() => {
-                            if (isFullscreen) return; // Don't close when fullscreen
-                            setForceFade(true);
-                            setInitialTranslate(300);
-                            setTimeout(() => setShowModal(false), 250);
-                        }}
+                        onClick={() => { if (!isFullscreen) setShowModal(false); }}
                     />
-              <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
-    <div
-        ref={modalRef}
-        className={`overflow-scroll overflow-x-auto bg-white flex w-full flex-col relative gap-1 px-[30px] py-[30px]
-             text-left border border-gray-300 ${
-            isFullscreen ? 'rounded-none' : 'rounded-t-[16px] max-h-[80vh]' // <-- ADD max-h-[80vh] class
-        }`}
-        style={{
-            transform: isFullscreen
-                ? `translateY(${isDragging ? dragOffset : 0}px)`
-                : `translateY(${initialTranslate + dragOffset}px)`,
-            
-            // Set height to 100vh when fullscreen, but allow it to be constrained by max-h when not
-            height: isFullscreen && !isDragging ? '100vh' : 'auto', 
-
-            transition: isDragging
-                ? "none"
-                : "transform 0.25s ease-out, height 0.3s ease-out ",
-        }}
-    >
-                            <div>
-                                {/* Drag handle - replaces ChevronDown button */}
-                                <button
-                                    onTouchStart={handleTouchStart}
-                                    onMouseDown={handleMouseDown}
-                                    className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing py-2 -mt-2"
-                                >
-                                    <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
-                                </button>
-
-
-
-                                {/* Header - KEEP ONLY ONE */}
-                                <div className='flex justify-between items-center'>
-                                    <div className='flex items-center gap-3 '>
-                                     <GrProjects size={16} color="black" />
-                                                               
-                                        <span className="text-[24px] font-semibold">All Projects</span>
-                                    </div>
-                                    <button
-                                        onClick={() => {
-
-                                            setIsClosing(true);
-                                            setForceFade(true);        // <- fast opacity fade
-                                            setInitialTranslate(300);  // <- normal slide
-                                            setTimeout(() => setShowModal(false), 50);
-                                        }}
-                                        className="cursor-pointer"
-                                    >
-
-
-
-                                        <span className='cursor-pointer text-[24px]'>✕</span>
-                                    </button>
-                                </div>                 <div className='mt-[5px] mb-[5px]'>
-
-                                  
-
-
-                              {/* --- THIS IS THE NEW ALBUM GRID --- */}
-                        <GalleryGrid className= '!items-center !justify-center' />
-                    </div>
-
-    
-                </div>
-            </div>
-
-            {/* --- 3. THE LIGHTBOX OVERLAY (Album View) --- */}
-            {lightboxOpen && (
-                <div 
-                    className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
-                    onClick={closeLightbox}
-                >
-                    {/* Close Button */}
-                    <button 
-                        className=" cursor-pointer absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
-                        onClick={closeLightbox}
-                    >
-                        &times;
-                    </button>
-
-                    {/* Prev Button */}
-                    <button 
-                        className=" cursor-pointer absolute left-2 md:left-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
-                        onClick={prevSlide}
-                    >
-                        &#8249;
-                    </button>
-
-                    {/* Image Container with Swipe */}
-                    <div 
-                        className="relative max-w-4xl w-full h-full flex items-center justify-center"
-                        onClick={(e) => e.stopPropagation()} // Stop click closing modal
-                        onTouchStart={onLbTouchStart}
-                        onTouchMove={onLbTouchMove}
-                        onTouchEnd={onLbTouchEnd}
-                    >
-                        <img 
-                            src={galleryImages[currentImageIndex]} 
-                            alt="Full View" 
-                            className="max-h-[85vh] max-w-full object-contain rounded shadow-2xl select-none"
-                        />
-                        <div className="absolute bottom-5 text-white/50 text-sm">
-                            {currentImageIndex + 1} / {galleryImages.length}
+                    <div className={`fixed flex w-full justify-center items-center z-50 ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
+                        <div
+                            ref={modalRef}
+                            className={`overflow-y-auto bg-white flex w-full flex-col relative px-[30px] py-[30px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[80vh]'}`}
+                            style={{
+                                transform: isFullscreen ? `translateY(${isDragging ? dragOffset : 0}px)` : `translateY(${initialTranslate + dragOffset}px)`,
+                                transition: isDragging ? "none" : "transform 0.25s ease-out",
+                            }}
+                        >
+                            <button onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} className="flex justify-center w-full py-2 -mt-2 cursor-grab">
+                                <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
+                            </button>
+                            <div className='flex justify-between items-center mb-6'>
+                                <div className='flex items-center gap-3'><GrProjects size={16}/><span className="text-[24px] font-semibold">Projects</span></div>
+                                <button onClick={() => setShowModal(false)} className="text-[24px]">✕</button>
+                            </div>
+                            <div className="flex flex-row">
+                                <NavMenu />
+                                <GalleryGrid />
+                            </div>
                         </div>
                     </div>
-
-                    {/* Next Button */}
-                    <button 
-                        className=" cursor-pointer absolute right-2 md:right-5 text-white text-5xl hover:scale-110 p-2 z-50 select-none"
-                        onClick={nextSlide}
-                    >
-                        &#8250;
-                    </button>
-                </div>
-            )}
-        
-   
-
-
-
-                           
-
-                          
-
-
-                    </div>
                 </>
-            }
+            )}
 
-            {isTabletOrMobile &&
+            {/* --- MOBILE VIEW --- */}
+            {isTabletOrMobile && (
                 <>
-
-   <div
-                        className="fixed inset-0 bg-gray-600 "
+                    <div
+                        className="fixed inset-0 bg-gray-600 z-40"
                         style={{
-                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
+                            opacity: isFullscreen ? 0 : 0.6,
                             transform: `translateY(${initialTranslate + dragOffset}px)`,
-                            opacity: isDragging ? 0 : 0.600,
-                            transition: isDragging
-                                ? "none"
-                                : forceFade
-                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                                    : "opacity 0.25s ease-out, transform 0.25s ease-out",
-                            pointerEvents: 'auto'
+                            transition: "opacity 0.25s ease-out",
                         }}
-                        onClick={() => {
-                            if (isFullscreen) return; // Don't close when fullscreen
-                            setForceFade(true);
-                            setInitialTranslate(300);
-                            setTimeout(() => setShowModal(false), 250);
-                        }}
+                        onClick={() => setShowModal(false)}
                     />
-              <div className={`fixed flex w-full justify-center items-center z-[50] ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
-            <div
-                ref={modalRef}
-                className={`bg-white flex w-full flex-col relative gap-1 px-[15px] py-[35px] text-left border border-gray-300 shadow-xl
-                    ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px] max-h-[85vh]'}
-                `}
-                style={{
-                    // LOGIC FIX: Keep height 100vh if fullscreen, regardless of dragging state
-                    height: isFullscreen ? '100vh' : 'auto',
-                    
-                    transform: isFullscreen
-                        ? `translateY(${isDragging ? dragOffset : 0}px)`
-                        : `translateY(${initialTranslate + dragOffset}px)`,
-
-                    // CSS FIX: This stops the browser from trying to scroll the page while you drag
-                    touchAction: 'none',
-
-                    transition: isDragging
-                        ? "none"
-                        : "transform 0.25s ease-out, height 0.3s ease-out",
-                }}
-            >
-                          
-                                {/* Drag handle - replaces ChevronDown button */}
-                                <button
-                                    onTouchStart={handleTouchStart}
-                                    onMouseDown={handleMouseDown}
-                                    className="flex justify-center items-center w-full cursor-grab active:cursor-grabbing 
-                                    py-2 -mt-2"
-                                >
-                                    <div className="w-12 h-1 bg-gray-300 rounded-full mb-2" />
-                                </button>
-
-
-
-                                {/* Header - KEEP ONLY ONE */}
-                                <div className='flex justify-between items-center'>
-                                    <div className='flex items-center gap-3'>
-                                             <GrProjects size={12} color="black" />
-                                        <span className="text-[20px] font-semibold">All Projects</span>
-                                    </div>
-                                    <button
-                                        onClick={() => {
-
-                                            setIsClosing(true);
-                                            setForceFade(true);        // <- fast opacity fade
-                                            setInitialTranslate(300);  // <- normal slide
-                                            setTimeout(() => setShowModal(false), 50);
-                                        }}
-                                        className="cursor-pointer"
-                                    >
-
-
-
-                                        <span className='cursor-pointer text-[22px]'>✕</span>
-                                    </button>
-                                </div>        
-
-
-
-
-                               
-
-<div 
-        className="flex-1 overflow-y-auto overflow-x-hidden w-full"
-        // Optional: stop propagation ensures scrolling inside here doesn't trigger drag on parent if logic overlaps
-        onPointerDown={(e) => e.stopPropagation()} 
-    >
-                              {/* --- THIS IS THE NEW ALBUM GRID --- */}
-                        <GalleryGrid c />
-                    </div>
-
-    </div>
-              
-            
-
-            {/* --- 3. THE LIGHTBOX OVERLAY (Album View) --- */}
-            {lightboxOpen && (
-                <div 
-                    className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
-                    onClick={closeLightbox}
-                >
-                    {/* Close Button */}
-                    <button 
-                        className="cursor-pointer absolute top-5 right-5 text-white text-4xl hover:text-gray-300 z-50 p-2"
-                        onClick={closeLightbox}
-                    >
-                        &times;
-                    </button>
-
-                    {/* Prev Button */}
-                    <button 
-                        className="cursor-pointer absolute left-2 md:left-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
-                        onClick={prevSlide}
-                    >
-                        &#8249;
-                    </button>
-
-                    {/* Image Container with Swipe */}
-                    <div 
-                        className="relative max-w-4xl w-full px-5  h-full flex items-center justify-center"
-                        onClick={(e) => e.stopPropagation()} // Stop click closing modal
-                        onTouchStart={onLbTouchStart}
-                        onTouchMove={onLbTouchMove}
-                        onTouchEnd={onLbTouchEnd}
-                    >
-                        <img 
-                            src={galleryImages[currentImageIndex]} 
-                            alt="Full View" 
-                            className="max-h-full max-w-full object-contain rounded shadow-2xl select-none"
-                        />
-                        <div className="absolute bottom-5 text-white/50 text-sm">
-                            {currentImageIndex + 1} / {galleryImages.length}
+                    <div className={`fixed flex w-full justify-center items-center z-50 ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
+                        <div
+                            ref={modalRef}
+                            className={`bg-white flex w-full flex-col relative px-[15px] py-[35px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[85vh]'}`}
+                            style={{
+                                transform: isFullscreen ? `translateY(${isDragging ? dragOffset : 0}px)` : `translateY(${initialTranslate + dragOffset}px)`,
+                                touchAction: 'none',
+                                transition: isDragging ? "none" : "transform 0.25s ease-out",
+                            }}
+                        >
+                            <button onTouchStart={handleTouchStart} className="flex justify-center w-full py-2 -mt-2"><div className="w-12 h-1 bg-gray-300 rounded-full mb-2" /></button>
+                            <div className='flex justify-between items-center mb-4'>
+                                <div className='flex items-center gap-2'><GrProjects size={12}/><span className="text-[20px] font-semibold">Projects</span></div>
+                                <button onClick={() => setShowModal(false)} className="text-[22px]">✕</button>
+                            </div>
+                            <NavMenu />
+                            <div className="flex-1 overflow-y-auto w-full"><GalleryGrid /></div>
                         </div>
                     </div>
+                </>
+            )}
 
-                    {/* Next Button */}
-                    <button 
-                        className="cursor-pointer absolute right-2 md:right-5 text-white text-[24px] hover:scale-110 p-2 z-50 select-none"
-                        onClick={nextSlide}
-                    >
-                        &#8250;
-                    </button>
+            {/* --- LIGHTBOX OVERLAY --- */}
+            {lightboxOpen && (
+                <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm" onClick={closeLightbox}>
+                    <button className="absolute top-5 right-5 text-white text-4xl z-50 p-2" onClick={closeLightbox}>&times;</button>
+                    <button className="absolute left-2 md:left-5 text-white text-[24px] z-50 p-2" onClick={prevSlide}>&#8249;</button>
+                    <div className="relative max-w-4xl w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()} onTouchStart={onLbTouchStart} onTouchMove={onLbTouchMove} onTouchEnd={onLbTouchEnd}>
+                        <img src={displayedImages[currentImageIndex]} alt="Full View" className="max-h-full max-w-full object-contain rounded shadow-2xl" />
+                        <div className="absolute bottom-5 text-white/50 text-sm">{currentImageIndex + 1} / {displayedImages.length}</div>
+                    </div>
+                    <button className="absolute right-2 md:right-5 text-white text-[24px] z-50 p-2" onClick={nextSlide}>&#8250;</button>
                 </div>
             )}
-                       
-  </div>
-          
-                  
-
-                </>
-            }
         </>
-
-
-    )
-
-
+    );
 }
-export default Nigga
+
+export default Nigga;
