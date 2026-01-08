@@ -158,7 +158,7 @@ function Nigga({ setShowModal }) {
                     <li key={item} className={`${isDesktopOrLaptop ? 'mb-4' : 'flex-shrink-0'}`}>
                         <button
                             onClick={() => { setActiveItem(item); setCurrentImageIndex(0); }}
-                            className={`text-left py-1 px-4 duration-200 ease-in-out whitespace-nowrap ${
+                            className={`cursor-pointer text-left py-1 px-4 duration-200 ease-in-out whitespace-nowrap ${
                                 activeItem === item
                                     ? "text-black font-semibold border-l-4 border-black"
                                     : "text-gray-500 hover:text-gray-700 hover:border-l-4 hover:border-gray-400"
@@ -203,7 +203,7 @@ function Nigga({ setShowModal }) {
             {isDesktopOrLaptop && (
                 <>
                     <div
-                        className="fixed inset-0 bg-gray-600 z-40"
+                        className="fixed inset-0 bg-gray-800 z-40"
                         style={{
                             opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.6),
                             transform: `translateY(${initialTranslate + dragOffset}px)`,
@@ -214,7 +214,7 @@ function Nigga({ setShowModal }) {
                     <div className={`fixed flex w-full justify-center items-center z-50 ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
                         <div
                             ref={modalRef}
-                            className={`overflow-y-auto bg-white flex w-full flex-col relative px-[30px] py-[30px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[80vh]'}`}
+                            className={`overflow-y-auto bg-white flex w-full h-[550px] flex-col relative px-[30px] py-[30px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[80vh]'}`}
                             style={{
                                 transform: isFullscreen ? `translateY(${isDragging ? dragOffset : 0}px)` : `translateY(${initialTranslate + dragOffset}px)`,
                                 transition: isDragging ? "none" : "transform 0.25s ease-out",
@@ -240,7 +240,7 @@ function Nigga({ setShowModal }) {
             {isTabletOrMobile && (
                 <>
                     <div
-                        className="fixed inset-0 bg-gray-600 z-40"
+                        className="fixed inset-0 bg-gray-100 z-40"
                         style={{
                             opacity: isFullscreen ? 0 : 0.6,
                             transform: `translateY(${initialTranslate + dragOffset}px)`,
@@ -251,7 +251,7 @@ function Nigga({ setShowModal }) {
                     <div className={`fixed flex w-full justify-center items-center z-50 ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
                         <div
                             ref={modalRef}
-                            className={`bg-white flex w-full flex-col relative px-[15px] py-[35px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[85vh]'}`}
+                            className={`bg-white flex w-full h-[550px]  flex-col relative px-[15px] py-[35px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[85vh]'}`}
                             style={{
                                 transform: isFullscreen ? `translateY(${isDragging ? dragOffset : 0}px)` : `translateY(${initialTranslate + dragOffset}px)`,
                                 touchAction: 'none',
