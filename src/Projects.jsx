@@ -37,10 +37,37 @@ function Projects() {
                             </button>
                         </div>
 
+      <button onClick={() => setShowModal(true)} className='w-[320px] px-[20px] py-[10px] text-left
+                         border-1 border-gray-300 rounded-[16px] cursor-pointer
+                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
+                          
+                           <div className="flex items-center justify-between mb-[5px]">
+                            <h1 className='font-bold ' >Dupro</h1>
+                               <span className="text-[10px] font-semibold italic text-gray-600">Designing</span>
+                            </div>
+                            <p className='text-[10px]'>
+                            Allows users to create your own templated website portfolio. 
+                            </p>
+                        </button>
 
+
+                        <button onClick={() => setShowModal(true)} className=' w-[320px] px-[20px] py-[10px] text-left
+                         border-1 border-gray-300 rounded-[16px] cursor-pointer 
+                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
+                          
+                           <div className="flex items-center justify-between mb-[5px]">
+                            <h1 className='font-bold ' >PLV-RCYC App</h1>
+                               <span className="text-[10px] font-semibold italic text-gray-600">Developing</span>
+                            </div>
+                            <p className='text-[10px]'>
+                                  Management System: Events, Attendance, and Membership.
+                            </p>
+                        </button>
+
+                      
 <a href="https://ecompare.site/ " target="_blank" rel="noopenner noreferrer">
-                        <div className=' w-full px-[20px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
+                        <div className=' w-[320px] px-[20px] py-[10px] text-left
+                         border-1 border-gray-300 rounded-[16px] cursor-pointer 
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
                          
                          <div className="flex items-center justify-between mb-[5px]">
@@ -49,36 +76,11 @@ function Projects() {
                             </h1>
                             <span className="text-[10px] font-semibold italic text-gray-600">ecompare.site</span>
                             </div>
-                            <p className='text-[12px]'>
-                                Comparing products between by Lazada and Shopee
+                            <p className='text-[10px]'>
+                                Comparing products between Lazada and Shopee
                             </p>
                         </div>
 </a>
-                        <button onClick={() => setShowModal(true)} className=' w-full px-[20px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
-                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
-                          
-                           <div className="flex items-center justify-between mb-[5px]">
-                            <h1 className='font-bold ' >CMEN</h1>
-                               <span className="text-[10px] font-semibold italic text-gray-600">Deployment Pending</span>
-                            </div>
-                            <p className='text-[12px]'>
-                                A drag and drop survey creation website
-                            </p>
-                        </button>
-
-                        <button onClick={() => setShowModal(true)} className=' w-full px-[20px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px] cursor-pointer w-full
-                       px-2 py-2 hover:-translate-y-0.5  duration-200'>
-
-                          <div className="flex items-center justify-between mb-[5px]">
-                            <h1 className='font-bold text-[16px]'>ELAD KICKS</h1>
-                                   <span className="text-[10px] font-semibold italic text-gray-600">Deployment Pending</span>
-                           </div>
-                            <p className='text-[12px]'>
-                                An information website for footwear business
-                            </p>
-                        </button>
                     </div>
 
                     
@@ -122,7 +124,36 @@ function Projects() {
                             </button>
                         </div>
 
-                        <a href='https://ecompare.site/' target='_blank' rel='noopener noreferrer'>
+                          <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
+                                <div className='px-[15px] py-[10px] text-left
+                         border-1 border-gray-300 rounded-[16px]'>
+ <div className="flex items-center justify-between mb-[5px]">
+                                    <h1 className='font-semibold text-[14px] mb-[5px]' >Dupro</h1>
+                                 <span className="text-[8px] font-semibold italic text-gray-600">Designing</span>
+                                </div>
+                                    <p className='text-[10px]'>
+                                       Allows you to create your own templated website portfolio. 
+                                    </p>
+                                </div>
+                            </button>
+
+                      
+                            <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
+                                <div className='px-[15px] py-[10px] text-left
+                         border-1 border-gray-300 rounded-[16px]'>
+ <div className="flex items-center justify-between mb-[5px]">
+                                    <h1 className='font-semibold text-[14px] mb-[5px]' >PLV-RCYC App</h1>
+                                 <span className="text-[8px] font-semibold italic text-gray-600">Developing</span>
+                                </div>
+                                    <p className='text-[10px]'>
+                                     Management System: Events, Attendance, and Membership.
+                                    </p>
+                                </div>
+                            </button>
+                     
+
+
+                         <a href='https://ecompare.site/' target='_blank' rel='noopener noreferrer'>
                             <button className='w-full cursor-pointer '>
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] '>
@@ -141,37 +172,6 @@ function Projects() {
                             </button>
                         </a>
 
-
-                      
-                            <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
-                                <div className='px-[15px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px]'>
- <div className="flex items-center justify-between mb-[5px]">
-                                    <h1 className='font-semibold text-[14px] mb-[5px]' >CMEN</h1>
-                                 <span className="text-[8px] font-semibold italic text-gray-600">Deployment Pending</span>
-                                </div>
-                                    <p className='text-[10px]'>
-                                        A drag and drop survey creation website
-                                    </p>
-                                </div>
-                            </button>
-                     
-
-
-                       
-                            <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
-                                <div className='px-[15px] py-[10px] text-left
-                         border-1 border-gray-300 rounded-[16px]'>
-                                     <div className="flex items-center justify-between mb-[5px]">
-                            <h1 className='font-bold text-[14px]'>ELAD KICKS</h1>
-                                   <span className="text-[8px] font-semibold italic text-gray-600">Deployment Pending</span>
-                           </div>
-                                    <p className='text-[10px]'>
-                                        An information website for footwear business
-                                    </p>
-                                </div>
-                            </button>
-                       
                     </div>
 
                       <AnimatePresence>
