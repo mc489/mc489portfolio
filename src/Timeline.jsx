@@ -129,6 +129,7 @@ export default function ExperienceTimeline() {
         <div className="absolute left-[4px] top-4 bottom-0 w-px bg-gray-300 z-0"></div>
         
         <div className="space-y-8 mt-4">
+          
           {timeline.map((item, idx) => (
             <div key={idx} className="relative pl-8">
 
