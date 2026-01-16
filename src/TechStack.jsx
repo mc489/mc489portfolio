@@ -15,6 +15,10 @@ function TechStack() {
     const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
 
     const [showModal, setShowModal] = useState(false);
+    const uiuix = ['Figma', 'Adobe XD', 'Sketch']
+    const FrontEnd = [ 'React JS',  'Next.Js', 'Vite']
+    const creative = ['Photoshop', 'Illustrator', 'Premiere Pro']
+
     return (
 
 
@@ -32,7 +36,7 @@ function TechStack() {
 
                         <div className='flex justify-between items-center'>
                             <div className='flex gap-2 items-center'>
-                                 <GrTechnology size={14} color="black"/>
+                                <GrTechnology size={14} color="black" />
                                 <span className="text-lg font-semibold ">Tech Stack</span>
 
                             </div>
@@ -49,97 +53,58 @@ function TechStack() {
 
                         <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
 
-                            <div className="items-center px-[15px] py-[2px] flex flex-row items-center gap-2
+
+                            {uiuix.map((design) => (
+                                <span key={design} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
+                                duration-200">'>{design}
+                                </span>
+
+                            )
 
 
-                                <span className='text-[10px]'> Figma </span>
-
-                            </div>
+                            )}
 
 
-
-                            <div className="items-center px-[15px]  flex flex-row items-center
-                                rounded-[6px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
-                                  duration-200">
-
-
-                                <span className='text-[10px]'> Adobe Xd</span>
-
-                            </div>
-                             <div className="items-center px-[15px]  flex flex-row items-center
-                                rounded-[6px] gap-2 border-1 border-gray-300  hover:-translate-y-0.5 
-                                  duration-200">
-
-
-                                <span className='text-[10px]'> Sketch</span>
-
-                            </div>
-                            
-
-                            
                         </div>
+
+
 
                         <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] '>Graphic Design / Illustration</span>
+                            <span className='font-semibold text-[12px] '>Frontend</span>
                         </div>
 
 
                         <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
-                            <div className="items-center gap-2 px-[15px] py-[2px] flex flex-row items-center gap-
-                               rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
 
-
-                                <span className='text-[10px]'> Photoshop </span>
-
-                            </div>
+                            {FrontEnd.map((front) => (<span key={front} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">'>{front}</span>
+                            ))}
 
 
 
-                            <div className="items-center px-[15px] flex flex-row items-center
-                                rounded-[6px] gap-2 border-1 border-gray-300 hover:-translate-y-0.5 
-                                  duration-200">
+                        </div>
+
+                      <div className='mb-[5px]'>
+
+                            <span className='font-semibold text-[12px] '>Graphics & Video Editing</span>
+                        </div>
+   <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
-                                <span className='text-[10px]'> Illustrator</span>
+                            {creative.map((graphics) => (<span key={graphics} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                duration-200">'>{graphics}</span>
+                            ))}
 
-                            </div>
 
-                         
- <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] '>Video Editing</span>
                         </div>
 
 
-                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
-
-                            <div className="items-center gap-2 px-[15px] py-[2px] flex flex-row items-center gap-
-                               rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                <span className='text-[10px]'> Premiere Pro </span>
-
-                            </div>
-
-
-
-                            <div className="items-center px-[15px] flex flex-row items-center
-                                rounded-[6px] gap-2 border-1 border-gray-300 hover:-translate-y-0.5 
-                                  duration-200">
-
-
-                                <span className='text-[10px]'> After Effects</span>
-
-                            </div> </div>
-    
-                        
-                        </div>
 
                     </div>
                     <AnimatePresence>
@@ -171,7 +136,7 @@ function TechStack() {
 
                         <div className='flex justify-between'>
                             <div className='flex items-center gap-2'>
-                            <GrTechnology size={12} color="black"/>
+                                <GrTechnology size={12} color="black" />
                                 <span className="text-[16px] font-semibold ">Tech Stack</span>
 
                             </div>
@@ -185,109 +150,59 @@ function TechStack() {
 
                         </div>
 
+ <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
 
-                        <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
 
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            {uiuix.map((design) => (
+                                <span key={design} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
+                                duration-200">'>{design}
+                                </span>
+
+                            )
 
 
-                                <span className='text-[12px]'> Figma </span>
-
-                            </div>
+                            )}
 
 
-
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-
-                                <span className='text-[12px]'> Adobe Xd</span>
-
-                            </div>
                         </div>
+
+
 
                         <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[14px] '>Graphic Design / Illustration</span>
+                            <span className='font-semibold text-[12px] '>Frontend</span>
                         </div>
 
 
-                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+
+                            {FrontEnd.map((front) => (<span key={front} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
+                                duration-200">'>{front}</span>
+                            ))}
 
 
-                                <span className='text-[12px]'> Photoshop </span>
-
-                            </div>
-
-
-
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-
-                                <span className='text-[12px]'> Illustrator</span>
-
-                            </div>
-
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                <span className='text-[12px]'> Canva</span>
-
-                            </div>
 
                         </div>
 
-                        <div className='mb-[5px]'>
+                      <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[14px]'>Video Editing</span>
+                            <span className='font-semibold text-[12px] '>Graphics & Video Editing</span>
                         </div>
+   <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
-                        <div className='flex gap-2  cursor-pointer w-full rounded-[12px]  '>
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            {creative.map((graphics) => (<span key={graphics} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
+                                duration-200">'>{graphics}</span>
+                            ))}
 
 
-
-                                <span className='text-[12px]'> Premiere Pro </span>
-
-                            </div>
-
-
-
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                <span className='text-[12px]'> After Effects</span>
-
-                            </div>
-
-                            <div className="items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">
-
-
-                                <span className='text-[12px]'> Capcut</span>
-
-                            </div>
 
                         </div>
+ 
 
                     </div>
 
