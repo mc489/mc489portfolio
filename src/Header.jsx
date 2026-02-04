@@ -15,7 +15,7 @@ import { MdMailOutline } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { LuBriefcaseBusiness } from "react-icons/lu";
 import { FaTimeline } from "react-icons/fa6";
-import RESUME from "./assets/RESUME.pdf"
+import RESUME from "./assets/GANIR_RESUME.pdf"
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookMessenger } from 'react-icons/fa';
 import { MdOutlineDownload } from "react-icons/md";

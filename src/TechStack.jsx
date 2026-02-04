@@ -156,7 +156,7 @@ function TechStack() {
                             {uiuix.map((design) => (
                                 <span key={design} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">'>{design}
+                                duration-200'>{design}
                                 </span>
 
                             )
