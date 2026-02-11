@@ -30,9 +30,9 @@ function Header() {
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
     const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
          const [showModal, setShowModal] = useState(true);
-    // State to track if the image has been clicked
+
     const [clicked, setClicked] = useState(false);
-    // State to track if the cursor is currently over the element
+ 
     const [isHovered, setIsHovered] = useState(false);
 
 
@@ -52,7 +52,7 @@ function Header() {
 
     const handleMouseLeave = () => {
         setIsHovered(false);
-        // Condition: If it was clicked AND the cursor leaves, reset the clicked state
+       
         if (clicked) {
             setClicked(false);
         }

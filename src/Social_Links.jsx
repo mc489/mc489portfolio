@@ -1,13 +1,11 @@
 
-import { FaLinkedin } from 'react-icons/fa'; // 'fa' stands for Font Awesome
-import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
-import { FaGithub } from 'react-icons/fa'; // 'fa' for Font Awesome
+import { FaLinkedin } from 'react-icons/fa'; 
+import { FaFacebook } from 'react-icons/fa'; 
+import { FaGithub } from 'react-icons/fa'; 
 import { FaBehance } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa'; // 'fa' for Font Awesome
+import { FaYoutube } from 'react-icons/fa'; 
 import { useMediaQuery } from 'react-responsive';
 import { LuLink } from "react-icons/lu";
-import { icon } from '@fortawesome/fontawesome-svg-core';
-import { color } from 'framer-motion';
 
 function SocialLinks() {
     const isDesktopOrLaptop = useMediaQuery({
