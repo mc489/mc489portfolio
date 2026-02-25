@@ -36,20 +36,20 @@ function Projects() {
                             <span className='text-[12px] cursor-pointer'>View All</span>
                             </button>
                         </div>
-
-      <button onClick={() => setShowModal(true)} className='w-[320px] px-[20px] py-[10px] text-left
+<a href="https://ispecmn.site/ " target="_blank" rel="noopenner noreferrer">
+      <button onClick={() => setShowModal(true)} className=' w-[320px] px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer
                        px-2 py-2 hover:-translate-y-0.5  duration-200'>
                           
                            <div className="flex items-center justify-between mb-[5px]">
-                            <h1 className='font-bold ' >Dupro</h1>
-                               <span className="text-[10px] font-semibold italic text-gray-600">Designing</span>
+                            <h1 className='font-bold'>Ispecmn</h1>
+                               <span className="text-[10px] font-semibold italic text-gray-600">ispecmn.site</span>
                             </div>
                             <p className='text-[10px]'>
-                            Allows users to create your own templated website portfolio. 
+                            Drag and drop forms creation website with AI. 
                             </p>
                         </button>
-
+</a>
 
                         <button onClick={() => setShowModal(true)} className=' w-[320px] px-[20px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px] cursor-pointer 
@@ -123,20 +123,21 @@ function Projects() {
                             <span className='text-[10px] cursor-pointer'>View All</span>
                             </button>
                         </div>
+<a href="https://ispecmn.site/ " target="_blank" rel="noopenner noreferrer">
 
                           <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
                                 <div className='px-[15px] py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px]'>
  <div className="flex items-center justify-between mb-[5px]">
-                                    <h1 className='font-semibold text-[14px] mb-[5px]' >Dupro</h1>
-                                 <span className="text-[8px] font-semibold italic text-gray-600">Designing</span>
+                                    <h1 className='font-semibold text-[14px] mb-[5px]' >Ispecmn</h1>
+                                 <span className="text-[8px] font-semibold italic text-gray-600">ispecmn.site</span>
                                 </div>
                                     <p className='text-[10px]'>
-                                       Allows you to create your own templated website portfolio. 
+                            Drag and drop forms creation website with AI. 
                                     </p>
                                 </div>
                             </button>
-
+</a>
                       
                             <button onClick={() => setShowModal(true)} className='w-full cursor-pointer'>
                                 <div className='px-[15px] py-[10px] text-left
