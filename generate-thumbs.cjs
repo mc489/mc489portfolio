@@ -2,7 +2,7 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+// npx sharp-cli -i ./src/assets/projectsimg/rcy1.png -o ./src/assets/projectsimg/thumbnails/rcy1-thumb.webp resize --width 300
 // 1. Recreate __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

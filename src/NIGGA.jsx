@@ -66,7 +66,16 @@ import card1 from "./assets/projectsimg/card1.jpg"
 import card1_thumb from "./assets/projectsimg/thumbnails/card1-thumb.webp"
 import ecosia from "./assets/projectsimg/ECOSIA.jpg"
 import ecosia_thumb from "./assets/projectsimg/thumbnails/ECOSIA-thumb.webp"
+import rcy1 from "./assets/projectsimg/rcy1.png"
+import rcy1_thumb from "./assets/projectsimg/thumbnails/rcy1-thumb.webp"
+import rcy2 from "./assets/projectsimg/rcy2.png"
+import rcy2_thumb from "./assets/projectsimg/thumbnails/rcy2-thumb.webp"
+import rcy3 from "./assets/projectsimg/rcy3.png"
+import rcy3_thumb from "./assets/projectsimg/thumbnails/rcy3-thumb.webp"
+import rcy4 from "./assets/projectsimg/rcy4.png"
+import rcy4_thumb from "./assets/projectsimg/thumbnails/rcy4-thumb.webp"
 import { GrProjects } from "react-icons/gr";
+
 function Nigga({ setShowModal }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
@@ -103,7 +112,9 @@ function Nigga({ setShowModal }) {
          { thumb: expwarmer_thumb, full: expwarmer }, { thumb: jirsey1_thumb, full: jirsey1 }, 
          { thumb: trend_thumb, full: trend }, { thumb: chades_thumb, full: chades },
         { thumb: ecosia_thumb, full: ecosia }, { thumb: wotg1_thumb, full: wotg1 }, 
-        { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 }, { thumb: aircon1_thumb, full: aircon1 },
+        { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },    { thumb: rcy1_thumb, full: rcy1 }, 
+        { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
+         { thumb: rcy4_thumb, full: rcy4 },{ thumb: aircon1_thumb, full: aircon1 },
         { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral }, { thumb: batwar_thumb, full: batwar }
     ];
     const WebsitesImages = [
@@ -115,7 +126,9 @@ function Nigga({ setShowModal }) {
          { thumb: ek3_thumb, full: ek3 }, { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 }
     ];
     const appImages = [
-        { thumb: wotg1_thumb, full: wotg1 }, { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 }
+        { thumb: wotg1_thumb, full: wotg1 }, { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },
+         { thumb: rcy1_thumb, full: rcy1 }, { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
+         { thumb: rcy4_thumb, full: rcy4 }
     ];
     const GraphicsImages = [
         { thumb: ja_thumb, full: ja }, { thumb: ky_thumb, full: ky },

@@ -57,7 +57,7 @@ function Projects() {
                           
                            <div className="flex items-center justify-between mb-[5px]">
                             <h1 className='font-bold ' >PLV-RCYC App</h1>
-                               <span className="text-[10px] font-semibold italic text-gray-600">Developing</span>
+                               <span className="text-[10px] font-semibold italic text-gray-600">Deployment</span>
                             </div>
                             <p className='text-[10px]'>
                                   Management System: Events, Attendance, and Membership.
@@ -144,7 +144,7 @@ function Projects() {
                          border-1 border-gray-300 rounded-[16px]'>
  <div className="flex items-center justify-between mb-[5px]">
                                     <h1 className='font-semibold text-[14px] mb-[5px]' >PLV-RCYC App</h1>
-                                 <span className="text-[8px] font-semibold italic text-gray-600">Developing</span>
+                                 <span className="text-[8px] font-semibold italic text-gray-600">Deployment</span>
                                 </div>
                                     <p className='text-[10px]'>
                                      Management System: Events, Attendance, and Membership.
