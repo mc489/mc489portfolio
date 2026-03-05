@@ -76,10 +76,11 @@ import rcy4 from "./assets/projectsimg/rcy4.png"
 import rcy4_thumb from "./assets/projectsimg/thumbnails/rcy4-thumb.webp"
 import { GrProjects } from "react-icons/gr";
 
-function Nigga({ setShowModal }) {
+function Nigga({ setShowModal , initialImage = null }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
     // --- Navigation & Filtering State ---
+    
     const navItems = ["All", "Websites", "Apps", "Graphics"];
     const [activeItem, setActiveItem] = useState(navItems[0]);
     // --- Modal Drag State ---
@@ -146,11 +147,22 @@ function Nigga({ setShowModal }) {
             activeItem === "Apps" ? appImages :
                 activeItem === "Graphics" ? GraphicsImages :
                     galleryImages;
-    useEffect(() => {
-        requestAnimationFrame(() => setInitialTranslate(0));
-        const timer = setTimeout(() => setIsModalReady(true), 300);
-        return () => clearTimeout(timer);
-    }, []);
+   // Replace your existing useEffect with this:
+useEffect(() => {
+    requestAnimationFrame(() => setInitialTranslate(0));
+    const timer = setTimeout(() => {
+        setIsModalReady(true);
+    }, 300);
+    return () => clearTimeout(timer);
+}, []);
+
+// Add this SEPARATE useEffect:
+useEffect(() => {
+    if (isModalReady && initialImage !== null) {
+        setCurrentImageIndex(initialImage);
+        setLightboxOpen(true);
+    }
+}, [isModalReady]);
     // --- Drag Logic ---
     const handleTouchStart = (e) => { setIsDragging(true); startY.current = e.touches[0].clientY; };
     const handleMouseDown = (e) => { setIsDragging(true); startY.current = e.clientY; };
