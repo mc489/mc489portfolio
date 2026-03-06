@@ -34,14 +34,14 @@ const [targetImage, setTargetImage] = useState(null);
                                 <GrProjects size={12} color="black" />
                                 <span className="text-lg font-semibold">Recent Projects</span>
                             </div>
-                        <button 
+              <button 
     onClick={() => { 
-      setTargetImage({ index: 26, category: "Apps" }); // pass the index of the image you want
+    
         setShowModal(true); 
     }} 
     className='cursor-pointer'
 >
-    <span className='text-[12px] cursor-pointer'>View All</span>
+    <span className='text-[10px] cursor-pointer'>View All</span>
 </button>
                         </div>
                         <a href="https://ispecmn.site/ " target="_blank" rel="noopenner noreferrer">
@@ -65,7 +65,7 @@ const [targetImage, setTargetImage] = useState(null);
                         </a>
 
                       <button 
-    onClick={() => { setTargetImage(29); setShowModal(true); }} 
+   onClick={() => { setTargetImage({ index: 3, category: "Apps" }); setShowModal(true); }}
     className='relative overflow-hidden w-[320px] text-left border-1 border-gray-300 rounded-[16px] cursor-pointer hover:-translate-y-0.5 duration-200'
 >
                             <img
@@ -123,7 +123,7 @@ const [targetImage, setTargetImage] = useState(null);
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="fixed inset-0 z-50 flex items-center justify-center"
         >
-            <Nigga setShowModal={setShowModal} initialImage={targetImage} />
+            <Nigga setShowModal={setShowModal} initialImage={targetImage}/> 
         </motion.div>
     )}
 </AnimatePresence>
@@ -179,7 +179,7 @@ const [targetImage, setTargetImage] = useState(null);
                             </button>
                         </a>
 
-                        <button onClick={() => { setTargetImage(29), setShowModal(true); }}   className='relative overflow-hidden py-[10px] text-left
+                        <button  onClick={() => { setTargetImage({ index: 3, category: "Apps" }); setShowModal(true); }}  className='relative overflow-hidden py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px]'>
 
                       

@@ -157,12 +157,21 @@ useEffect(() => {
 }, []);
 
 // Add this SEPARATE useEffect:
+// Locate this effect in your Modal component
 useEffect(() => {
     if (isModalReady && initialImage !== null) {
-        setCurrentImageIndex(initialImage);
-        setLightboxOpen(true);
+        // 1. Set the Category if it exists in the object
+        if (initialImage.category) {
+            setActiveItem(initialImage.category);
+        }
+        
+        // 2. Set the Image Index (if you passed an index)
+        if (initialImage.index !== undefined) {
+            setCurrentImageIndex(initialImage.index);
+            setLightboxOpen(true);
+        }
     }
-}, [isModalReady]);
+}, [isModalReady, initialImage]); // Add initialImage to dependency array
     // --- Drag Logic ---
     const handleTouchStart = (e) => { setIsDragging(true); startY.current = e.touches[0].clientY; };
     const handleMouseDown = (e) => { setIsDragging(true); startY.current = e.clientY; };
