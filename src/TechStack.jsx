@@ -29,7 +29,7 @@ function TechStack() {
 
                 <div className="flex justify-center items-center  ">
 
-                    <div className="  hover:shadow-sm w-full flex-col relative
+                    <div className="bg-white hover:shadow-sm w-full flex-col relative
                      max-w-[270px]  rounded-[16px] 
                     px-[15px] pt-[10px] pb-[4px] mt-[5px] 
                     text-left border border-gray-300 ">
@@ -131,7 +131,7 @@ function TechStack() {
 
                 <div className="flex w-full justify-center items-center  ">
 
-                    <div className=" flex w-full flex-col relative max-w-[330px] gap-1 rounded-[16px] 
+                    <div className=" bg-white flex w-full flex-col relative max-w-[330px] gap-1 rounded-[16px] 
                     p-[15px] mt-[10px] text-left border border-gray-300 ">
 
                         <div className='flex justify-between'>

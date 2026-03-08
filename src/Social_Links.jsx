@@ -43,7 +43,7 @@ function SocialLinks() {
             {isDesktopOrLaptop &&
                 <div className="flex items-center justify-center ">
 
-                    <div className=" hover:shadow-sm flex-col w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
+                    <div className=" bg-white hover:shadow-sm flex-col w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
 
                         <div className='flex items-center gap-2 mb-[10px] '>
                             <LuLink size={14} color="black" />
@@ -58,7 +58,7 @@ function SocialLinks() {
             {isTabletOrMobile &&
                 <div className="flex w-full justify-center items-center  ">
 
-                    <div className=" flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
+                    <div className="bg-white flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
 
 
 

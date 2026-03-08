@@ -25,10 +25,9 @@ function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
     })
-    const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+   
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  699px)' })
-    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-    const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+ 
          const [showModal, setShowModal] = useState(true);
 
     const [clicked, setClicked] = useState(false);
@@ -159,7 +158,7 @@ function Header() {
                                 </button>
                             </a>
                          <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
-                               <button className=" cursor-pointer 
+                               <button className=" bg-white cursor-pointer 
                         button  px-[16px] py-[8px]  duration-200
                         text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
                                 <div className="flex items-center gap-[8px]">
@@ -173,7 +172,7 @@ function Header() {
               <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                                 <button className=" cursor-pointer 
                         button  px-[16px] py-[8px]  duration-200
-                        text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
+                        text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap bg-white">
 
  
                                     <div className="flex gap-[8px] items-center">
@@ -290,7 +289,7 @@ function Header() {
 
                                 <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
 
-                                    <button className="cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
+                                    <button className="bg-white cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
                                         <div className="flex items-center gap-[5px]">
                                            <MdMailOutline size={10} color="black" />
                                             Email
@@ -299,7 +298,7 @@ function Header() {
                                 </a>
 
  <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                <button className="cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
+                                <button className="bg-white cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
 
                                     <div className="flex items-center gap-[5px]">
 

@@ -49,7 +49,7 @@ export default function ExperienceTimeline() {
 
  {isDesktopOrLaptop &&
     <div className="flex  justify-center items-center ">
-                 <div className="w-full hover:shadow-sm
+                 <div className="bg-white w-full hover:shadow-sm
                  max-w-[650px] rounded-[16px]  p-[15px] mt-[10px] 
                  border border-gray-300">
 
@@ -113,7 +113,7 @@ export default function ExperienceTimeline() {
 
     {isTabletOrMobile  &&
     <div className="flex justify-center items-center w-full ">
-                    <div className="relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
+                    <div className="bg-white relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
 
       {/* Header */}
       <div className="flex items-center gap-2 mb-2">

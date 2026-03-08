@@ -33,7 +33,7 @@ function About() {
             {isDesktopOrLaptop &&
                 <div className="flex justify-center items-center ">
                     <div className="hover:shadow-sm relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] 
-                    text-left border border-gray-300 ">
+                    text-left border bg-white border-gray-300 ">
                    
                    
                    <div className='flex items-center gap-2 '>
@@ -54,7 +54,7 @@ function About() {
             {/* Tablet or Mobile View (With See More/Less) */}
             {isTabletOrMobile &&
                 <div className="flex justify-center items-center">
-                    <div className="relative max-w-[330px] rounded-[16px] w-full 
+                    <div className="bg-white relative max-w-[330px] rounded-[16px] w-full 
                     p-[15px] mt-[10px] text-left border border-gray-300">
                      
                       <div className='flex items-center gap-2 mb-2 '>

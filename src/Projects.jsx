@@ -23,7 +23,7 @@ const [targetImage, setTargetImage] = useState(null);
 
                 <div className=" flex flex-col items-center justify-center mt-3">
 
-                    <div className="hover:shadow-sm py-[12px] w-full max-w-[650px]  flex flex-col  px-[15px] justify-center 
+                    <div className="bg-white hover:shadow-sm py-[12px] w-full max-w-[650px]  flex flex-col  px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 
@@ -136,7 +136,7 @@ const [targetImage, setTargetImage] = useState(null);
 
                 <div className=" flex w-full flex-col items-center justify-center mt-2">
 
-                    <div className=" flex flex-col relative max-w-[330px] gap-1 
+                    <div className="bg-white flex flex-col relative max-w-[330px] gap-1 
                               rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 mb-[5px]">
 
 

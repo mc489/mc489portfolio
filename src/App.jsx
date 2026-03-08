@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Grid } from 'lucide-react';
 import About from "./About"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -7,6 +7,7 @@ import SocialLinks from "./Social_Links"
 import RecentProjects from "./Projects"
 import TechStack from "./TechStack"
 import { useMediaQuery } from 'react-responsive'
+import GridBackground from './GridBG';
 
 function App() {
  const isDesktopOrLaptop = useMediaQuery({
@@ -24,7 +25,10 @@ function App() {
    {isDesktopOrLaptop &&
    <> 
 
+   
+<GridBackground>
   <Header />
+  
 <div className='flex  items-center justify-center gap-2'>
       <About />
       <div className='flex flex-col'>
@@ -39,12 +43,14 @@ function App() {
     </div>
 
     <Footer/>
+    </GridBackground>
      </>
    }
 
    
    {isTabletOrMobile &&
    <> 
+     <GridBackground>
   <Header />
 
       <About />
@@ -55,7 +61,7 @@ function App() {
       <SocialLinks/>
 </div>
 
-    <Footer/>
+    <Footer/>  </GridBackground>
      </>
    }
   
