@@ -32,7 +32,7 @@ const GridBackground = ({ children }) => {
             ></div>
 
             {/* Your Portfolio Content */}
-            <div className="relative z-10 flex flex-col items-center p-8">
+                 <div className="relative z-10">
               {children}
             </div>
 
@@ -56,13 +56,13 @@ const GridBackground = ({ children }) => {
                 backgroundSize: '40px 40px', //  make squares bigger/smaller
 
                 // fade effect fading out from the center
-                maskImage: 'radial-gradient(ellipse at center, black 80%, transparent 80%)',
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 80%, transparent 80%)',
+                maskImage: 'radial-gradient(ellipse at center, black 90%, transparent 80%)',
+                WebkitMaskImage: 'radial-gradient(ellipse at center, black 90%, transparent 80%)',
               }}
             ></div>
 
             {/* Your Portfolio Content */}
-            <div className="relative z-10 flex flex-col items-center p-8">
+          <div className="relative z-10">
               {children}
             </div>
 

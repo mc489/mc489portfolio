@@ -26,9 +26,9 @@ function App() {
    <> 
 
    
-<GridBackground>
+
   <Header />
-  
+  <GridBackground>
 <div className='flex  items-center justify-center gap-2'>
       <About />
       <div className='flex flex-col'>
@@ -41,18 +41,18 @@ function App() {
         <RecentProjects/>
       <SocialLinks/>
     </div>
-
+ </GridBackground>
     <Footer/>
-    </GridBackground>
+   
      </>
    }
 
    
    {isTabletOrMobile &&
    <> 
-     <GridBackground>
+   
   <Header />
-
+  <GridBackground>
       <About />
       <Timeline />
      <TechStack/>
@@ -60,8 +60,8 @@ function App() {
         <RecentProjects/>
       <SocialLinks/>
 </div>
-
-    <Footer/>  </GridBackground>
+ </GridBackground>
+    <Footer/> 
      </>
    }
   
