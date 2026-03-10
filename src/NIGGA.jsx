@@ -74,6 +74,16 @@ import rcy3 from "./assets/projectsimg/rcy3.png"
 import rcy3_thumb from "./assets/projectsimg/thumbnails/rcy3-thumb.webp"
 import rcy4 from "./assets/projectsimg/rcy4.png"
 import rcy4_thumb from "./assets/projectsimg/thumbnails/rcy4-thumb.webp"
+
+import webdes1 from "./assets/projectsimg/webdes1.png"
+import webdes1_thumb from "./assets/projectsimg/thumbnails/webdes1-thumb.webp"
+import webdes2 from "./assets/projectsimg/webdes2.png"
+import webdes2_thumb from "./assets/projectsimg/thumbnails/webdes2-thumb.webp"
+import webdes3 from "./assets/projectsimg/webdes3.png"
+import webdes3_thumb from "./assets/projectsimg/thumbnails/webdes3-thumb.webp"
+import webdes4 from "./assets/projectsimg/webdes4.png"
+import webdes4_thumb from "./assets/projectsimg/thumbnails/webdes4-thumb.webp"
+
 import { GrProjects } from "react-icons/gr";
 
 function Nigga({ setShowModal , initialImage = null }) {
@@ -116,7 +126,9 @@ function Nigga({ setShowModal , initialImage = null }) {
         { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },    { thumb: rcy1_thumb, full: rcy1 }, 
         { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
          { thumb: rcy4_thumb, full: rcy4 },{ thumb: aircon1_thumb, full: aircon1 },
-        { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral }, { thumb: batwar_thumb, full: batwar }
+        { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral }, { thumb: batwar_thumb, full: batwar },
+          { thumb: webdes1_thumb, full: webdes1 },{ thumb: webdes2_thumb, full: webdes2 },
+        { thumb: webdes2_thumb, full: webdes2 }, { thumb: webdes3_thumb, full: webdes3 }, { thumb: webdes4_thumb, full: webdes4 }
     ];
     const WebsitesImages = [
         { thumb: c1_thumb, full: c1 }, { thumb: c2_thumb, full: c2 }, 
@@ -124,7 +136,9 @@ function Nigga({ setShowModal , initialImage = null }) {
         { thumb: e1_thumb, full: e1 }, { thumb: e2_thumb, full: e2 }, { thumb: e3_thumb, full: e3 }, 
         { thumb: e4_thumb, full: e4 }, { thumb: e5_thumb, full: e5 },
         { thumb: ek1_thumb, full: ek1 }, { thumb: ek2_thumb, full: ek2 },
-         { thumb: ek3_thumb, full: ek3 }, { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 }
+         { thumb: ek3_thumb, full: ek3 }, { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 },
+           { thumb: webdes1_thumb, full: webdes1 },{ thumb: webdes2_thumb, full: webdes2 },
+        { thumb: webdes2_thumb, full: webdes2 }, { thumb: webdes3_thumb, full: webdes3 }, { thumb: webdes4_thumb, full: webdes4 }
     ];
     const appImages = [
         { thumb: wotg1_thumb, full: wotg1 }, { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },
