@@ -109,6 +109,7 @@ function Nigga({ setShowModal , initialImage = null }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
+    const hasInitialized = useRef(false); // Add this at the top with your other refs
     // --- Arrays: Now using objects with { thumb, full } ---
     const galleryImages = [
         { thumb: c1_thumb, full: c1 }, { thumb: c2_thumb, full: c2 }, { thumb: c3_thumb, full: c3 },
@@ -170,22 +171,16 @@ useEffect(() => {
     return () => clearTimeout(timer);
 }, []);
 
-// Add this SEPARATE useEffect:
-// Locate this effect in your Modal component
 useEffect(() => {
-    if (isModalReady && initialImage !== null) {
-        // 1. Set the Category if it exists in the object
-        if (initialImage.category) {
-            setActiveItem(initialImage.category);
+        if (isModalReady && initialImage !== null && !hasInitialized.current) {
+            if (initialImage.category) setActiveItem(initialImage.category);
+            if (initialImage.index !== undefined) {
+                setCurrentImageIndex(initialImage.index);
+                setLightboxOpen(true);
+            }
+            hasInitialized.current = true;
         }
-        
-        // 2. Set the Image Index (if you passed an index)
-        if (initialImage.index !== undefined) {
-            setCurrentImageIndex(initialImage.index);
-            setLightboxOpen(true);
-        }
-    }
-}, [isModalReady, initialImage]); // Add initialImage to dependency array
+    }, [isModalReady, initialImage]);
     // --- Drag Logic ---
     const handleTouchStart = (e) => { setIsDragging(true); startY.current = e.touches[0].clientY; };
     const handleMouseDown = (e) => { setIsDragging(true); startY.current = e.clientY; };
@@ -218,6 +213,28 @@ useEffect(() => {
             document.removeEventListener("mouseup", handleDragEnd);
         };
     }, [isDragging, dragOffset]);
+
+    // --- Keyboard Navigation ---
+  useEffect(() => {
+      const handleKeyDown = (e) => {
+          if (!lightboxOpen) return;
+          
+          if (e.key === 'ArrowRight') {
+              setCurrentImageIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
+          } else if (e.key === 'ArrowLeft') {
+              setCurrentImageIndex((prev) => (prev === 0 ? displayedImages.length - 1 : prev - 1));
+          } else if (e.key === 'Escape') {
+              setLightboxOpen(false);
+          }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      
+      // Clean up the event listener when closed
+      return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, displayedImages.length]);
+
+
     useEffect(() => {
         document.body.style.overflow = "hidden";
         return () => { document.body.style.overflow = "auto"; };
@@ -226,12 +243,14 @@ useEffect(() => {
     // --- Lightbox Functions ---
     const openLightbox = (index) => { setCurrentImageIndex(index); setLightboxOpen(true); };
     const closeLightbox = () => setLightboxOpen(false);
-    const nextSlide = (e) => {
-        e?.stopPropagation();
+
+const nextSlide = (e) => {
+        if (e) e.stopPropagation();
         setCurrentImageIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
     };
+
     const prevSlide = (e) => {
-        e?.stopPropagation();
+        if (e) e.stopPropagation();
         setCurrentImageIndex((prev) => (prev === 0 ? displayedImages.length - 1 : prev - 1));
     };
     // --- Sub-Component: Navigation Menu ---
@@ -384,37 +403,47 @@ useEffect(() => {
                 </>
             )}
             {/* --- LIGHTBOX OVERLAY --- */}
-            {lightboxOpen && (
-                <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm" onClick={closeLightbox}>
-                    <button className="absolute top-5 right-5 text-white text-4xl z-50 p-2" onClick={closeLightbox}>&times;</button>
+           {lightboxOpen && (
+                <div 
+                    className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm" 
+                    onClick={() => setLightboxOpen(false)}
+                >
+                    {/* Close Button */}
+                    <button 
+                        className="absolute top-5 right-5 text-white text-4xl z-[220] p-4 hover:text-gray-300" 
+                        onClick={() => setLightboxOpen(false)}
+                    >
+                        &times;
+                    </button>
 
-                    {/* Left Chevron - Size and position based on media query */}
+                    {/* Left Chevron - Higher Z-Index */}
                     <button
-                        className={`absolute z-50 p-2 text-white ${isTabletOrMobile ? 'left-1 text-[40px]' : 'left-5 text-[24px]'}`}
+                        className={`absolute z-[220] p-6 text-white hover:scale-110 transition-transform ${isTabletOrMobile ? 'left-0 text-[50px]' : 'left-5 text-[40px]'}`}
                         onClick={prevSlide}
                     >
                         &#8249;
                     </button>
 
-                    {/* Image Container - Adds padding on mobile to protect the chevrons */}
+                    {/* Image Container */}
                     <div
-                        className={`relative max-w-4xl w-full h-full flex items-center justify-center ${isTabletOrMobile ? 'px-12' : ''}`}
+                        className={`relative max-w-4xl w-full h-full flex flex-col items-center justify-center ${isTabletOrMobile ? 'px-14' : ''}`}
                         onClick={(e) => e.stopPropagation()}
-                        onTouchStart={onLbTouchStart}
-                        onTouchMove={onLbTouchMove}
-                        onTouchEnd={onLbTouchEnd}
+                  
                     >
                         <img
-                            src={displayedImages[currentImageIndex].full}
+                            key={currentImageIndex} // CRITICAL: Forces React to refresh the image
+                            src={displayedImages[currentImageIndex]?.full}
                             alt="Full View"
-                            className={`max-w-full object-contain rounded shadow-2xl ${isTabletOrMobile ? 'max-h-[85vh]' : 'max-h-full'}`}
+                            className={`max-w-full object-contain rounded shadow-2xl transition-all duration-300 ${isTabletOrMobile ? 'max-h-[80vh]' : 'max-h-[90vh]'}`}
                         />
-                        <div className="absolute bottom-5 text-white/50 text-sm">{currentImageIndex + 1} / {displayedImages.length}</div>
+                        <div className="mt-4 text-white/70 text-sm font-mono">
+                            {currentImageIndex + 1} / {displayedImages.length}
+                        </div>
                     </div>
 
-                    {/* Right Chevron - Size and position based on media query */}
+                    {/* Right Chevron - Higher Z-Index */}
                     <button
-                        className={`absolute z-50 p-2 text-white ${isTabletOrMobile ? 'right-1 text-[40px]' : 'right-5 text-[24px]'}`}
+                        className={`absolute z-[220] p-6 text-white hover:scale-110 transition-transform ${isTabletOrMobile ? 'right-0 text-[50px]' : 'right-5 text-[40px]'}`}
                         onClick={nextSlide}
                     >
                         &#8250;
