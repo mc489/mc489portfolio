@@ -1,9 +1,9 @@
 
-import { FaLinkedin } from 'react-icons/fa'; 
-import { FaFacebook } from 'react-icons/fa'; 
-import { FaGithub } from 'react-icons/fa'; 
+import { FaLinkedin } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { FaBehance } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa'; 
+import { FaYoutube } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
 import { LuLink } from "react-icons/lu";
 
@@ -14,16 +14,16 @@ function SocialLinks() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  699px)' })
 
 
-    const socialLinks = [{ name: 'mc489', icon: FaGithub, color: 'black', url: 'https://github.com/mc489'},
-    { name: 'MC Ganir', icon: FaLinkedin, color: 'black', url: 'https://www.linkedin.com/in/mc-ganir-552264210/'},
+    const socialLinks = [{ name: 'mc489', icon: FaGithub, color: 'black', url: 'https://github.com/mc489' },
+    { name: 'MC Ganir', icon: FaLinkedin, color: 'black', url: 'https://www.linkedin.com/in/mc-ganir-552264210/' },
     { name: 'MC Ganir', icon: FaFacebook, color: 'black', url: 'https://www.facebook.com/evmcpov' },
-    { name: 'mc ganir', icon: FaBehance, color: 'black', url: 'https://www.behance.net/mcganir'},
-    { name: 'mcjemuelganir', icon: FaYoutube, color: 'black', url:'https://www.youtube.com/@mcjemuelganir' },
+    { name: 'mc ganir', icon: FaBehance, color: 'black', url: 'https://www.behance.net/mcganir' },
+    { name: 'mcjemuelganir', icon: FaYoutube, color: 'black', url: 'https://www.youtube.com/@mcjemuelganir' },
     ];
-    
+
     const renderLinks = (iconSize, textSize) => (
         socialLinks.map((link, index) => {
-            const Icon = link.icon; 
+            const Icon = link.icon;
             return (
                 <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
                     <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
@@ -49,8 +49,8 @@ function SocialLinks() {
                             <LuLink size={14} color="black" />
                             <span className="text-lg font-semibold">Social Links</span>
                         </div>
-                            {renderLinks(14, "text-[14px] ")}
-                       
+                        {renderLinks(14, "text-[14px] ")}
+
                     </div>
                 </div>
             }
@@ -68,7 +68,7 @@ function SocialLinks() {
                             <span className="text-[16px] font-semibold">Social Links</span>
                         </div>
 
-                         {renderLinks(10, "text-[10px] ")}
+                        {renderLinks(10, "text-[10px] ")}
                     </div>
                 </div>
             }

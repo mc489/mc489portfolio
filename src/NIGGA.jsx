@@ -86,11 +86,11 @@ import webdes4_thumb from "./assets/projectsimg/thumbnails/webdes4-thumb.webp"
 
 import { GrProjects } from "react-icons/gr";
 
-function Nigga({ setShowModal , initialImage = null }) {
+function Nigga({ setShowModal, initialImage = null }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 699px)' });
     // --- Navigation & Filtering State ---
-    
+
     const navItems = ["All", "Websites", "Apps", "Graphics"];
     const [activeItem, setActiveItem] = useState(navItems[0]);
     // --- Modal Drag State ---
@@ -113,48 +113,48 @@ function Nigga({ setShowModal , initialImage = null }) {
     // --- Arrays: Now using objects with { thumb, full } ---
     const galleryImages = [
         { thumb: c1_thumb, full: c1 }, { thumb: c2_thumb, full: c2 }, { thumb: c3_thumb, full: c3 },
-         { thumb: c4_thumb, full: c4 }, { thumb: c5_thumb, full: c5 },
-        { thumb: e1_thumb, full: e1 }, { thumb: e2_thumb, full: e2 }, 
+        { thumb: c4_thumb, full: c4 }, { thumb: c5_thumb, full: c5 },
+        { thumb: e1_thumb, full: e1 }, { thumb: e2_thumb, full: e2 },
         { thumb: e3_thumb, full: e3 }, { thumb: e4_thumb, full: e4 }, { thumb: e5_thumb, full: e5 },
         { thumb: ek1_thumb, full: ek1 }, { thumb: ek2_thumb, full: ek2 }, { thumb: ek3_thumb, full: ek3 },
-         { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 },
-        { thumb: ja_thumb, full: ja }, { thumb: ky_thumb, full: ky }, 
-        { thumb: toxxazi_thumb, full: toxxazi }, { thumb: ecomlogo_thumb, full: ecomlogo }, 
+        { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 },
+        { thumb: ja_thumb, full: ja }, { thumb: ky_thumb, full: ky },
+        { thumb: toxxazi_thumb, full: toxxazi }, { thumb: ecomlogo_thumb, full: ecomlogo },
         { thumb: lid_thumb, full: lid }, { thumb: card1_thumb, full: card1 },
-         { thumb: expwarmer_thumb, full: expwarmer }, { thumb: jirsey1_thumb, full: jirsey1 }, 
-         { thumb: trend_thumb, full: trend }, { thumb: chades_thumb, full: chades },
-        { thumb: ecosia_thumb, full: ecosia }, { thumb: wotg1_thumb, full: wotg1 }, 
-        { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },    { thumb: rcy1_thumb, full: rcy1 }, 
+        { thumb: expwarmer_thumb, full: expwarmer }, { thumb: jirsey1_thumb, full: jirsey1 },
+        { thumb: trend_thumb, full: trend }, { thumb: chades_thumb, full: chades },
+        { thumb: ecosia_thumb, full: ecosia }, { thumb: wotg1_thumb, full: wotg1 },
+        { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 }, { thumb: rcy1_thumb, full: rcy1 },
         { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
-         { thumb: rcy4_thumb, full: rcy4 },{ thumb: aircon1_thumb, full: aircon1 },
+        { thumb: rcy4_thumb, full: rcy4 }, { thumb: aircon1_thumb, full: aircon1 },
         { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral }, { thumb: batwar_thumb, full: batwar },
-          { thumb: webdes1_thumb, full: webdes1 },{ thumb: webdes2_thumb, full: webdes2 },
+        { thumb: webdes1_thumb, full: webdes1 }, { thumb: webdes2_thumb, full: webdes2 },
         { thumb: webdes2_thumb, full: webdes2 }, { thumb: webdes3_thumb, full: webdes3 }, { thumb: webdes4_thumb, full: webdes4 }
     ];
     const WebsitesImages = [
-        { thumb: c1_thumb, full: c1 }, { thumb: c2_thumb, full: c2 }, 
+        { thumb: c1_thumb, full: c1 }, { thumb: c2_thumb, full: c2 },
         { thumb: c3_thumb, full: c3 }, { thumb: c4_thumb, full: c4 }, { thumb: c5_thumb, full: c5 },
-        { thumb: e1_thumb, full: e1 }, { thumb: e2_thumb, full: e2 }, { thumb: e3_thumb, full: e3 }, 
+        { thumb: e1_thumb, full: e1 }, { thumb: e2_thumb, full: e2 }, { thumb: e3_thumb, full: e3 },
         { thumb: e4_thumb, full: e4 }, { thumb: e5_thumb, full: e5 },
         { thumb: ek1_thumb, full: ek1 }, { thumb: ek2_thumb, full: ek2 },
-         { thumb: ek3_thumb, full: ek3 }, { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 },
-           { thumb: webdes1_thumb, full: webdes1 },{ thumb: webdes2_thumb, full: webdes2 },
+        { thumb: ek3_thumb, full: ek3 }, { thumb: ek4_thumb, full: ek4 }, { thumb: ek5_thumb, full: ek5 },
+        { thumb: webdes1_thumb, full: webdes1 }, { thumb: webdes2_thumb, full: webdes2 },
         { thumb: webdes2_thumb, full: webdes2 }, { thumb: webdes3_thumb, full: webdes3 }, { thumb: webdes4_thumb, full: webdes4 }
     ];
     const appImages = [
         { thumb: wotg1_thumb, full: wotg1 }, { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },
-         { thumb: rcy1_thumb, full: rcy1 }, { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
-         { thumb: rcy4_thumb, full: rcy4 }
+        { thumb: rcy1_thumb, full: rcy1 }, { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
+        { thumb: rcy4_thumb, full: rcy4 }
     ];
     const GraphicsImages = [
         { thumb: ja_thumb, full: ja }, { thumb: ky_thumb, full: ky },
         { thumb: toxxazi_thumb, full: toxxazi }, { thumb: ecomlogo_thumb, full: ecomlogo },
-         { thumb: lid_thumb, full: lid },{ thumb: card1_thumb, full: card1 },
-          { thumb: expwarmer_thumb, full: expwarmer }, { thumb: jirsey1_thumb, full: jirsey1 },
-         { thumb: trend_thumb, full: trend }, { thumb: chades_thumb, full: chades },
+        { thumb: lid_thumb, full: lid }, { thumb: card1_thumb, full: card1 },
+        { thumb: expwarmer_thumb, full: expwarmer }, { thumb: jirsey1_thumb, full: jirsey1 },
+        { thumb: trend_thumb, full: trend }, { thumb: chades_thumb, full: chades },
         { thumb: ecosia_thumb, full: ecosia }, { thumb: aircon1_thumb, full: aircon1 },
-         { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral }, 
-         { thumb: batwar_thumb, full: batwar }
+        { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral },
+        { thumb: batwar_thumb, full: batwar }
     ];
     // Determine which images to display
     const displayedImages =
@@ -162,16 +162,16 @@ function Nigga({ setShowModal , initialImage = null }) {
             activeItem === "Apps" ? appImages :
                 activeItem === "Graphics" ? GraphicsImages :
                     galleryImages;
-   // Replace your existing useEffect with this:
-useEffect(() => {
-    requestAnimationFrame(() => setInitialTranslate(0));
-    const timer = setTimeout(() => {
-        setIsModalReady(true);
-    }, 300);
-    return () => clearTimeout(timer);
-}, []);
+    // Replace your existing useEffect with this:
+    useEffect(() => {
+        requestAnimationFrame(() => setInitialTranslate(0));
+        const timer = setTimeout(() => {
+            setIsModalReady(true);
+        }, 300);
+        return () => clearTimeout(timer);
+    }, []);
 
-useEffect(() => {
+    useEffect(() => {
         if (isModalReady && initialImage !== null && !hasInitialized.current) {
             if (initialImage.category) setActiveItem(initialImage.category);
             if (initialImage.index !== undefined) {
@@ -215,24 +215,24 @@ useEffect(() => {
     }, [isDragging, dragOffset]);
 
     // --- Keyboard Navigation ---
-  useEffect(() => {
-      const handleKeyDown = (e) => {
-          if (!lightboxOpen) return;
-          
-          if (e.key === 'ArrowRight') {
-              setCurrentImageIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
-          } else if (e.key === 'ArrowLeft') {
-              setCurrentImageIndex((prev) => (prev === 0 ? displayedImages.length - 1 : prev - 1));
-          } else if (e.key === 'Escape') {
-              setLightboxOpen(false);
-          }
-      };
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (!lightboxOpen) return;
 
-      window.addEventListener('keydown', handleKeyDown);
-      
-      // Clean up the event listener when closed
-      return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, displayedImages.length]);
+            if (e.key === 'ArrowRight') {
+                setCurrentImageIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
+            } else if (e.key === 'ArrowLeft') {
+                setCurrentImageIndex((prev) => (prev === 0 ? displayedImages.length - 1 : prev - 1));
+            } else if (e.key === 'Escape') {
+                setLightboxOpen(false);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        // Clean up the event listener when closed
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [lightboxOpen, displayedImages.length]);
 
 
     useEffect(() => {
@@ -244,7 +244,7 @@ useEffect(() => {
     const openLightbox = (index) => { setCurrentImageIndex(index); setLightboxOpen(true); };
     const closeLightbox = () => setLightboxOpen(false);
 
-const nextSlide = (e) => {
+    const nextSlide = (e) => {
         if (e) e.stopPropagation();
         setCurrentImageIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
     };
@@ -403,14 +403,14 @@ const nextSlide = (e) => {
                 </>
             )}
             {/* --- LIGHTBOX OVERLAY --- */}
-           {lightboxOpen && (
-                <div 
-                    className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm" 
+            {lightboxOpen && (
+                <div
+                    className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
                     onClick={() => setLightboxOpen(false)}
                 >
                     {/* Close Button */}
-                    <button 
-                        className="absolute top-5 right-5 text-white text-4xl z-[220] p-4 hover:text-gray-300" 
+                    <button
+                        className="absolute top-5 right-5 text-white text-4xl z-[220] p-4 hover:text-gray-300"
                         onClick={() => setLightboxOpen(false)}
                     >
                         &times;
@@ -418,7 +418,7 @@ const nextSlide = (e) => {
 
                     {/* Left Chevron - Higher Z-Index */}
                     <button
-                        className={`absolute z-[220] p-6 text-white hover:scale-110 transition-transform ${isTabletOrMobile ? 'left-0 text-[50px]' : 'left-5 text-[40px]'}`}
+                        className={`absolute z-[220]  text-white hover:scale-110 transition-transform ${isTabletOrMobile ? 'p-3 left-0 text-[30px]' : 'p-6 left-5 text-[40px]'}`}
                         onClick={prevSlide}
                     >
                         &#8249;
@@ -426,9 +426,12 @@ const nextSlide = (e) => {
 
                     {/* Image Container */}
                     <div
-                        className={`relative max-w-4xl w-full h-full flex flex-col items-center justify-center ${isTabletOrMobile ? 'px-14' : ''}`}
+                        className={`relative max-w-4xl w-full h-full flex flex-col items-center justify-center ${isTabletOrMobile ? 'px-5' : ''}`}
                         onClick={(e) => e.stopPropagation()}
-                  
+                        onTouchStart={onLbTouchStart}
+                        onTouchMove={onLbTouchMove}
+                        onTouchEnd={onLbTouchEnd}
+
                     >
                         <img
                             key={currentImageIndex} // CRITICAL: Forces React to refresh the image
@@ -443,7 +446,7 @@ const nextSlide = (e) => {
 
                     {/* Right Chevron - Higher Z-Index */}
                     <button
-                        className={`absolute z-[220] p-6 text-white hover:scale-110 transition-transform ${isTabletOrMobile ? 'right-0 text-[50px]' : 'right-5 text-[40px]'}`}
+                        className={`absolute z-[220] text-white hover:scale-110 transition-transform ${isTabletOrMobile ? 'p-3 right-0 text-[30px]' : 'p-6 right-5 text-[40px]'}`}
                         onClick={nextSlide}
                     >
                         &#8250;

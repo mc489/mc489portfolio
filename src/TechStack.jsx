@@ -16,7 +16,7 @@ function TechStack() {
 
     const [showModal, setShowModal] = useState(false);
     const uiuix = ['Figma', 'Adobe XD', 'Sketch']
-    const FrontEnd = [ 'React JS',  'Next.Js', 'Vite']
+    const FrontEnd = ['React JS', 'Next.Js', 'Vite']
     const creative = ['Photoshop', 'Illustrator', 'Premiere Pro']
 
     return (
@@ -88,11 +88,11 @@ function TechStack() {
 
                         </div>
 
-                      <div className='mb-[5px]'>
+                        <div className='mb-[5px]'>
 
                             <span className='font-semibold text-[12px] '>Graphics & Video Editing</span>
                         </div>
-   <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
+                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
                             {creative.map((graphics) => (<span key={graphics} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
@@ -150,7 +150,7 @@ function TechStack() {
 
                         </div>
 
- <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+                        <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
                             {uiuix.map((design) => (
@@ -187,11 +187,11 @@ function TechStack() {
 
                         </div>
 
-                      <div className='mb-[5px]'>
+                        <div className='mb-[5px]'>
 
                             <span className='font-semibold text-[12px] '>Graphics & Video Editing</span>
                         </div>
-   <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
+                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
                             {creative.map((graphics) => (<span key={graphics} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
@@ -202,7 +202,7 @@ function TechStack() {
 
 
                         </div>
- 
+
 
                     </div>
 
