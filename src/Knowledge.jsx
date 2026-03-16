@@ -151,7 +151,7 @@ function Knowledge({ setShowModal }) {
                         }`}>
                         <div
                             ref={modalRef}
-                            className={` bg-white flex w-full flex-col relative gap-1 
+                            className={` bg-white dark:bg-black flex w-full flex-col relative gap-1 
                                 px-[30px] py-[30px] text-left border border-gray-300 
                                 ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
                                 }`}
@@ -182,7 +182,7 @@ function Knowledge({ setShowModal }) {
                             {/* Header - KEEP ONLY ONE */}
                             <div className='flex justify-between items-center'>
                                 <div className='flex items-center gap-3'>
-                                    <GrTechnology size={16} color="black" />
+                                    <GrTechnology size={16} />
                                     <span className="text-[24px] font-semibold">Tech Stack</span>
                                 </div>
                                 <button
@@ -306,7 +306,7 @@ function Knowledge({ setShowModal }) {
                         }`}>
                         <div
                             ref={modalRef}
-                            className={` bg-white flex w-full flex-col relative gap-1
+                            className={` bg-white dark:bg-black flex w-full flex-col relative gap-1
                              px-[30px] py-[35px] text-left border border-gray-300 ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
                                 }`}
                             style={{
@@ -335,7 +335,7 @@ function Knowledge({ setShowModal }) {
                             {/* Header - KEEP ONLY ONE */}
                             <div className='flex justify-between items-center'>
                                 <div className='flex items-center gap-3'>
-                                    <GrTechnology size={12} color="black" />
+                                    <GrTechnology size={12} />
                                     <span className="text-[20px] font-semibold">Tech Stack</span>
                                 </div>
                                 <button

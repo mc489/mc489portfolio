@@ -37,7 +37,7 @@ function About() {
 
 
                         <div className='flex items-center gap-2 '>
-                            <IoMdInformationCircleOutline size={16} color="black" />
+                            <IoMdInformationCircleOutline size={16}  />
                             <h1 className="text-lg font-semibold ">About</h1>
                         </div>
 
@@ -54,11 +54,11 @@ function About() {
             {/* Tablet or Mobile View (With See More/Less) */}
             {isTabletOrMobile &&
                 <div className="flex justify-center items-center">
-                    <div className="bg-white relative max-w-[330px] rounded-[16px] w-full 
+                    <div className="bg-white dark:bg-black relative max-w-[330px] rounded-[16px] w-full 
                     p-[15px] mt-[10px] text-left border border-gray-300">
 
                         <div className='flex items-center gap-2 mb-2 '>
-                            <IoMdInformationCircleOutline size={12} color="black" />
+                            <IoMdInformationCircleOutline size={12}  />
                             <h1 className="text-[16px] font-semibold ">About</h1>
 
                         </div>
@@ -66,7 +66,7 @@ function About() {
                         {isMobileExpanded ? (
                             // Full Text View
                             <>
-                                <p className="text-[12px] text-black">{p1}</p>
+                                <p className="text-[12px] ">{p1}</p>
                                 <br />
                                 <p className="text-[12px]">{p2}</p>
                                 <br />
@@ -74,7 +74,7 @@ function About() {
                             </>
                         ) : (
                             // Short Text View
-                            <p className="text-[12px] text-black">
+                            <p className="text-[12px] ">
                                 {shortText}
                             </p>
                         )}

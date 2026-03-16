@@ -36,7 +36,7 @@ function TechStack() {
 
                         <div className='flex justify-between items-center'>
                             <div className='flex gap-2 items-center'>
-                                <GrTechnology size={14} color="black" />
+                                <GrTechnology size={14} />
                                 <span className="text-lg font-semibold ">Tech Stack</span>
 
                             </div>
@@ -131,12 +131,12 @@ function TechStack() {
 
                 <div className="flex w-full justify-center items-center  ">
 
-                    <div className=" bg-white flex w-full flex-col relative max-w-[330px] gap-1 rounded-[16px] 
+                    <div className=" bg-white dark:bg-black flex w-full flex-col relative max-w-[330px] gap-1 rounded-[16px] 
                     p-[15px] mt-[10px] text-left border border-gray-300 ">
 
                         <div className='flex justify-between'>
                             <div className='flex items-center gap-2'>
-                                <GrTechnology size={12} color="black" />
+                                <GrTechnology size={12} />
                                 <span className="text-[16px] font-semibold ">Tech Stack</span>
 
                             </div>

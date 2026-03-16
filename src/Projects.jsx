@@ -23,7 +23,7 @@ function Projects() {
 
                 <div className=" flex flex-col items-center justify-center mt-3">
 
-                    <div className="bg-white dark:bg-black  hover:shadow-sm py-[12px] w-full max-w-[650px]  flex flex-col  px-[15px] justify-center 
+                    <div className="bg-white dark:bg-black hover:shadow-sm py-[12px] w-full max-w-[650px]  flex flex-col  px-[15px] justify-center 
                     items-center rounded-[16px] border-1 border-gray-300 gap-2">
 
 
@@ -31,7 +31,7 @@ function Projects() {
                          w-full  mt-[5px] gap-2  text-left">
 
                             <div className='flex items-center gap-2 '>
-                                <GrProjects size={12} color="black" />
+                                <GrProjects size={12} />
                                 <span className="text-lg font-semibold">Recent Projects</span>
                             </div>
                             <button
@@ -136,7 +136,7 @@ function Projects() {
 
                 <div className=" flex w-full flex-col items-center justify-center mt-2">
 
-                    <div className="bg-white flex flex-col relative max-w-[330px] gap-1 
+                    <div className="bg-white dark:bg-black flex flex-col relative max-w-[330px] gap-1 
                               rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 mb-[5px]">
 
 
@@ -145,7 +145,7 @@ function Projects() {
 
 
                             <div className='flex items-center gap-2 '>
-                                <GrProjects size={10} color="black" />
+                                <GrProjects size={10} />
                                 <span className="text-[16px] font-semibold">Recent Projects</span>
                             </div>
                             <button onClick={() => setShowModal(true)} className='cursor-pointer'>

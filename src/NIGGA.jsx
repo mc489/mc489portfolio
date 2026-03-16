@@ -263,7 +263,7 @@ function Nigga({ setShowModal, initialImage = null }) {
                         <button
                             onClick={() => { setActiveItem(item); setCurrentImageIndex(0); }}
                             className={`cursor-pointer text-left py-1 px-4 duration-200 ease-in-out whitespace-nowrap ${activeItem === item
-                                ? "text-black font-semibold border-l-4 border-black"
+                                ? " font-semibold border-l-4 "
                                 : "text-gray-500 hover:text-gray-700 hover:border-l-4 hover:border-gray-400"
                                 }`}
                         >
@@ -327,7 +327,7 @@ function Nigga({ setShowModal, initialImage = null }) {
                     <div className={`fixed flex w-full justify-center items-center z-50 ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
                         <div
                             ref={modalRef}
-                            className={`overflow-y-auto bg-white flex w-full h-[550px] flex-col relative px-[30px] py-[30px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[80vh]'}`}
+                            className={`overflow-y-auto bg-white dark:bg-black   flex w-full h-[550px] flex-col relative px-[30px] py-[30px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[80vh]'}`}
                             style={{
                                 transform: isFullscreen ? `translate3d(0, ${isDragging ? dragOffset : 0}px, 0)` : `translate3d(0, ${initialTranslate + dragOffset}px, 0)`,
                                 transition: isDragging ? "none" : "transform 0.25s ease-out",
@@ -373,7 +373,7 @@ function Nigga({ setShowModal, initialImage = null }) {
                     <div className={`fixed flex w-full justify-center items-center z-50 ${isFullscreen ? 'inset-0' : 'bottom-0'}`}>
                         <div
                             ref={modalRef}
-                            className={`bg-white flex w-full h-[550px]  flex-col relative px-[15px] py-[35px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[85vh]'}`}
+                            className={`bg-white dark:bg-black flex w-full h-[550px]  flex-col relative px-[15px] py-[35px] border border-gray-300 ${isFullscreen ? 'h-screen' : 'rounded-t-[16px] max-h-[85vh]'}`}
                             style={{
                                 transform: isFullscreen ? `translateY(${isDragging ? dragOffset : 0}px)` : `translateY(${initialTranslate + dragOffset}px)`,
                                 touchAction: 'none',

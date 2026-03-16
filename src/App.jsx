@@ -37,13 +37,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
-      {/* Theme Toggle */}
+    
       <button
         onClick={toggleTheme}
-        className="fixed top-4 right-4  flex items-center w-14 h-8 p-1 bg-gray-300 dark:bg-gray-700 rounded transition-colors duration-300 focus:outline-none"
+        className="fixed top-4 right-4 flex items-center w-14 h-8 p-1 bg-gray-300 dark:bg-gray-700 rounded transition-colors duration-300 focus:outline-none"
         aria-label="Toggle Dark Mode"
       >
-        {/* The sliding "thumb" */}
+       
         <div
           className={`flex items-center justify-center w-6 h-6 bg-white dark:bg-gray-900 rounded shadow-sm transform transition-transform duration-300 ${theme === 'dark' ? 'translate-x-6' : 'translate-x-0'
             }`}
@@ -56,7 +56,7 @@ function App() {
         </div>
       </button>
 
-      {/* Wrap content in a container to add spacing */}
+   
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {isDesktopOrLaptop &&

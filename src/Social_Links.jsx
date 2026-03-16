@@ -58,13 +58,13 @@ function SocialLinks() {
             {isTabletOrMobile &&
                 <div className="flex w-full justify-center items-center  ">
 
-                    <div className="bg-white flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
+                    <div className="bg-white dark:bg-black flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
 
 
 
                         <div className='flex mb-2 gap-2 items-center'>
 
-                            <LuLink size={12} color="black" />
+                            <LuLink size={12} />
                             <span className="text-[16px] font-semibold">Social Links</span>
                         </div>
 

@@ -25,24 +25,18 @@ function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
     })
-   
+
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  699px)' })
- 
-         const [showModal, setShowModal] = useState(true);
+
+    const [showModal, setShowModal] = useState(true);
 
     const [clicked, setClicked] = useState(false);
- 
+
     const [isHovered, setIsHovered] = useState(false);
-
-
-
-
-
-
 
     const handleClick = () => {
         setClicked(true);
-       
+
     };
 
     const handleMouseEnter = () => {
@@ -51,7 +45,7 @@ function Header() {
 
     const handleMouseLeave = () => {
         setIsHovered(false);
-       
+
         if (clicked) {
             setClicked(false);
         }
@@ -67,9 +61,9 @@ function Header() {
 
             {isDesktopOrLaptop &&
 
-            
+
                 <div className=" pt-[24px] items-center justify-center flex flex-row gap-4   ">
-  
+
                     <div
                         className="relative w-[150px]  aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
@@ -112,11 +106,11 @@ function Header() {
 
                             <div className="flex items-center gap-2">
                                 <h1 className="text-[24px] max-[500px]:text-[18px]">MC Ganir</h1>
-                       
-                                
-                                    <MdVerified color="blue"
-                                
-                                     className="text-[16px]" />
+
+
+                                <MdVerified color="blue"
+
+                                    className="text-[16px]" />
                             </div>
 
 
@@ -125,21 +119,21 @@ function Header() {
                                     <div className="flex items-center group gap-1">
                                         <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 
                                         group-hover:translate-x-0 duration-200">Download My Resume</span>
-                                        
+
                                         <MdOutlineDownload className="text-[20px] " />
                                     </div>
                                 </button>
                             </a>
                         </div>
 
-<a href= 'https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
-                        <div className="mt-[2px] flex flex-row items-center">
-                            <MapPin size={14} style={{ marginRight: '4px' }} /> {/* */}
-                            <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
-                        </div>
-                       </a>
-                       
-                       
+                        <a href='https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
+                            <div className="mt-[2px] flex flex-row items-center">
+                                <MapPin size={14} style={{ marginRight: '4px' }} /> {/* */}
+                                <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
+                            </div>
+                        </a>
+
+
                         <h2 className=" mt-[10px] text-[16px] ">Information Technology/ Multimedia </h2>
 
                         <div className="mt-[15px] flex flex-row gap-[10px]">
@@ -150,38 +144,38 @@ function Header() {
                         text-white dark:text-black text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                     <div className="flex gap-[8px] items-center">
-                                    
-                                        <RiMessengerLine size={16}  />
+
+                                        <RiMessengerLine size={16} />
                                         Message Now
-                                        <ChevronRight size={16}  />
+                                        <ChevronRight size={16} />
                                     </div>
                                 </button>
                             </a>
-                         <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
-                               <button className=" bg-white cursor-pointer 
+                            <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
+                                <button className=" bg-white cursor-pointer 
                         button bg-white px-[16px] py-[8px]  duration-200
                         text-black dark:text-white dark:bg-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
-                                <div className="flex items-center gap-[8px]">
-                                    
-                                    <MdMailOutline size={16}  />
-                                    Send Email
-                                </div>
-                            </button>
+                                    <div className="flex items-center gap-[8px]">
+
+                                        <MdMailOutline size={16} />
+                                        Send Email
+                                    </div>
+                                </button>
                             </a>
 
-              <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                 <button className=" bg-white cursor-pointer 
+                            <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                <button className=" bg-white cursor-pointer 
                         button bg-white px-[16px] py-[8px]  duration-200
                         text-black dark:text-white dark:bg-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
 
- 
+
                                     <div className="flex gap-[8px] items-center">
-<LuBriefcaseBusiness size={16} />
-                                    
-                                    Portfolio
-                                </div>
-                            </button>
-                                       </a>
+                                        <LuBriefcaseBusiness size={16} />
+
+                                        Portfolio
+                                    </div>
+                                </button>
+                            </a>
 
                         </div>
                     </div>
@@ -191,12 +185,12 @@ function Header() {
             {isTabletOrMobile &&
                 <>
 
-                
-                  
+
+
                     <div className=" pt-[24px] pb-[6px] items-center justify-center flex flex-row gap-2 overflow-hidden ">
 
-               
-   
+
+
                         <div
                             className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
 
@@ -219,21 +213,21 @@ function Header() {
                             <img
                                 src={profileHover}
                                 alt="profile hover"
-                               onClick={handleClick}
+                                onClick={handleClick}
                                 className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
                     ${clicked ? "opacity-100" : "opacity-0"}
                 `}
                             />
-  <img
+                            <img
                                 src={profileClicked}
                                 alt="profile hover"
-                               onClick={handleClick}
+                                onClick={handleClick}
                                 className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
                     ${clicked ? "opacity-100" : "opacity-0"}
                 `}
                             />
 
-                      
+
 
                         </div>
 
@@ -245,8 +239,8 @@ function Header() {
 
                                 <div className="flex items-center ">
                                     <h1 className="text-[16px] font-semibold">MC Ganir</h1>
-                                      <MdVerified  icon={faCheckCircle} color="blue"
-                              className="ml-[5px] w-[10px] " />
+                                    <MdVerified icon={faCheckCircle} color="blue"
+                                        className="ml-[5px] w-[10px] " />
                                 </div>
 
 
@@ -264,11 +258,11 @@ function Header() {
                                 </a>
                             </div>
 
-<a href= 'https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
-                            <div className=" m-0 flex flex-row items-center">
-                                <MapPin color="black" size={8} style={{ marginRight: '2px' }} /> {/* */}
-                                <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
-                            </div>
+                            <a href='https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
+                                <div className=" m-0 flex flex-row items-center">
+                                    <MapPin  size={8} style={{ marginRight: '2px' }} /> {/* */}
+                                    <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
+                                </div>
                             </a>
                             <h2 className=" mt-[8px] text-[10px] justify-center ">Information Technology/ Multimedia </h2>
 
@@ -276,37 +270,37 @@ function Header() {
 
                                 <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
                                     <button className="cursor-pointer
-                        button bg-black px-[8px] py-[4px] 
-                        text-white text-[10px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
+                        button  px-[8px] py-[4px] 
+                        text-[10px] bg-black dark:bg-white text-white dark:text-black !border-none hover:-translate-y-0.5 whitespace-nowrap">
                                         <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
                                         <div className="flex gap-[5px] items-center">
-                                           <RiMessengerLine size={10} color="white" />
+                                            <RiMessengerLine size={10}  />
                                             Message
-                                            <ChevronRight size={10} color="white" />
+                                            <ChevronRight size={10} />
                                         </div>
                                     </button>
                                 </a>
 
                                 <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
 
-                                    <button className="bg-white cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
+                                    <button className="bg-white dark:bg-black cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
                                         <div className="flex items-center gap-[5px]">
-                                           <MdMailOutline size={10} color="black" />
+                                            <MdMailOutline size={10}  />
                                             Email
                                         </div>
                                     </button>
                                 </a>
 
- <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                <button className="bg-white cursor-pointer button text-[10px]  py-[4px] px-[8px] hover:-translate-y-0.5">
+                                <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                    <button className="bg-white dark:bg-black cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
 
-                                    <div className="flex items-center gap-[5px]">
+                                        <div className="flex items-center gap-[5px]">
 
-                                        <LuBriefcaseBusiness size={10} />
-                                        Portfolio
-                                    </div>
+                                            <LuBriefcaseBusiness size={10} />
+                                            Portfolio
+                                        </div>
 
-                                </button>
+                                    </button>
                                 </a>
                             </div>
                         </div>

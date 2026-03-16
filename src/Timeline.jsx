@@ -56,7 +56,7 @@ export default function ExperienceTimeline() {
             {/* Header */}
             <div className='flex gap-2 items-center '>
 
-              <MdOutlineViewTimeline size={16} color="black" className="items-center" />
+              <MdOutlineViewTimeline size={16} className="items-center" />
               <h2 className="text-lg font-semibold text-center">Experience</h2>
             </div>
 
@@ -113,11 +113,11 @@ export default function ExperienceTimeline() {
 
       {isTabletOrMobile &&
         <div className="flex justify-center items-center w-full ">
-          <div className="bg-white relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
+          <div className="bg-white dark:bg-black relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] text-left border border-gray-300">
 
             {/* Header */}
             <div className="flex items-center gap-2 mb-2">
-              <MdOutlineViewTimeline size={12} color="black" className="items-center" />
+              <MdOutlineViewTimeline size={12} className="items-center" />
               <h2 className="text-[16px] font-semibold">Experience</h2>
             </div>
 
@@ -140,7 +140,7 @@ export default function ExperienceTimeline() {
                   absolute -left-[2px] top-[4px]
                   w-[12px] h-[12px] rounded-full border-2 
                   transition-all duration-200 z-10
-                  ${item.filled ? "bg-black" : "border-gray-300 bg-white hover:bg-black"}
+                  ${item.filled ? "bg-black dark:bg-white" : "border-gray-300 bg-white dark:bg-black hover:bg-black"}
                 `}
                     />
 
@@ -150,15 +150,15 @@ export default function ExperienceTimeline() {
                     <div className="flex justify-between items-end mb-[15px] ">
                       <div>
 
-                        <h3 className="text-black text-[12px] font-semibold">{item.role}</h3>
-                        <p className="text-black text-[10px] ">{item.school}</p>
+                        <h3 className=" text-[12px] font-semibold">{item.role}</h3>
+                        <p className=" text-[10px] ">{item.school}</p>
 
 
 
                       </div>
 
                       {/* Year Badge */}
-                      <span className=" items-end text-black text-[8px] border-1 border-gray-300 px-3 py-1 rounded-full">
+                      <span className=" items-end  text-[8px] border-1 border-gray-300 px-3 py-1 rounded-full">
                         {item.year}
                       </span>
                     </div>
