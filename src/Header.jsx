@@ -134,7 +134,7 @@ function Header() {
 
 <a href= 'https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
                         <div className="mt-[2px] flex flex-row items-center">
-                            <MapPin color="black" size={14} style={{ marginRight: '4px' }} /> {/* */}
+                            <MapPin size={14} style={{ marginRight: '4px' }} /> {/* */}
                             <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
                         </div>
                        </a>
@@ -146,37 +146,37 @@ function Header() {
 
                             <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
                                 <button className=" cursor-pointer 
-                        button bg-black px-[16px] py-[8px] duration-200
-                        text-white text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
+                        button bg-black dark:bg-white px-[16px] py-[8px] duration-200
+                        text-white dark:text-black text-[14px] !border-none hover:-translate-y-0.5 whitespace-nowrap">
 
                                     <div className="flex gap-[8px] items-center">
                                     
-                                        <RiMessengerLine size={16} color="white" />
+                                        <RiMessengerLine size={16}  />
                                         Message Now
-                                        <ChevronRight size={16} color="white" />
+                                        <ChevronRight size={16}  />
                                     </div>
                                 </button>
                             </a>
                          <a href="mailto:mcjemuelganir@gmail.com?" target="_blank" rel="noopener noreferrer">
                                <button className=" bg-white cursor-pointer 
-                        button  px-[16px] py-[8px]  duration-200
-                        text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
+                        button bg-white px-[16px] py-[8px]  duration-200
+                        text-black dark:text-white dark:bg-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
                                 <div className="flex items-center gap-[8px]">
                                     
-                                    <MdMailOutline size={16} color="black" />
+                                    <MdMailOutline size={16}  />
                                     Send Email
                                 </div>
                             </button>
                             </a>
 
               <a href="https://drive.google.com/file/d/1aulF9a9r4rXTfv6Trb4GXVLZByx5i7Zp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                <button className=" cursor-pointer 
-                        button  px-[16px] py-[8px]  duration-200
-                        text-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap bg-white">
+                                 <button className=" bg-white cursor-pointer 
+                        button bg-white px-[16px] py-[8px]  duration-200
+                        text-black dark:text-white dark:bg-black text-[14px]  hover:-translate-y-0.5 whitespace-nowrap">
 
  
                                     <div className="flex gap-[8px] items-center">
-<LuBriefcaseBusiness size={16} color="black"/>
+<LuBriefcaseBusiness size={16} />
                                     
                                     Portfolio
                                 </div>

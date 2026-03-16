@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
@@ -23,7 +23,7 @@ function About() {
     const p1 = "Motivated Bachelor of Science in Information Technology (BSIT) student with a strong passion for user-centric design and visual storytelling. I am proficient in designing and developing seamless user interfaces (UI/UX) and visually compelling graphics using tools like Figma and the Adobe Creative Suite including branding, typography, digital illustration.";
     const p2 = "I combine this design expertise with practical front-end development skills in HTML, CSS, JavaScript, React, and Tailwind, bridging the gap between design and functionality to build high-quality web experiences.";
     const p3 = "My skill set also includes impactful video editing and motion graphics, all aimed at creating engaging digital content. Eager to apply my technical knowledge and creativity to create intuitive, visually appealing, and responsive digital experiences in real-world projects.";
-    
+
     // Create a short version for the mobile initial view
     const shortText = `${p1.substring(0, 300)}...`; // Truncate the first paragraph
 
@@ -33,17 +33,17 @@ function About() {
             {isDesktopOrLaptop &&
                 <div className="flex justify-center items-center ">
                     <div className="hover:shadow-sm relative max-w-[330px] rounded-[16px] w-full p-[15px] mt-[10px] 
-                    text-left border bg-white border-gray-300 ">
-                   
-                   
-                   <div className='flex items-center gap-2 '>
-                        <IoMdInformationCircleOutline size={16} color="black" />
-                        <h1 className="text-lg font-semibold ">About</h1>
+                    text-left border bg-white dark:bg-black border-gray-300 ">
+
+
+                        <div className='flex items-center gap-2 '>
+                            <IoMdInformationCircleOutline size={16} color="black" />
+                            <h1 className="text-lg font-semibold ">About</h1>
                         </div>
-                        
-                        
+
+
                         <p className=" text-[14px]">{p1}</p>
-                        <br/>
+                        <br />
                         <p className='text-[14px]'>{p2}</p>
                         <br />
                         <p className='text-[14px]'>{p3}</p>
@@ -56,18 +56,18 @@ function About() {
                 <div className="flex justify-center items-center">
                     <div className="bg-white relative max-w-[330px] rounded-[16px] w-full 
                     p-[15px] mt-[10px] text-left border border-gray-300">
-                     
-                      <div className='flex items-center gap-2 mb-2 '>
-                      <IoMdInformationCircleOutline size={12} color="black"/> 
-                        <h1 className="text-[16px] font-semibold ">About</h1>
-                                       
-</div>
-                           {/* Conditionally render paragraphs or the short version */}
+
+                        <div className='flex items-center gap-2 mb-2 '>
+                            <IoMdInformationCircleOutline size={12} color="black" />
+                            <h1 className="text-[16px] font-semibold ">About</h1>
+
+                        </div>
+                        {/* Conditionally render paragraphs or the short version */}
                         {isMobileExpanded ? (
                             // Full Text View
                             <>
                                 <p className="text-[12px] text-black">{p1}</p>
-                                <br/>
+                                <br />
                                 <p className="text-[12px]">{p2}</p>
                                 <br />
                                 <p className="text-[12px]">{p3}</p>
@@ -78,7 +78,7 @@ function About() {
                                 {shortText}
                             </p>
                         )}
-                        
+
                         {/* The Toggle Button for mobile */}
                         <button
                             onClick={toggleMobileExpansion}

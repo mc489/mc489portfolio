@@ -115,10 +115,10 @@ function Knowledge({ setShowModal }) {
     const uiuix = ['Figma', 'Adobe XD', 'Sketch']
     const FrontEnd = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React JS', 'Tailwind CSS', 'React Native',
         'Nativewind', 'Styled Components', 'Next.Js', 'Vite']
-    const devTools =  ['Git', 'Github', 'VS Code', 'Discord', 'Teams', 'JIRA',]
+    const devTools = ['Git', 'Github', 'VS Code', 'Discord', 'Teams', 'JIRA',]
     const creative = ['Photoshop', 'Illustrator', 'Canva', 'Lightroom', 'Premiere Pro', 'After Effects', 'Da Vinci Resolve', 'Capcut',]
 
-    
+
     return (
 
 
@@ -200,9 +200,9 @@ function Knowledge({ setShowModal }) {
 
                                     <span className='cursor-pointer text-[24px]'>✕</span>
                                 </button>
-                            </div>             
-                            
-                                <div className='mt-[5px] mb-[5px]'>
+                            </div>
+
+                            <div className='mt-[5px] mb-[5px]'>
 
                                 <span className='font-semibold text-[16px]' >UI/UX</span>
 
@@ -230,52 +230,52 @@ function Knowledge({ setShowModal }) {
                             <div className='mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
-{FrontEnd.map((front) => (<span key={front} className='items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                {FrontEnd.map((front) => (<span key={front} className='items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200'>
 
                                     {front}
                                 </span>
-                                   
-))}
-                                </div>
 
-                                <div className='mb-[5px] '>
+                                ))}
+                            </div>
+
+                            <div className='mb-[5px] '>
 
                                 <span className='font-semibold text-[16px] '>Developer Tools</span>
-                                </div>
+                            </div>
                             <div className='mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
-{devTools.map((devt) => (<span key={devt} className='items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                {devTools.map((devt) => (<span key={devt} className='items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200'>
 
                                     {devt}
                                 </span>
-                                   
-))}
-                                </div>
-                                <div className='mb-[5px] '>
+
+                                ))}
+                            </div>
+                            <div className='mb-[5px] '>
 
                                 <span className='font-semibold text-[16px] '>Graphics & Video Editing</span>
-                                </div>
-                                 <div className='mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
+                            </div>
+                            <div className='mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
-{creative.map((graphics) => (<span key={graphics} className='items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                {creative.map((graphics) => (<span key={graphics} className='items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200'>
 
                                     {graphics}
                                 </span>
-                                   
-))}
-                                </div>
 
-</div>
+                                ))}
+                            </div>
 
-                               </div>
+                        </div>
+
+                    </div>
                 </>
             }
 
@@ -354,7 +354,7 @@ function Knowledge({ setShowModal }) {
                                     <span className='cursor-pointer text-[20px]'>✕</span>
                                 </button>
                             </div>
-       <div className='mt-[5px] mb-[5px]'>
+                            <div className='mt-[5px] mb-[5px]'>
 
                                 <span className='font-semibold text-[16px]' >UI/UX</span>
 
@@ -370,8 +370,8 @@ function Knowledge({ setShowModal }) {
                              text-[14px]       flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200'>
-                                    
-                                    {design}</span>
+
+                                        {design}</span>
                                 ))}
 
                             </div>
@@ -385,52 +385,52 @@ function Knowledge({ setShowModal }) {
                             <div className='flex flex-wrap mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
-{FrontEnd.map((front) => (<span key={front} className='flex text-[14px]  items-center px-[10px] py-[2px] flex-row items-center gap-2
+                                {FrontEnd.map((front) => (<span key={front} className='flex text-[14px]  items-center px-[10px] py-[2px] flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200 '>
-                                    
+
 
                                     {front}
                                 </span>
-                                   
-))}
-                                </div>
 
-                                <div className='mb-[5px] '>
+                                ))}
+                            </div>
+
+                            <div className='mb-[5px] '>
 
                                 <span className='font-semibold text-[16px] '>Developer Tools</span>
-                                </div>
+                            </div>
                             <div className=' flex flex-wrap mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
-{devTools.map((devt) => (<span key={devt} className=' text-[14px]  items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                {devTools.map((devt) => (<span key={devt} className=' text-[14px]  items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 whitespace-wrap
                                 duration-200'>
 
                                     {devt}
                                 </span>
-                                   
-))}
-                                </div>
-                                <div className='mb-[5px] '>
+
+                                ))}
+                            </div>
+                            <div className='mb-[5px] '>
 
                                 <span className='font-semibold text-[16px] '>Graphics & Video Editing</span>
-                                </div>
-                            
-                            
-                                 <div className='flex flex-wrap mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
+                            </div>
 
 
-{creative.map((graphics) => (<span key={graphics} className='text-[14px]  items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            <div className='flex flex-wrap mb-[20px] flex  gap-2 cursor-pointer w-full rounded-[12px]  '>
+
+
+                                {creative.map((graphics) => (<span key={graphics} className='text-[14px]  items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200'>
 
                                     {graphics}
                                 </span>
-                                   
-))}
-                                </div>
-                         </div>     
+
+                                ))}
+                            </div>
+                        </div>
 
                     </div>
                 </>

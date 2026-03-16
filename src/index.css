@@ -3,17 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 @import "tailwindcss";
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* This helps with layout calculations */
+  box-sizing: border-box;
+  /* This helps with layout calculations */
 }
 
 
 
-.button{
-border:gray 1px solid;
-border-radius: 6px;
+.button {
+  border: gray 1px solid;
+  border-radius: 6px;
 }
-

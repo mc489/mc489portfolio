@@ -49,7 +49,7 @@ export default function ExperienceTimeline() {
 
       {isDesktopOrLaptop &&
         <div className="flex  justify-center items-center ">
-          <div className="bg-white w-full hover:shadow-sm
+          <div className="bg-white dark:bg-black w-full hover:shadow-sm
                  max-w-[650px] rounded-[16px]  p-[15px] mt-[10px] 
                  border border-gray-300">
 
@@ -78,7 +78,7 @@ export default function ExperienceTimeline() {
                   absolute -left-[2px] top-[6px]
                   w-[12px] h-[12px] rounded-full border-2 
                   transition-all duration-200 z-10
-                  ${item.filled ? "bg-black" : "border-gray-300 bg-white hover:bg-black"}
+                  ${item.filled ? "bg-black dark:bg-white" : "border-gray-300 bg-white dark:bg-black hover:bg-black"}
                 `}
                     />
 
@@ -88,15 +88,15 @@ export default function ExperienceTimeline() {
                     <div className="flex justify-between items-end mb-[15px] ">
                       <div>
 
-                        <h3 className="text-black text-[12px] font-semibold">{item.role}</h3>
-                        <p className="text-black text-[10px] ">{item.school}</p>
+                        <h3 className=" text-[12px] font-semibold">{item.role}</h3>
+                        <p className=" text-[10px] ">{item.school}</p>
 
 
 
                       </div>
 
                       {/* Year Badge */}
-                      <span className=" items-end text-black text-[8px] border-1 border-gray-300 px-[5px] py-[1px] rounded-full">
+                      <span className=" items-end text-[8px] border-1 border-gray-300 px-[5px] py-[1px] rounded-full">
                         {item.year}
                       </span>
                     </div>

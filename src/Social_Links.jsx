@@ -14,11 +14,11 @@ function SocialLinks() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  699px)' })
 
 
-    const socialLinks = [{ name: 'mc489', icon: FaGithub, color: 'black', url: 'https://github.com/mc489' },
-    { name: 'MC Ganir', icon: FaLinkedin, color: 'black', url: 'https://www.linkedin.com/in/mc-ganir-552264210/' },
-    { name: 'MC Ganir', icon: FaFacebook, color: 'black', url: 'https://www.facebook.com/evmcpov' },
-    { name: 'mc ganir', icon: FaBehance, color: 'black', url: 'https://www.behance.net/mcganir' },
-    { name: 'mcjemuelganir', icon: FaYoutube, color: 'black', url: 'https://www.youtube.com/@mcjemuelganir' },
+    const socialLinks = [{ name: 'mc489', icon: FaGithub, color: '', url: 'https://github.com/mc489' },
+    { name: 'MC Ganir', icon: FaLinkedin, color: '', url: 'https://www.linkedin.com/in/mc-ganir-552264210/' },
+    { name: 'MC Ganir', icon: FaFacebook, color: '', url: 'https://www.facebook.com/evmcpov' },
+    { name: 'mc ganir', icon: FaBehance, color: '', url: 'https://www.behance.net/mcganir' },
+    { name: 'mcjemuelganir', icon: FaYoutube, color: '', url: 'https://www.youtube.com/@mcjemuelganir' },
     ];
 
     const renderLinks = (iconSize, textSize) => (
@@ -29,7 +29,7 @@ function SocialLinks() {
                     <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="flex flex-row items-center gap-2">
                             <Icon size={iconSize} style={{ color: link.color }} />
-                            <span className={`${textSize} text-black`}>{link.name}</span>
+                            <span className={`${textSize}  `}>{link.name}</span>
                         </div>
                     </button>
                 </a>
@@ -43,10 +43,10 @@ function SocialLinks() {
             {isDesktopOrLaptop &&
                 <div className="flex items-center justify-center ">
 
-                    <div className=" bg-white hover:shadow-sm flex-col w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
+                    <div className=" bg-white dark:bg-black hover:shadow-sm flex-col w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
 
                         <div className='flex items-center gap-2 mb-[10px] '>
-                            <LuLink size={14} color="black" />
+                            <LuLink size={14} />
                             <span className="text-lg font-semibold">Social Links</span>
                         </div>
                         {renderLinks(14, "text-[14px] ")}

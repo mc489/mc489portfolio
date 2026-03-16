@@ -29,7 +29,7 @@ function TechStack() {
 
                 <div className="flex justify-center items-center  ">
 
-                    <div className="bg-white hover:shadow-sm w-full flex-col relative
+                    <div className="bg-white dark:bg-black hover:shadow-sm w-full flex-col relative
                      max-w-[270px]  rounded-[16px] 
                     px-[15px] pt-[10px] pb-[4px] mt-[5px] 
                     text-left border border-gray-300 ">
