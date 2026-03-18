@@ -20,7 +20,7 @@ function About() {
     // Other media queries (isBigScreen, isPortrait, isRetina) remain the same
 
     // Define the full text content (as you had it across multiple paragraphs)
-    const p1 = "Motivated Bachelor of Science in Information Technology (BSIT) student with a strong passion for user-centric design and visual storytelling. I am proficient in designing and developing seamless user interfaces (UI/UX) and visually compelling graphics using tools like Figma and the Adobe Creative Suite including branding, typography, digital illustration.";
+    const p1 = "Dedicated Bachelor of Science in Information Technology (BSIT) student with a core focus on user-centric design and functional aesthetics. I specialize in crafting seamless user interfaces (UI/UX) and high-impact visual identities using Figma and the Adobe Creative Suite, with a particular emphasis on branding, typography, and digital illustration.";
     const p2 = "I combine this design expertise with practical front-end development skills in HTML, CSS, JavaScript, React, and Tailwind, bridging the gap between design and functionality to build high-quality web experiences.";
     const p3 = "My skill set also includes impactful video editing and motion graphics, all aimed at creating engaging digital content. Eager to apply my technical knowledge and creativity to create intuitive, visually appealing, and responsive digital experiences in real-world projects.";
 

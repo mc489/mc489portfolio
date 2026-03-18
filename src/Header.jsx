@@ -260,7 +260,7 @@ function Header() {
 
                             <a href='https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
                                 <div className=" m-0 flex flex-row items-center">
-                                    <MapPin  size={8} style={{ marginRight: '2px' }} /> {/* */}
+                                    <MapPin size={8} style={{ marginRight: '2px' }} /> {/* */}
                                     <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
                                 </div>
                             </a>
@@ -274,7 +274,7 @@ function Header() {
                         text-[10px] bg-black dark:bg-white text-white dark:text-black !border-none hover:-translate-y-0.5 whitespace-nowrap">
                                         <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
                                         <div className="flex gap-[5px] items-center">
-                                            <RiMessengerLine size={10}  />
+                                            <RiMessengerLine size={10} />
                                             Message
                                             <ChevronRight size={10} />
                                         </div>
@@ -285,7 +285,7 @@ function Header() {
 
                                     <button className="bg-white dark:bg-black cursor-pointer button text-[10px] py-[4px] px-[8px] hover:-translate-y-0.5">
                                         <div className="flex items-center gap-[5px]">
-                                            <MdMailOutline size={10}  />
+                                            <MdMailOutline size={10} />
                                             Email
                                         </div>
                                     </button>

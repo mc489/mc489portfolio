@@ -82,7 +82,7 @@ function App() {
         {isTabletOrMobile &&
           <>
             <Header />
-            <GridBackground>
+         {/* <GridBackground> */}
               <About />
               <Timeline />
               <TechStack />
@@ -90,7 +90,7 @@ function App() {
                 <RecentProjects />
                 <SocialLinks />
               </div>
-            </GridBackground>
+            {/*</GridBackground> */ }
             <Footer />
           </>
         }
