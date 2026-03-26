@@ -37,7 +37,7 @@ function About() {
 
 
                         <div className='flex items-center gap-2 '>
-                            <IoMdInformationCircleOutline size={16}  />
+                            <IoMdInformationCircleOutline size={16} />
                             <h1 className="text-lg font-semibold ">About</h1>
                         </div>
 
@@ -58,7 +58,7 @@ function About() {
                     p-[15px] mt-[10px] text-left border border-gray-300">
 
                         <div className='flex items-center gap-2 mb-2 '>
-                            <IoMdInformationCircleOutline size={12}  />
+                            <IoMdInformationCircleOutline size={12} />
                             <h1 className="text-[16px] font-semibold ">About</h1>
 
                         </div>

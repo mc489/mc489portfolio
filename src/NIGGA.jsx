@@ -315,7 +315,7 @@ function Nigga({ setShowModal, initialImage = null }) {
             {isDesktopOrLaptop && (
                 <>
                     <div
-                        className="fixed inset-0 bg-gray-800 z-40"
+                        className="fixed inset-0 bg-black/20 dark:bg-white/20"
                         style={{
                             opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.6),
                             transform: `translate3d(0, ${initialTranslate + dragOffset}px, 0)`,
@@ -362,7 +362,7 @@ function Nigga({ setShowModal, initialImage = null }) {
             {isTabletOrMobile && (
                 <>
                     <div
-                        className="fixed inset-0 bg-gray-100 z-40"
+                        className="fixed inset-0 bg-black/20 dark:bg-white/20"
                         style={{
                             opacity: isFullscreen ? 0 : 0.6,
                             transform: `translateY(${initialTranslate + dragOffset}px)`,

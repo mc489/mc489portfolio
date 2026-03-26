@@ -268,7 +268,7 @@ function Header() {
 
                             <div className="mt-[8px] flex flex-row gap-[6px]">
 
-                                <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer">
+                                <a href="https://m.me/evmcpov" targetw="_blank" rel="noopener noreferrer">
                                     <button className="cursor-pointer
                         button  px-[8px] py-[4px] 
                         text-[10px] bg-black dark:bg-white text-white dark:text-black !border-none hover:-translate-y-0.5 whitespace-nowrap">

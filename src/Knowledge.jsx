@@ -128,34 +128,35 @@ function Knowledge({ setShowModal }) {
                 <>
 
                     <div
-                        className="fixed inset-0 bg-gray-600"
+                        className="fixed inset-0 bg-black/20 dark:bg-white/20"
                         style={{
-                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
-                            transform: `translateY(${initialTranslate + dragOffset}px)`,
-                            opacity: isDragging ? 0 : 0.600,
-                            transition: isDragging
-                                ? "none"
-                                : forceFade
-                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                                    : "opacity 0.25s ease-out, transform 0.25s ease-out",
-                            pointerEvents: 'auto'
+                            // 1. Calculate opacity based on drag: fades as you drag down
+                            opacity: isClosing || forceFade
+                                ? 0
+                                : Math.max(0, 0.6 - (dragOffset / 500)),
+
+                            // 2. Ensure it doesn't move
+                            transform: 'none',
+
+                            transition: isDragging ? "none" : "opacity 0.25s ease-out",
+                            pointerEvents: isFullscreen ? 'none' : 'auto'
                         }}
                         onClick={() => {
-                            if (isFullscreen) return; // Don't close when fullscreen
-                            setForceFade(true);
-                            setInitialTranslate(300);
-                            setTimeout(() => setShowModal(false), 250);
+                            if (isFullscreen) return;
+                            closeModal();
                         }}
                     />
+
+                    {/* MODAL CONTAINER: This moves */}
                     <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'
                         }`}>
                         <div
                             ref={modalRef}
-                            className={` bg-white dark:bg-black flex w-full flex-col relative gap-1 
-                                px-[30px] py-[30px] text-left border border-gray-300 
-                                ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
-                                }`}
+                            className={`bg-white dark:bg-black flex w-full flex-col relative gap-1 
+                            px-[30px] py-[30px] text-left border border-gray-300 
+                            ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'}`}
                             style={{
+                                // Only the modal content gets the translateY
                                 transform: isFullscreen
                                     ? `translateY(${isDragging ? dragOffset : 0}px)`
                                     : `translateY(${initialTranslate + dragOffset}px)`,
@@ -164,9 +165,7 @@ function Knowledge({ setShowModal }) {
 
                                 transition: isDragging
                                     ? "none"
-                                    : "transform 0.25s ease-out, height 0.3s ease-out ",
-
-
+                                    : "transform 0.25s ease-out, height 0.3s ease-out",
                             }}
                         >
                             {/* Drag handle - replaces ChevronDown button */}
@@ -283,33 +282,35 @@ function Knowledge({ setShowModal }) {
                 <>
 
                     <div
-                        className="fixed inset-0 bg-gray-600"
+                        className="fixed inset-0 bg-black/20 dark:bg-white/20"
                         style={{
-                            opacity: isFullscreen ? 0 : (forceFade ? 0 : 0.5 - dragOffset / 10),
-                            transform: `translateY(${initialTranslate + dragOffset}px)`,
-                            opacity: isDragging ? 0 : 0.600,
-                            transition: isDragging
-                                ? "none"
-                                : forceFade
-                                    ? "opacity 0.1s ease-out, transform 0.10s ease-out"
-                                    : "opacity 0.25s ease-out, transform 0.25s ease-out",
-                            pointerEvents: 'auto'
+                            // 1. Calculate opacity based on drag: fades as you drag down
+                            opacity: isClosing || forceFade
+                                ? 0
+                                : Math.max(0, 0.6 - (dragOffset / 500)),
+
+                            // 2. Ensure it doesn't move
+                            transform: 'none',
+
+                            transition: isDragging ? "none" : "opacity 0.25s ease-out",
+                            pointerEvents: isFullscreen ? 'none' : 'auto'
                         }}
                         onClick={() => {
-                            if (isFullscreen) return; // Don't close when fullscreen
-                            setForceFade(true);
-                            setInitialTranslate(300);
-                            setTimeout(() => setShowModal(false), 250);
+                            if (isFullscreen) return;
+                            closeModal();
                         }}
                     />
+
+                    {/* MODAL CONTAINER: This moves */}
                     <div className={`fixed flex w-full justify-center items-center ${isFullscreen ? 'inset-0' : 'bottom-0'
                         }`}>
                         <div
                             ref={modalRef}
-                            className={` bg-white dark:bg-black flex w-full flex-col relative gap-1
-                             px-[30px] py-[35px] text-left border border-gray-300 ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'
-                                }`}
+                            className={`bg-white dark:bg-black flex w-full flex-col relative gap-1 
+                            px-[30px] py-[30px] text-left border border-gray-300 
+                            ${isFullscreen ? 'rounded-none' : 'rounded-t-[16px]'}`}
                             style={{
+                                // Only the modal content gets the translateY
                                 transform: isFullscreen
                                     ? `translateY(${isDragging ? dragOffset : 0}px)`
                                     : `translateY(${initialTranslate + dragOffset}px)`,
@@ -318,9 +319,7 @@ function Knowledge({ setShowModal }) {
 
                                 transition: isDragging
                                     ? "none"
-                                    : "transform 0.25s ease-out, height 0.3s ease-out ",
-
-
+                                    : "transform 0.25s ease-out, height 0.3s ease-out",
                             }}
                         >
                             {/* Drag handle - replaces ChevronDown button */}
