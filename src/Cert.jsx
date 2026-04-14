@@ -1,31 +1,32 @@
 
+
 import { FaLinkedin, FaFacebook, FaGithub, FaBehance, FaYoutube } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
 import { LuLink } from "react-icons/lu";
 
-function SocialLinks() {
+const Certificate = () => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
     })
     const isTabletOrMobile = useMediaQuery({ query: '(max-width:  699px)' })
 
 
-    const socialLinks = [{ name: 'mc489', icon: FaGithub, color: '', url: 'https://github.com/mc489' },
-    { name: 'MC Ganir', icon: FaLinkedin, color: '', url: 'https://www.linkedin.com/in/mc-ganir-552264210/' },
-    { name: 'MC Ganir', icon: FaFacebook, color: '', url: 'https://www.facebook.com/evmcpov' },
-    { name: 'mc ganir', icon: FaBehance, color: '', url: 'https://www.behance.net/mcganir' },
-    { name: 'mcjemuelganir', icon: FaYoutube, color: '', url: 'https://www.youtube.com/@mcjemuelganir' },
+    const certificate = [
+        { name: 'UI/UX for Beginners', url: 'https://github.com/mc489' },
+        { name: 'ReactJS for Beginners', url: 'https://www.linkedin.com/in/mc-ganir-552264210/' },
+        { name: 'Introduction to Front End Development', url: 'https://www.facebook.com/evmcpov' },
+
     ];
 
-    const renderLinks = (iconSize, textSize) => (
-        socialLinks.map((link, index) => {
+    const renderLinks = (textSize) => (
+        certificate.map((link, index) => {
             const Icon = link.icon;
             return (
                 <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
                     <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
-                        <div className="flex flex-row items-center gap-2">
-                            <Icon size={iconSize} style={{ color: link.color }} />
+                        <div className="flex flex-col text-left gap-2">
                             <span className={`${textSize}  `}>{link.name}</span>
+                            <span className='text-[12px]' >simplilearn</span>
                         </div>
                     </button>
                 </a>
@@ -39,19 +40,35 @@ function SocialLinks() {
             {isDesktopOrLaptop &&
                 <div className="flex items-center justify-center ">
 
-                    <div className=" bg-white dark:bg-black hover:shadow-sm flex-col w-full relative max-w-[250px]  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
+                    <div className=" bg-white dark:bg-black hover:shadow-sm flex-col w-fit  gap-1 rounded-[16px] p-[15px] mt-[10px] text-left border border-gray-300">
 
-                        <div className='flex items-center gap-2 mb-[10px] '>
-                            <LuLink size={14} />
-                            <span className="text-lg font-semibold">Social Links</span>
+                        <div className=" flex items-center justify-between relative gap-1 rounded-[16px] 
+                         w-full  mt-[5px] gap-2  text-left">
+
+                            <div className='flex items-center gap-2 mb-[10px] '>
+                                <LuLink size={14} />
+                                <span className="text-lg font-semibold">Recent Certification</span>
+                            </div>
+
+                            <button
+                                onClick={() => {
+
+                                    setShowModal(true);
+                                }}
+                                className='cursor-pointer'
+                            >
+
+                                <span className='text-[10px] cursor-pointer'>View All</span>
+                            </button>
                         </div>
-                        {renderLinks(14, "text-[14px] ")}
+                        {renderLinks("text-[14px] ")}
 
                     </div>
-                </div>
+                </div >
             }
 
-            {isTabletOrMobile &&
+            {
+                isTabletOrMobile &&
                 <div className="flex w-full justify-center items-center  ">
 
                     <div className="bg-white dark:bg-black flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
@@ -71,4 +88,4 @@ function SocialLinks() {
         </>
     )
 }
-export default SocialLinks
+export default Certificate;

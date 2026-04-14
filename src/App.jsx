@@ -9,6 +9,7 @@ import RecentProjects from "./Projects"
 import TechStack from "./TechStack"
 import { useMediaQuery } from 'react-responsive'
 import GridBackground from './GridBG';
+import Certificate from './Cert';
 
 function App() {
   const [theme, setTheme] = useState(
@@ -74,6 +75,7 @@ function App() {
                 <RecentProjects />
                 <SocialLinks />
               </div>
+
             </GridBackground>
             <Footer />
           </>

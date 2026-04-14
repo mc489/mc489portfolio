@@ -78,7 +78,7 @@ export default function ExperienceTimeline() {
                   absolute -left-[2px] top-[6px]
                   w-[12px] h-[12px] rounded-full border-2 
                   transition-all duration-200 z-10
-                  ${item.filled ? "bg-black dark:bg-white" : "border-gray-300 bg-white dark:bg-black hover:bg-black"}
+                  ${item.filled ? "bg-black dark:bg-white" : "border-gray-300 bg-white dark:bg-black hover:bg-black hover:dark:bg-white"}
                 `}
                     />
 

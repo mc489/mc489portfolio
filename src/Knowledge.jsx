@@ -114,7 +114,7 @@ function Knowledge({ setShowModal }) {
     };
     const uiuix = ['Figma', 'Adobe XD', 'Sketch']
     const FrontEnd = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React JS', 'Tailwind CSS', 'React Native',
-        'Nativewind', 'Styled Components', 'Next.Js', 'Vite']
+        'Nativewind', 'Styled Components', 'StyleX', 'Next.Js', 'Vite']
     const devTools = ['Git', 'Github', 'VS Code', 'Discord', 'Teams', 'JIRA',]
     const creative = ['Photoshop', 'Illustrator', 'Canva', 'Lightroom', 'Premiere Pro', 'After Effects', 'Da Vinci Resolve', 'Capcut',]
 
