@@ -2,9 +2,12 @@
 
 import { FaLinkedin, FaFacebook, FaGithub, FaBehance, FaYoutube } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
-import { LuLink } from "react-icons/lu";
+import { LuLink, LuBadgeCheck } from "react-icons/lu";
+import Cert from "./assets/uiuxcert.jpg"
 
-const Certificate = () => {
+const Certified = () => {
+
+
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
     })
@@ -46,22 +49,20 @@ const Certificate = () => {
                          w-full  mt-[5px] gap-2  text-left">
 
                             <div className='flex items-center gap-2 mb-[10px] '>
-                                <LuLink size={14} />
+                                <LuBadgeCheck size={14} />
                                 <span className="text-lg font-semibold">Recent Certification</span>
                             </div>
-
-                            <button
-                                onClick={() => {
-
-                                    setShowModal(true);
-                                }}
-                                className='cursor-pointer'
-                            >
-
-                                <span className='text-[10px] cursor-pointer'>View All</span>
-                            </button>
                         </div>
-                        {renderLinks("text-[14px] ")}
+                        <a href="https://simpli-web.app.link/e/IuFKoAM5Q2b" target="_blank" rel="noopener noreferrer" className="w-full">
+
+                            <button className="w-full cursor-pointer">
+                                <img
+                                    src={Cert}
+                                    alt="Certification"
+                                    className="w-[578px] h-auto rounded-[12px] object-cover"
+                                />
+                            </button>
+                        </a>
 
                     </div>
                 </div >
@@ -69,23 +70,33 @@ const Certificate = () => {
 
             {
                 isTabletOrMobile &&
-                <div className="flex w-full justify-center items-center  ">
+                <div className="flex w-full justify-center items-center gap-2 ">
 
-                    <div className="bg-white dark:bg-black flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px] mt-[2px] text-left border border-gray-300 ">
+                    <div className="bg-white dark:bg-black flex flex-col relative max-w-[330px] gap-1 rounded-[16px] w-full p-[15px]  mt-[10px]  text-left border border-gray-300 ">
+
 
 
 
                         <div className='flex mb-2 gap-2 items-center'>
 
-                            <LuLink size={12} />
-                            <span className="text-[16px] font-semibold">Social Links</span>
+                            <LuBadgeCheck size={12} />
+                            <span className="text-[16px] font-semibold">Recent Certification</span>
                         </div>
+                        <a href="https://simpli-web.app.link/e/IuFKoAM5Q2b" target="_blank" rel="noopener noreferrer" className="w-full">
 
-                        {renderLinks(10, "text-[10px] ")}
+                            <button className="w-full cursor-pointer">
+                                <img
+                                    src={Cert}
+                                    alt="Certification"
+                                    className="w-full h-auto rounded-[12px] object-cover"
+                                />
+                            </button>
+                        </a>
+
                     </div>
                 </div>
             }
         </>
     )
 }
-export default Certificate;
+export default Certified;
