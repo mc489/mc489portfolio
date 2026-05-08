@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive'
 import GridBackground from './GridBG';
 import Certificate from './Cert';
 import Certified from './Certified';
+import Ispecmn from './components/IspecmnButton';
 
 function App() {
   const [theme, setTheme] = useState(
@@ -78,6 +79,7 @@ function App() {
               </div>
               <Certified />
             </GridBackground>
+            <Ispecmn />
             <Footer />
           </>
         }
@@ -95,6 +97,8 @@ function App() {
             </div>
             {/*</GridBackground> */}
             <Certified />
+            <Ispecmn />
+
             <Footer />
           </>
         }
