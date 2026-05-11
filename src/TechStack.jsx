@@ -55,7 +55,7 @@ function TechStack() {
 
 
                             {uiuix.map((design) => (
-                                <span key={design} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                <span key={design} className='text-[10px] items-center px-[10px] duration-200 py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">'>{design}
                                 </span>
@@ -80,7 +80,7 @@ function TechStack() {
 
 
                             {FrontEnd.map((front) => (<span key={front} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5  duration-200
                                 duration-200">'>{front}</span>
                             ))}
 
@@ -96,7 +96,7 @@ function TechStack() {
 
 
                             {creative.map((graphics) => (<span key={graphics} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
-                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
+                                rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 duration-200 
                                 duration-200">'>{graphics}</span>
                             ))}
 
