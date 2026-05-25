@@ -44,6 +44,7 @@ function Projects() {
                                 <span className='text-[10px] cursor-pointer'>View All</span>
                             </button>
                         </div>
+
                         <a href="https://ispecmn.site/ " target="_blank" rel="noopenner noreferrer">
                             <button className='relative overflow-hidden w-[320px] border border-gray-300 rounded-[16px] cursor-pointer hover:-translate-y-0.5 duration-200 text-left'>
                                 <img
@@ -152,10 +153,11 @@ function Projects() {
                                 <span className='text-[10px] cursor-pointer'>View All</span>
                             </button>
                         </div>
+
+
                         <a href="https://ispecmn.site/ " target="_blank" rel="noopenner noreferrer">
 
-                            <button onClick={() => setShowModal(true)}
-
+                            <button
                                 className='relative overflow-hidden w-full  py-[10px] text-left
                          border-1 border-gray-300 rounded-[16px]'>
 
