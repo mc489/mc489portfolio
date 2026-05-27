@@ -20,13 +20,10 @@ function About() {
     // Other media queries (isBigScreen, isPortrait, isRetina) remain the same
 
     // Define the full text content (as you had it across multiple paragraphs)
-    const p1 = "Dedicated Bachelor of Science in Information Technology (BSIT) student with a core focus on user-centric design and functional aesthetics. I specialize in crafting seamless user interfaces (UI/UX) and high-impact visual identities using Figma and the Adobe Creative Suite, with a particular emphasis on branding, typography, and digital illustration.";
-    const p2 = "I combine this design expertise with practical front-end development skills in HTML, CSS, JavaScript, React, and Tailwind, bridging the gap between design and functionality to build high-quality web experiences.";
-    const p3 = "My skill set also includes impactful video editing and motion graphics, all aimed at creating engaging digital content. Eager to apply my technical knowledge and creativity to create intuitive, visually appealing, and responsive digital experiences in real-world projects.";
-
-    // Create a short version for the mobile initial view
-    const shortText = `${p1.substring(0, 300)}...`; // Truncate the first paragraph
-
+    const p1 = "I'm a UI/UX designer and frontend developer driven to design for the community, currently completing my BSIT degree. I specialize in crafting seamless user interfaces (UI/UX) and engaging digital experiences using Figma, placing a strong emphasis on intuitive navigation, accessible components, clean visual hierarchies, and interactive prototyping.";
+    const p2 = "I combine this UI/UX design expertise with practical front-end development skills in HTML, CSS, JavaScript, React, and Tailwind, bridging the gap between design and functionality for diverse digital platforms.";
+    const p3 = "This expertise extends to building robust mobile and desktop applications, ensuring cohesive cross-platform solutions. I am eager to apply my technical knowledge and creativity to deliver intuitive, responsive, and visually compelling digital experiences for real-world projects.";
+    const shortText = `${p1.substring(0, 274 )}...`; // Truncate the first paragraph
     return (
         <>
             {/* Desktop View (No See More/Less needed) */}
