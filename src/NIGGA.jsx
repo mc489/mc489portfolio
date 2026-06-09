@@ -83,6 +83,12 @@ import webdes3 from "./assets/projectsimg/webdes3.png"
 import webdes3_thumb from "./assets/projectsimg/thumbnails/webdes3-thumb.webp"
 import webdes4 from "./assets/projectsimg/webdes4.png"
 import webdes4_thumb from "./assets/projectsimg/thumbnails/webdes4-thumb.webp"
+import comnair1 from "./assets/projectsimg/comnair1.jpg"
+import comnair1_thumb from "./assets/projectsimg/thumbnails/comnair1-thumb.webp"
+import ispecmnlogo from "./assets/projectsimg/ispecmnlogo.png"
+import ispecmnlogo_thumb from "./assets/projectsimg/thumbnails/ispecmnlogo-thumb.webp"
+import comnairlogo from "./assets/projectsimg/comnairlogo.jpg"
+import comnairlogo_thumb from "./assets/projectsimg/thumbnails/comnairlogo-thumb.webp"
 
 import { GrProjects } from "react-icons/gr";
 
@@ -129,7 +135,8 @@ function Nigga({ setShowModal, initialImage = null }) {
         { thumb: rcy4_thumb, full: rcy4 }, { thumb: aircon1_thumb, full: aircon1 },
         { thumb: cover_thumb, full: cover }, { thumb: neutral_thumb, full: neutral }, { thumb: batwar_thumb, full: batwar },
         { thumb: webdes1_thumb, full: webdes1 }, { thumb: webdes2_thumb, full: webdes2 },
-        { thumb: webdes2_thumb, full: webdes2 }, { thumb: webdes3_thumb, full: webdes3 }, { thumb: webdes4_thumb, full: webdes4 }
+        { thumb: webdes2_thumb, full: webdes2 }, { thumb: webdes3_thumb, full: webdes3 }, { thumb: webdes4_thumb, full: webdes4 },
+        { thumb: comnair1_thumb, full: comnair1 }, { thumb: comnairlogo_thumb, full: comnairlogo }, { thumb: ispecmnlogo_thumb, full: ispecmnlogo },
     ];
     const WebsitesImages = [
         { thumb: c1_thumb, full: c1 }, { thumb: c2_thumb, full: c2 },
@@ -144,9 +151,11 @@ function Nigga({ setShowModal, initialImage = null }) {
     const appImages = [
         { thumb: wotg1_thumb, full: wotg1 }, { thumb: wotg2_thumb, full: wotg2 }, { thumb: wotg3_thumb, full: wotg3 },
         { thumb: rcy1_thumb, full: rcy1 }, { thumb: rcy2_thumb, full: rcy2 }, { thumb: rcy3_thumb, full: rcy3 },
-        { thumb: rcy4_thumb, full: rcy4 }
+        { thumb: rcy4_thumb, full: rcy4 },{ thumb: comnair1_thumb, full: comnair1 },
     ];
     const GraphicsImages = [
+        { thumb: comnair1_thumb, full: comnair1 }, { thumb: comnairlogo_thumb, full: comnairlogo },
+        { thumb: ispecmnlogo_thumb, full: ispecmnlogo },
         { thumb: ja_thumb, full: ja }, { thumb: ky_thumb, full: ky },
         { thumb: toxxazi_thumb, full: toxxazi }, { thumb: ecomlogo_thumb, full: ecomlogo },
         { thumb: lid_thumb, full: lid }, { thumb: card1_thumb, full: card1 },
