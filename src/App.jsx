@@ -65,21 +65,25 @@ function App() {
         {isDesktopOrLaptop &&
           <>
             <Header />
-            <GridBackground>
-              <div className='flex items-center justify-center gap-2'>
-                <About />
-                <div className='flex flex-col'>
-                  <Timeline />
-                  <TechStack />
+
+            <main>
+              <GridBackground>
+                <div className='flex items-center justify-center gap-2'>
+                  <About />
+                  <div className='flex flex-col'>
+                    <Timeline />
+                    <TechStack />
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <RecentProjects />
-                <SocialLinks />
-              </div>
-              <Certified />
-            </GridBackground>
+                <div className="flex items-center justify-center gap-2">
+                  <RecentProjects />
+                  <SocialLinks />
+                </div>
+                <Certified />
+              </GridBackground>
+            </main>
             <Ispecmn />
+
             <Footer />
           </>
         }
@@ -88,15 +92,17 @@ function App() {
           <>
             <Header />
             {/* <GridBackground> */}
-            <About />
-            <Timeline />
-            <TechStack />
-            <div className="flex flex-col items-center justify-center gap-2">
-              <RecentProjects />
-              <SocialLinks />
-            </div>
-            {/*</GridBackground> */}
-            <Certified />
+            <main>
+              <About />
+              <Timeline />
+              <TechStack />
+              <div className="flex flex-col items-center justify-center gap-2">
+                <RecentProjects />
+                <SocialLinks />
+              </div>
+              {/*</GridBackground> */}
+              <Certified />
+            </main>
             <Ispecmn />
 
             <Footer />
