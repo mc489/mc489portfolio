@@ -64,7 +64,7 @@ function SocialLinks() {
                             <span className="text-[16px] font-semibold">Social Links</span>
                         </div>
 
-                        {renderLinks(10, "text-[10px] ")}
+                        {renderLinks(14, "text-[14px] ")}
                     </div>
                 </div>
             }

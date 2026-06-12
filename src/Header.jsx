@@ -4,16 +4,15 @@ import profileClicked from "./assets/mcicon3.png"
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MapPin, Locate } from 'lucide-react';
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaRegComment } from 'react-icons/fa';
 import { ChevronRight } from 'lucide-react';
 import { MdDownload } from 'react-icons/md';
-import { FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive'
-import { FaBriefcase } from 'react-icons/fa'; // Example: using a briefcase icon from Font Awesome
+import { FaBriefcase, FaEnvelope } from 'react-icons/fa';
 import { MdMailOutline } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
-import { LuBriefcaseBusiness } from "react-icons/lu";
+import { LuBriefcaseBusiness, LuDownload } from "react-icons/lu";
 import { FaTimeline } from "react-icons/fa6";
 import RESUME from "./assets/GANIR_RESUME.pdf"
 import { motion, AnimatePresence } from "framer-motion";
@@ -31,7 +30,8 @@ function Header() {
     const [showModal, setShowModal] = useState(true);
 
     const [clicked, setClicked] = useState(false);
-
+    const longPressTimer = useRef(null);
+    const isLongPress = useRef(false);
     const [isHovered, setIsHovered] = useState(false);
 
     const handleClick = () => {
@@ -50,7 +50,33 @@ function Header() {
             setClicked(false);
         }
     };
+    const handleTouchStart = () => {
+        isLongPress.current = false;
 
+        longPressTimer.current = setTimeout(() => {
+            isLongPress.current = true;
+            setClicked(true);
+        }, 500);
+    };
+
+    const handleTouchEnd = () => {
+        clearTimeout(longPressTimer.current);
+    };
+
+    const handleTouchCancel = () => {
+        clearTimeout(longPressTimer.current);
+    };
+
+    const handleImageTap = () => {
+
+        if (isLongPress.current) {
+            isLongPress.current = false;
+            return;
+        }
+
+
+        setClicked(!clicked);
+    };
 
     return (
 
@@ -120,7 +146,7 @@ function Header() {
                                         <span className="text-[14px] opacity-0 group-hover:opacity-100 translate-x-2 
                                         group-hover:translate-x-0 duration-200">Download My Resume</span>
 
-                                        <MdOutlineDownload className="text-[20px] " />
+                                        <LuDownload className="text-[20px] " />
                                     </div>
                                 </button>
                             </a>
@@ -191,46 +217,44 @@ function Header() {
 
 
 
+                        {/* isTabletOrMobile Profile Image Section */}
                         <div
-                            className="relative items-center justify- w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0"
-
+                            className="relative items-center justify-center w-[100px] flex flex-row aspect-square rounded-[16px] overflow-hidden group flex-shrink-0 cursor-pointer select-none"
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
+                            onTouchCancel={handleTouchCancel}
+                            onClick={handleImageTap}
+                            style={{ WebkitTouchCallout: 'none' }}
                         >
-                            {/* Default Image: Visible when not clicked AND not hovered */}
+                            {/* Default Image */}
                             <img
                                 src={profile}
                                 alt="profile"
-                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300
-                    ${clicked || isHovered ? "opacity-0" : "opacity-100"}
-                `}
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 pointer-events-none
+            ${clicked || isHovered ? "opacity-0" : "opacity-100"}
+        `}
                             />
 
-
-
-
-                            {/* Hover Image: Visible when hovered (and not clicked) */}
+                            {/* Hover Image */}
                             <img
                                 src={profileHover}
                                 alt="profile hover"
-                                onClick={handleClick}
-                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
-                    ${clicked ? "opacity-100" : "opacity-0"}
-                `}
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 pointer-events-none
+            ${isHovered && !clicked ? "opacity-100" : "opacity-0"}
+        `}
                             />
+
+                            {/* Clicked / Long-pressed Image */}
                             <img
                                 src={profileClicked}
-                                alt="profile hover"
-                                onClick={handleClick}
-                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 cursor-pointer
-                    ${clicked ? "opacity-100" : "opacity-0"}
-                `}
+                                alt="profile clicked"
+                                className={`absolute inset-0 w-full h-full object-cover rounded-[16px] transition-opacity duration-300 pointer-events-none
+            ${clicked ? "opacity-100" : "opacity-0"}
+        `}
                             />
-
-
-
                         </div>
-
 
 
                         <div className=" my-[15px] flex flex-col  ">
@@ -244,15 +268,13 @@ function Header() {
                                 </div>
 
 
-
-
                                 <a href={RESUME} download target="_blank" rel="noopener noreferrer">
                                     <button >
 
                                         <div className="flex items-center group gap-1 cursor-pointer ">
                                             <span className="text-[10px] opacity-0 group-hover:opacity-100 
                             translate-x-2 group-hover:translate-x-0 duration-200">Download My Resume</span>
-                                            <MdOutlineDownload size={12} />
+                                            <LuDownload size={16} />
                                         </div>
                                     </button>
                                 </a>
@@ -261,7 +283,7 @@ function Header() {
                             <a href='https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
                                 <div className=" m-0 flex flex-row items-center">
                                     <MapPin size={8} style={{ marginRight: '2px' }} /> {/* */}
-                                    <h3 className="text-[10px] ">Metro Manila, Philippines</h3>
+                                    <h2 className="text-[10px] ">Metro Manila, Philippines</h2>
                                 </div>
                             </a>
                             <h2 className=" mt-[8px] text-[10px] justify-center ">Information Technology/ Multimedia </h2>
@@ -272,7 +294,6 @@ function Header() {
                                     <button className="cursor-pointer
                         button  px-[8px] py-[4px] 
                         text-[10px] bg-black dark:bg-white text-white dark:text-black !border-none hover:-translate-y-0.5 whitespace-nowrap">
-                                        <a href="https://m.me/evmcpov" target="_blank" rel="noopener noreferrer"></a>
                                         <div className="flex gap-[5px] items-center">
                                             <RiMessengerLine size={10} />
                                             Message
