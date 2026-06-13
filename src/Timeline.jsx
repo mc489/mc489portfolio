@@ -57,14 +57,13 @@ export default function ExperienceTimeline() {
             <div className='flex gap-2 items-center '>
 
               <MdOutlineViewTimeline size={16} className="items-center" />
-              <h2 className="text-lg font-semibold text-center">Experience</h2>
+              <h2  className="text-lg font-semibold text-center">Experience</h2>
             </div>
 
             {/* Timeline */}
             <div className="relative ml-2">
 
-              {/* ONE SINGLE VERTICAL LINE (Placed outside the map loop) */}
-              {/* It spans from top-0 to bottom-0 of its relative parent */}
+             
               <div className="absolute left-[4px] top-4 bottom-0 w-px bg-gray-300 z-0"></div>
 
               <div className="space-y-8 mt-4">
@@ -89,7 +88,7 @@ export default function ExperienceTimeline() {
                       <div>
 
                         <h3 className=" text-[12px] font-semibold">{item.role}</h3>
-                        <p className=" text-[10px] ">{item.school}</p>
+                        <h4 className=" text-[10px] ">{item.school}</h4>
 
 
 
@@ -151,7 +150,7 @@ export default function ExperienceTimeline() {
                       <div>
 
                         <h3 className=" text-[12px] font-semibold">{item.role}</h3>
-                        <p className=" text-[10px] ">{item.school}</p>
+                        <h4 className=" text-[10px] ">{item.school}</h4>
 
 
 

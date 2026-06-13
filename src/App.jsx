@@ -68,9 +68,11 @@ function App() {
 
             <main>
               <GridBackground>
-                <div className='flex items-center justify-center gap-2'>
-                  <About />
-                  <div className='flex flex-col'>
+                <div className="flex items-stretch justify-center gap-2">
+                  <div className="h-full">
+                    <About />
+                  </div>
+                  <div className="flex flex-col gap-2 h-full">
                     <Timeline />
                     <TechStack />
                   </div>

@@ -132,13 +132,8 @@ function Header() {
 
                             <div className="flex items-center gap-2">
                                 <h1 className="text-[24px] max-[500px]:text-[18px]">MC Ganir</h1>
-
-
-                                <MdVerified color="blue"
-
-                                    className="text-[16px]" />
+                                <MdVerified color="blue" size={16} />
                             </div>
-
 
                             <a href={RESUME} download target="_blank" rel="noopener noreferrer">
                                 <button className="cursor-pointer" >
@@ -155,7 +150,7 @@ function Header() {
                         <a href='https://maps.app.goo.gl/FcRjUWJgfixQWCFM8' target="_blank" rel="noopener noreferrer">
                             <div className="mt-[2px] flex flex-row items-center">
                                 <MapPin size={14} style={{ marginRight: '4px' }} /> {/* */}
-                                <h3 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h3>
+                                <h2 className="text-[16px] max-[500px]:text-[12px]">Metro Manila, Philippines</h2>
                             </div>
                         </a>
 
@@ -261,10 +256,9 @@ function Header() {
 
                             <div className="flex flex-row relative items-center justify-between ">
 
-                                <div className="flex items-center ">
+                                <div className="flex items-center gap-2 ">
                                     <h1 className="text-[16px] font-semibold">MC Ganir</h1>
-                                    <MdVerified icon={faCheckCircle} color="blue"
-                                        className="ml-[5px] w-[10px] " />
+                                    <MdVerified  color="blue" size={14} />
                                 </div>
 
 

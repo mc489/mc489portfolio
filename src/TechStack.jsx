@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook } from 'react-icons/fa'; // 'fa' stands for Font Awesome
 import Knowledge from "./Knowledge";
-import { GrTechnology } from "react-icons/gr";
+import { GrFormNext, GrTechnology } from "react-icons/gr";
 function TechStack() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 700px)'
@@ -37,51 +37,46 @@ function TechStack() {
                         <div className='flex justify-between items-center'>
                             <div className='flex gap-2 items-center'>
                                 <GrTechnology size={14} />
-                                <span className="text-lg font-semibold ">Tech Stack</span>
+                                <h2 className="text-lg font-semibold ">Tech Stack</h2>
 
                             </div>
-                            <button onClick={() => setShowModal(true)} className="cursor-pointer">
-                                <span className='text-[12px] cursor-pointer'>View All</span>
+                            <button onClick={() => setShowModal(true)} className="flex items-center gap-1 cursor-pointer">
+                                <h2 className='text-[12px] cursor-pointer'>View All</h2>
+                                <GrFormNext size={16} />
+
                             </button>
                         </div>
                         <div className='mt-[5px] mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] ' >UI/UX</span>
-
+                            <h3 className='font-semibold text-[12px] ' >UI/UX</h3>
                         </div>
 
-
-                        <div className='mb-[10px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
+                        <div className='mb-[18px] flex gap-2 cursor-pointer w-full rounded-[12px]  '>
 
 
                             {uiuix.map((design) => (
-                                <span key={design} className='text-[10px] items-center px-[10px] duration-200 py-[2px] flex flex-row items-center gap-2
+                                <h4 key={design} className='text-[10px] items-center px-[10px] duration-200 py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200">'>{design}
-                                </span>
-
+                                </h4>
                             )
-
-
                             )}
 
-
                         </div>
-
-
 
                         <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] '>Frontend</span>
+                            <h3 className='font-semibold text-[12px] '>Frontend</h3>
                         </div>
 
 
-                        <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
+                        <div className='mb-[18px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
-                            {FrontEnd.map((front) => (<span key={front} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            {FrontEnd.map((front) => (
+                                <h4 key={front} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5  duration-200
-                                duration-200">'>{front}</span>
+                                duration-200">'>{front}</h4>
                             ))}
 
 
@@ -90,14 +85,15 @@ function TechStack() {
 
                         <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] '>Graphics & Video Editing</span>
+                            <h3 className='font-semibold text-[12px] '>Graphics & Video Editing</h3>
                         </div>
                         <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
-                            {creative.map((graphics) => (<span key={graphics} className='text-[10px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            {creative.map((graphics) => (
+                                <h4 key={graphics} className='text-[10px]  items-center px-[10px] py-[2px] flex flex-nowrap flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 duration-200 
-                                duration-200">'>{graphics}</span>
+                                duration-200">'>{graphics}</h4>
                             ))}
 
 
@@ -137,16 +133,17 @@ function TechStack() {
                         <div className='flex justify-between'>
                             <div className='flex items-center gap-2'>
                                 <GrTechnology size={12} />
-                                <span className="text-[16px] font-semibold ">Tech Stack</span>
+                                <h2 className="text-[16px] font-semibold ">Tech Stack</h2>
 
                             </div>
-                            <button onClick={() => setShowModal(true)} className='cursor-pointer'>
-                                <span className='text-[10px] cursor-pointer'>View All</span>
+                            <button onClick={() => setShowModal(true)} className=' flex items-center gap-1 cursor-pointer'>
+                                <h2 className='text-[10px] cursor-pointer'>View All</h2>
+                                <GrFormNext size={14} />
                             </button>
                         </div>
                         <div className='mt-[5px] mb-[5px]'>
 
-                            <span className='font-semibold text-[14px]' >UI/UX</span>
+                            <h3 className='font-semibold text-[14px]' >UI/UX</h3>
 
                         </div>
 
@@ -154,49 +151,37 @@ function TechStack() {
 
 
                             {uiuix.map((design) => (
-                                <span key={design} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                                <h4 key={design} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
                                 duration-200'>{design}
-                                </span>
-
+                                </h4>
                             )
-
-
                             )}
-
-
                         </div>
-
-
 
                         <div className='mb-[5px]'>
-
-                            <span className='font-semibold text-[12px] '>Frontend</span>
+                            <h3 className='font-semibold text-[12px] '>Frontend</h3>
                         </div>
-
 
                         <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
-
-                            {FrontEnd.map((front) => (<span key={front} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            {FrontEnd.map((front) => (
+                                <h4 key={front} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">'>{front}</span>
+                                duration-200">'>{front}</h4>
                             ))}
-
-
-
                         </div>
 
                         <div className='mb-[5px]'>
 
-                            <span className='font-semibold text-[12px] '>Graphics & Video Editing</span>
+                            <h3 className='font-semibold text-[12px] '>Graphics & Video Editing</h3>
                         </div>
                         <div className='mb-[10px]  flex gap-2 cursor-pointer w-full rounded-[12px] flex-wrap  '>
 
 
-                            {creative.map((graphics) => (<span key={graphics} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
+                            {creative.map((graphics) => (<h4 key={graphics} className='text-[12px] items-center px-[10px] py-[2px] flex flex-row items-center gap-2
                                 rounded-[6px] border-1 border-gray-300  hover:-translate-y-0.5 
-                                duration-200">'>{graphics}</span>
+                                duration-200">'>{graphics}</h4>
                             ))}
 
 

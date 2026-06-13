@@ -25,7 +25,7 @@ function SocialLinks() {
                     <button className="mb-[4px] cursor-pointer w-full rounded-[12px] border-1 border-gray-300 px-2 py-2 hover:-translate-y-0.5 duration-200 ">
                         <div className="flex flex-row items-center gap-2">
                             <Icon size={iconSize} style={{ color: link.color }} />
-                            <span className={`${textSize}  `}>{link.name}</span>
+                            <h3 className={`${textSize}  `}>{link.name}</h3>
                         </div>
                     </button>
                 </a>
@@ -43,7 +43,7 @@ function SocialLinks() {
 
                         <div className='flex items-center gap-2 mb-[10px] '>
                             <LuLink size={14} />
-                            <span className="text-lg font-semibold">Social Links</span>
+                            <h2 className="text-lg font-semibold">Social Links</h2>
                         </div>
                         {renderLinks(14, "text-[14px] ")}
 
@@ -61,7 +61,7 @@ function SocialLinks() {
                         <div className='flex mb-2 gap-2 items-center'>
 
                             <LuLink size={12} />
-                            <span className="text-[16px] font-semibold">Social Links</span>
+                            <h2 className="text-[16px] font-semibold">Social Links</h2>
                         </div>
 
                         {renderLinks(14, "text-[14px] ")}

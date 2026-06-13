@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from "framer-motion";
 import Nigga from "./NIGGA";
-import { GrProjects } from "react-icons/gr";
+import { GrProjects, GrFormNext } from "react-icons/gr";
 import ispecmn from "./assets/projectsimg/ispecmnbg.png"
 import membersqr from "./assets/projectsimg/membersqr.png"
 import ecomparebg from "./assets/projectsimg/ecomparebg.png"
@@ -32,17 +32,20 @@ function Projects() {
 
                             <div className='flex items-center gap-2 '>
                                 <GrProjects size={12} />
-                                <span className="text-lg font-semibold">Recent Projects</span>
+                                <h2 className="text-lg font-semibold">Recent Projects</h2>
                             </div>
+
                             <button
                                 onClick={() => {
-
                                     setShowModal(true);
                                 }}
-                                className='cursor-pointer'
+                                className='cursor-pointer flex items-center gap-1'
                             >
-                                <span className='text-[10px] cursor-pointer'>View All</span>
+                                <h2 className='text-[12px] '>Explore All Projects</h2>
+                                <GrFormNext size={16} />
+
                             </button>
+
                         </div>
 
                         <a href="https://ispecmn.site/ " target="_blank" rel="noopenner noreferrer">
@@ -55,8 +58,8 @@ function Projects() {
                                 />
                                 <div className="relative z-10 px-[20px] py-[10px] text-white">
                                     <div className=" flex items-center justify-between mb-[5px]">
-                                        <h1 className='font-bold'>Ispecmn</h1>
-                                        <span className="text-[10px] font-semibold italic text-white/80">ispecmn.site</span>
+                                        <h3 className='font-bold'>Ispecmn</h3>
+                                        <h3 className="text-[10px] font-semibold italic text-white/80">ispecmn.site</h3>
                                     </div>
                                     <p className='text-[10px]'>
                                         Drag and drop forms creation website with AI.
@@ -100,10 +103,10 @@ function Projects() {
                                 <div className="relative z-10 px-[20px] py-[10px] text-white">
 
                                     <div className="flex items-center justify-between mb-[5px]">
-                                        <h1 className='text-[16px] font-bold   '>
+                                        <h3 className='text-[16px] font-bold   '>
                                             E-Compare
-                                        </h1>
-                                        <span className="text-[10px] font-semibold italic text-white/80">ecompare.site</span>
+                                        </h3>
+                                        <h3 className="text-[10px] font-semibold italic text-white/80">ecompare.site</h3>
                                     </div>
                                     <p className='text-[10px]'>
                                         Comparing products between Lazada and Shopee
@@ -147,11 +150,16 @@ function Projects() {
 
                             <div className='flex items-center gap-2 '>
                                 <GrProjects size={10} />
-                                <span className="text-[16px] font-semibold">Recent Projects</span>
+                                <h2 className="text-[16px] font-semibold">Recent Projects</h2>
                             </div>
-                            <button onClick={() => setShowModal(true)} className='cursor-pointer'>
-                                <span className='text-[10px] cursor-pointer'>View All</span>
+
+
+
+                            <button onClick={() => setShowModal(true)} className='cursor-pointer flex items-center gap-1'>
+                                <h2 className='text-[10px] cursor-pointer'>Explore All Projects</h2>
+                                <GrFormNext size={14} />
                             </button>
+
                         </div>
 
 
@@ -170,8 +178,8 @@ function Projects() {
                                 <div className="relative z-10 px-[15px] py-[2px] text-white">
 
                                     <div className="flex items-center justify-between mb-[5px]">
-                                        <h1 className='font-semibold text-[14px] mb-[5px]' >Ispecmn</h1>
-                                        <span className="text-[8px] font-semibold italic text-white/80">ispecmn.site</span>
+                                        <h3 className='font-semibold text-[14px] mb-[5px]' >Ispecmn</h3>
+                                        <h3 className="text-[8px] font-semibold italic text-white/80">ispecmn.site</h3>
                                     </div>
                                     <p className='text-[10px]'>
                                         Drag and drop forms creation website with AI.
@@ -193,8 +201,8 @@ function Projects() {
                             />
                             <div className="relative z-10 px-[15px] py-[2px] text-white">
                                 <div className="flex items-center justify-between mb-[5px]">
-                                    <h1 className='font-semibold text-[14px] mb-[5px]' >PLV-RCYC App</h1>
-                                    <span className="text-[8px] font-semibold italic text-white/80">Deployment</span>
+                                    <h3 className='font-semibold text-[14px] mb-[5px]' >PLV-RCYC App</h3>
+                                    <h3 className="text-[8px] font-semibold italic text-white/80">Deployment</h3>
                                 </div>
                                 <p className='text-[10px] whitespace-nowrap'>
                                     Management System: Events, Attendance, and Membership.
@@ -218,11 +226,11 @@ function Projects() {
 
                                 <div className="relative z-10 px-[15px] py-[2px] text-white">
                                     <div className="flex items-center justify-between mb-[5px]">
-                                        <h1 className='text-[14px] font-semibold'>
+                                        <h3 className='text-[14px] font-semibold'>
                                             E-Compare
-                                        </h1>
-                                        <span className="text-[8px] font-semibold italic text-white/80">
-                                            ecompare.site</span>
+                                        </h3>
+                                        <h3 className="text-[8px] font-semibold italic text-white/80">
+                                            ecompare.site</h3>
 
                                     </div>
                                     <p className='text-[10px]'>

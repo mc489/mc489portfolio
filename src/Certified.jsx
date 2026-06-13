@@ -57,7 +57,7 @@ const Certified = () => {
                         <div className="flex items-center justify-between relative rounded-[16px] w-full mt-[5px] gap-2 text-left">
                             <div className='flex items-center gap-2 mb-[10px]'>
                                 <LuBadgeCheck size={14} />
-                                <span className="text-lg font-semibold">Recent Certification</span>
+                                <h2 className="text-lg font-semibold">Recent Certification</h2>
                             </div>
                         </div>
 
@@ -96,10 +96,8 @@ const Certified = () => {
                         <div className='flex mb-2 gap-2 items-center'>
 
                             <LuBadgeCheck size={12} />
-                            <span className="text-[16px] font-semibold">Recent Certification</span>
+                            <h2 className="text-[16px] font-semibold">Recent Certification</h2>
                         </div>
-
-
 
 
                         <div className="w-[578px] max-w-full h-auto gap-4">
